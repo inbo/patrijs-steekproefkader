@@ -13,12 +13,65 @@
     ]
   },
   "Packages": {
+    "askpass": {
+      "Package": "askpass",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e8a22846fff485f0be3770c2da758713"
+    },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "50c838a310445e954bc13f26f26a6ecf"
+    },
+    "git2r": {
+      "Package": "git2r",
+      "Version": "0.28.0.9000",
+      "Source": "Repository",
+      "Repository": "https://ropensci.r-universe.dev",
+      "RemoteType": "repository",
+      "RemoteUrl": "https://github.com/ropensci/git2r",
+      "RemoteRef": "master",
+      "RemoteSha": "19440b16752a4b939a3bd5f33ff185a65be07d71",
+      "Hash": "36f4604a69aa796e559611c4bfdc9389"
+    },
+    "git2rdata": {
+      "Package": "git2rdata",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "42391cea59cc785157b9fefaf9a223ef"
+    },
+    "openssl": {
+      "Package": "openssl",
+      "Version": "1.4.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5406fd37ef0bf9b88c8a4f264d6ec220"
+    },
     "renv": {
       "Package": "renv",
       "Version": "0.14.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "30e5eba91b67f7f4d75d31de14bbfbdc"
+    },
+    "sys": {
+      "Package": "sys",
+      "Version": "3.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b227d13e29222b4574486cfcbde077fa"
+    },
+    "yaml": {
+      "Package": "yaml",
+      "Version": "2.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2826c5d9efb0a88f657c7a679c7106db"
     }
   }
 }

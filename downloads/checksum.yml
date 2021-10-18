@@ -1,0 +1,11 @@
+..generic:
+  git2rdata: 0.3.1
+  optimize: no
+  NA string: NA
+  sorting: file
+  hash: 4357f869729f2486f31b410815b8dbd8fa089baf
+  data_hash: 5b6cb4a37faed69654a3950d1f8a200311297b89
+file:
+  class: character
+sha512:
+  class: character
