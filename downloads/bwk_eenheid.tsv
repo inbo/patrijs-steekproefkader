@@ -1,0 +1,1158 @@
+eenheid	omschrijving	open
+a	stilstaande wateren	FALSE
+abi	gewone zilverspar (Abies alba)	FALSE
+acer	esdoorn (Acer sp.)	FALSE
+ad	bezinkingsbekken	FALSE
+ad-	bezinkingsbekken, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ad+	bezinkingsbekken, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ae	eutroof water	FALSE
+ae-	eutroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ae+	eutroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+aer	recent gegraven of vergraven eutroof water	FALSE
+aer-	recent gegraven of vergraven eutroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+aer+	recent gegraven of vergraven eutroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+aes	witte paardenkastanje (Aesculus hippocastanum)	FALSE
+aev	van oorsprong 'natuurlijk' eutroof water	FALSE
+aev-	van oorsprong 'natuurlijk' eutroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+aev+	van oorsprong 'natuurlijk' eutroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ah	brak of zilt water	FALSE
+ah-	brak of zilt water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ah+	brak of zilt water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+alng	zwarte els (Alnus glutinosa)	FALSE
+alni	witte els (Alnus incana)	FALSE
+ao	oligotroof water	FALSE
+ao-	oligotroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ao+	oligotroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+aom	mesotroof water	FALSE
+aom-	mesotroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+aom+	mesotroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+aoo	oligotroof water	FALSE
+aoo-	oligotroof water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+aoo+	oligotroof water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ap	diep of zeer diep water	FALSE
+ap-	diep of zeer diep water, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ap+	diep of zeer diep water, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+apo	diep of zeer diep water met zacht hellende oevers	FALSE
+apo-	diep of zeer diep water met zacht hellende oevers, zwak ontwikkeld en/of weinig voorkomend	FALSE
+apo+	diep of zeer diep water met zacht hellende oevers, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+app	diep of zeer diep water met steile oevers	FALSE
+app-	diep of zeer diep water met steile oevers, zwak ontwikkeld en/of weinig voorkomend	FALSE
+app+	diep of zeer diep water met steile oevers, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+b	akker	TRUE
+b-	akker, weinig voorkomend in complex	TRUE
+bet	berk (Betula sp.)	FALSE
+bk	akker op kalkrijke stenige leem	TRUE
+bk-	akker op kalkrijke stenige leem, weinig voorkomend in complex	TRUE
+bk+	akker op kalkrijke stenige leem met veel of zelfzame akkerkruiden, met veel en/of zeldzame akkerkruiden	TRUE
+bl	akker op lemige bodem	TRUE
+bl-	akker op lemige bodem, weinig voorkomend in complex	TRUE
+bl+	akker op lemige bodem met veel of zelfzame akkerkruiden, met veel en/of zeldzame akkerkruiden	TRUE
+bs	akker op zandige bodem	TRUE
+bs-	akker op zandige bodem, weinig voorkomend in complex	TRUE
+bs+	akker op zandige bodem met veel of zelfzame akkerkruiden, met veel en/of zeldzame akkerkruiden	TRUE
+bu	akker op kleiige bodem	TRUE
+bu-	akker op kleiige bodem, weinig voorkomend in complex	TRUE
+bu+	akker op kleiige bodem met veel of zelfzame akkerkruiden, met veel en/of zeldzame akkerkruiden	TRUE
+c	heiden	FALSE
+car	haagbeuk (Carpinus betulus)	FALSE
+cas	tamme kastanje (Castanea sativa)	FALSE
+cd	gedegradeerde heide met dominatie van bochtige smele	FALSE
+cd-	gedegradeerde heide met dominatie van bochtige smele, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cd+	gedegradeerde heide met dominatie van bochtige smele, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cdb	gedegradeerde heide met dominatie van bochtige smele met beperkte opslag van struiken en bomen	FALSE
+cdb-	gedegradeerde heide met dominatie van bochtige smele met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cdb+	gedegradeerde heide met dominatie van bochtige smele met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ce	vochtige tot natte dopheidevegetatie	FALSE
+ce-	vochtige tot natte dopheidevegetatie, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ce+	vochtige tot natte dopheidevegetatie, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ceb	vochtige tot natte dopheidevegetatie met beperkte opslag van struiken en bomen	FALSE
+ceb-	vochtige tot natte dopheidevegetatie met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ceb+	vochtige tot natte dopheidevegetatie met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ces	venige natte heide met soorten uit de hoogveenflora	FALSE
+ces-	venige natte heide met soorten uit de hoogveenflora, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ces+	venige natte heide met soorten uit de hoogveenflora, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cesb	venige natte heide met soorten uit de hoogveenflora met beperkte opslag van struiken en bomen	FALSE
+cesb-	venige natte heide met soorten uit de hoogveenflora met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cesb+	venige natte heide met soorten uit de hoogveenflora met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cg	droge struikheidevegetatie	FALSE
+cg-	droge struikheidevegetatie, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cg+	droge struikheidevegetatie, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cgb	droge struikheidevegetatie met beperkte opslag van struiken en bomen	FALSE
+cgb-	droge struikheidevegetatie met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cgb+	droge struikheidevegetatie met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cm	gedegradeerde heide met dominatie van pijpenstrootje	FALSE
+cm-	gedegradeerde heide met dominatie van pijpenstrootje, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cm+	gedegradeerde heide met dominatie van pijpenstrootje, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cmb	gedegradeerde heide met dominatie van pijpenstrootje met beperkte opslag van struiken en bomen	FALSE
+cmb-	gedegradeerde heide met dominatie van pijpenstrootje met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cmb+	gedegradeerde heide met dominatie van pijpenstrootje met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cor	hazelaar (Corylus avellana)	FALSE
+cp	gedegradeerde heide met dominatie van adelaarsvaren	FALSE
+cp-	gedegradeerde heide met dominatie van adelaarsvaren, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cp+	gedegradeerde heide met dominatie van adelaarsvaren, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cpb	gedegradeerde heide met dominatie van adelaarsvaren met beperkte opslag van struiken en bomen	FALSE
+cpb-	gedegradeerde heide met dominatie van adelaarsvaren met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cpb+	gedegradeerde heide met dominatie van adelaarsvaren met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cra	meidoorn (Crataegus sp.)	TRUE
+cv	droge heide met bosbes	FALSE
+cv-	droge heide met bosbes, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cv+	droge heide met bosbes, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+cvb	droge heide met bosbes met beperkte opslag van struiken en bomen	FALSE
+cvb-	droge heide met bosbes met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+cvb+	droge heide met bosbes met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+d	strand en duinen - slikken en schorren	FALSE
+da	schorre	FALSE
+da-	schorre, zwak ontwikkeld en/of weinig voorkomend	FALSE
+da+	schorre, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+dd	stuifduinen aan de kust	FALSE
+dd-	stuifduinen aan de kust, zwak ontwikkeld en/of weinig voorkomend	FALSE
+dd+	stuifduinen aan de kust, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+dl	strand	FALSE
+dl-	strand, zwak ontwikkeld en/of weinig voorkomend	FALSE
+dl+	strand met embryonale duinvorming	FALSE
+dla	strand met kunstwerken	FALSE
+dla-	strand met kunstwerken, zwak ontwikkeld en/of weinig voorkomend	FALSE
+dla+	strand met kunstwerken met embryonale duinvorming	FALSE
+dls	strand zonder kunstwerken	FALSE
+dls-	strand zonder kunstwerken, zwak ontwikkeld en/of weinig voorkomend	FALSE
+dls+	strand zonder  kunstwerken met embryonale duinvorming	FALSE
+dm	binnenlands vegetatiearm stuifduin	FALSE
+dm-	binnenlands vegetatiearm stuifduin, weinig voorkomend in complex	FALSE
+dm+	binnenlands vegetatiearm stuifduin, veelvuldig voorkomend in complex	FALSE
+ds	slik	FALSE
+ds-	slik, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ds+	slik, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+duits	Duitsland	FALSE
+dz	zandbank of zandplaat	FALSE
+dz-	zandbank of zandplaat, zwak ontwikkeld en/of weinig voorkomend	FALSE
+dz+	zandbank of zandplaat, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+endym	aanwezigheid van wilde hyacint	FALSE
+f	eiken- en beukenbossen	FALSE
+fa	beukenbos met voorjaarsflora, zonder wilde hyacint	FALSE
+fa-	beukenbos met voorjaarsflora, zonder wilde hyacint, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fa+	beukenbos met voorjaarsflora, zonder wilde hyacint, vegetatiekundig goed ontwikkeld bos	FALSE
+fag	beuk (Fagus sylvatica)	FALSE
+fe	beukenbos met wilde hyacint	FALSE
+fe-	beukenbos met wilde hyacint, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fe+	beukenbos met wilde hyacint, vegetatiekundig goed ontwikkeld bos	FALSE
+fk	beukenbos op mergel	FALSE
+fk-	beukenbos op mergel, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fk+	beukenbos op mergel, vegetatiekundig goed ontwikkeld bos	FALSE
+fl	beukenbos met witte veldbies	FALSE
+fl-	beukenbos met witte veldbies, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fl+	beukenbos met witte veldbies, vegetatiekundig goed ontwikkeld bos	FALSE
+fm	beukenbos met parelgras en lievevrouwebedstro	FALSE
+fm-	beukenbos met parelgras en lievevrouwebedstro, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fm+	beukenbos met parelgras en lievevrouwebedstro, vegetatiekundig goed ontwikkeld bos	FALSE
+fran	sporkehout (Frangula alnus)	FALSE
+frank	Frankrijk	FALSE
+frax	es (Fraxinus excelcior)	FALSE
+fs	zuur beukenbos	FALSE
+fs-	zuur beukenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld bos	FALSE
+fs+	zuur beukenbos, vegetatiekundig goed ontwikkeld bos	FALSE
+gml	gemengd loofhout	FALSE
+gmn	gemengd naaldhout	FALSE
+h	graslanden	TRUE
+ha	struisgrasvegetatie	TRUE
+ha-	struisgrasvegetatie, zwak ontwikkeld en/of weinig voorkomend	TRUE
+ha+	struisgrasvegetatie, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hab	struisgrasvegetatie met beperkte opslag van struiken en bomen	TRUE
+hab-	struisgrasvegetatie met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hab+	struisgrasvegetatie met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hac	buntgrasverbond	FALSE
+hac-	buntgrasverbond, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hac+	buntgrasverbond, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hacb	buntgrasverbond met beperkte opslag van struiken en bomen	FALSE
+hacb-	buntgrasverbond met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hacb+	buntgrasverbond met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+had	droog duingrasland van kalkarme milieus	FALSE
+had-	droog duingrasland van kalkarme milieus, zwak ontwikkeld en/of weinig voorkomend	FALSE
+had+	droog duingrasland van kalkarme milieus, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hat	dwerghaververbond	TRUE
+hat-	dwerghaververbond, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hat+	dwerghaververbond, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hatb	dwerghaververbond met beperkte opslag van struiken en bomen	TRUE
+hatb-	dwerghaververbond met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hatb+	dwerghaververbond met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hc	dotterbloemgrasland	FALSE
+hc-	dotterbloemgrasland, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hc+	dotterbloemgrasland, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hcb	dotterbloemgrasland met beperkte opslag van struiken en bomen	FALSE
+hcb-	dotterbloemgrasland met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hcb+	dotterbloemgrasland met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hd	droog duingrasland van kalkrijke milieus	FALSE
+hd-	droog duingrasland van kalkrijke milieus, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hd+	droog duingrasland van kalkrijke milieus, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hdb	droog duingrasland van kalkrijke milieus met beperkte opslag van struiken en bomen	FALSE
+hdb-	droog duingrasland van kalkrijke milieus met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hdb+	droog duingrasland van kalkrijke milieus met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hf	moerasspirearuigte	FALSE
+hf-	moerasspirearuigte, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hf+	moerasspirearuigte, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hfb	moerasspirearuigte met beperkte opslag van struiken en bomen	FALSE
+hfb-	moerasspirearuigte met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hfb+	moerasspirearuigte met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hfc	moerasspirearuigte met moesdistel	FALSE
+hfc-	moerasspirearuigte met moesdistel, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hfc+	moerasspirearuigte met moesdistel, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hfcb	moerasspirearuigte met moesdistel met beperkte opslag van struiken en bomen	FALSE
+hfcb-	moerasspirearuigte met moesdistel met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hfcb+	moerasspirearuigte met moesdistel met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hfl	natte ruigte met grote wederik en hennegras	FALSE
+hfl-	natte ruigte met grote wederik en hennegras, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hfl+	natte ruigte met grote wederik en hennegras, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hflb	natte ruigte met grote wederik en hennegras met beperkte opslag van struiken en bomen	FALSE
+hflb-	natte ruigte met grote wederik en hennegras met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hflb+	natte ruigte met grote wederik en hennegras met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hft	moerasspirearuigte met poelruit	FALSE
+hft-	moerasspirearuigte met poelruit, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hft+	moerasspirearuigte met poelruit, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hftb	moerasspirearuigte met poelruit en beperkte opslag van struiken en bomen	FALSE
+hftb-	moerasspirearuigte met poelruit en beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hftb+	moerasspirearuigte met poelruit en beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hj	vochtig grasland gedomineerd door russen	FALSE
+hj-	vochtig grasland gedomineerd door russen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hj+	vochtig grasland gedomineerd door russen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hjb	vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen	FALSE
+hjb-	vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hjb+	vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hk	kalkgrasland	TRUE
+hk-	kalkgrasland, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hk+	kalkgrasland, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hkb	kalkgrasland met beperkte opslag van struiken en bomen	TRUE
+hkb-	kalkgrasland met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hkb+	kalkgrasland met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hm	vochtig schraalgrasland	FALSE
+hm-	vochtig schraalgrasland, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hm+	vochtig schraalgrasland, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hmb	vochtig schraalgrasland met beperkte opslag van struiken en bomen	FALSE
+hmb-	vochtig schraalgrasland met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hmb+	vochtig schraalgrasland met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hme	vochtig schraalgrasland (kalkrijkere variant)	FALSE
+hme-	vochtig schraalgrasland (kalkrijkere variant), zwak ontwikkeld en/of weinig voorkomend	FALSE
+hme+	vochtig schraalgrasland (kalkrijkere variant), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hmm	vochtig schraalgrasland (zuurdere variant)	FALSE
+hmm-	vochtig schraalgrasland (zuurdere variant), zwak ontwikkeld en/of weinig voorkomend	FALSE
+hmm+	vochtig schraalgrasland (zuurdere variant), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hmo	vochtig heischraal grasland	FALSE
+hmo-	vochtig heischraal grasland, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hmo+	vochtig heischraal grasland, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hn	droog heischraal grasland	TRUE
+hn-	droog heischraal grasland, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hn+	droog heischraal grasland, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hnb	droog heischraal grasland met beperkte opslag van struiken en bomen	TRUE
+hnb-	droog heischraal grasland met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hnb+	droog heischraal grasland met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hp	soortenarm permanent cultuurgrasland	TRUE
+hp-	soortenarm permanent cultuurgrasland, weinig voorkomend in complex	TRUE
+hp+	soortenrijk permanent cultuurgrasland	TRUE
+hpr	weilandcomplex met veel sloten en/of microreliëf	TRUE
+hpr-	weilandcomplex met veel sloten en/of microreliëf, weinig voorkomend in complex	TRUE
+hpr+	soortenrijk permanent cultuurgrasland (met uitgesproken microreliëf)	TRUE
+hpu	weinig bemeste kalkrijke graslanden van de Maasuiterwaarden	TRUE
+hpu-	weinig bemeste kalkrijke graslanden van de Maasuiterwaarden, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hpu+	weinig bemeste kalkrijke graslanden van de Maasuiterwaarden, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hr	verruigd grasland	TRUE
+hr-	verruigd grasland, slechts banale soorten aanwezig	TRUE
+hr+	verruigd grasland, (zeer) soortenrijk met minder algemene soorten	TRUE
+hrb	verruigd grasland met beperkte opslag van struiken en bomen	TRUE
+hrb-	verruigd grasland met beperkte opslag van struiken en bomen, slechts banale soorten aanwezig	TRUE
+hrb+	verruigd grasland met beperkte opslag van struiken en bomen, (zeer) soortenrijk met minder algemene soorten	TRUE
+hu	mesofiel hooiland	TRUE
+hu-	mesofiel hooiland, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hu+	mesofiel hooiland, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hub	mesofiel hooiland met beperkte opslag van struiken en bomen	TRUE
+hub-	mesofiel hooiland met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hub+	mesofiel hooiland met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+hv	zinkgrasland	FALSE
+hv-	zinkgrasland, zwak ontwikkeld en/of weinig voorkomend	FALSE
+hv+	zinkgrasland, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+hx	zeer soortenarm, vaak tijdelijk grasland	TRUE
+hx-	zeer soortenarm, vaak tijdelijk grasland, weinig voorkomend in complex	TRUE
+hx+	zeer soortenarm, vaak tijdelijk grasland, veelvuldig voorkomend in complex	TRUE
+hz	grasland op door zware metalen vergiftigde bodem	TRUE
+hz-	grasland op door zware metalen vergiftigde bodem, zwak ontwikkeld en/of weinig voorkomend	TRUE
+hz+	grasland op door zware metalen vergiftigde bodem, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+jug	okkernoot (Juglans regia)	FALSE
+jun	jenerverbes (Juniperus communis)	FALSE
+k	kleine landschapselementen	TRUE
+k(ae-)	sloten met eutroof water, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(ae)	sloten met eutroof water	FALSE
+k(ae+)	sloten met eutroof water, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(ah-)	sloten met zilt of brak water, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(ah)	sloten met zilt of brak water	FALSE
+k(ah+)	sloten met zilt of brak water, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(ao-)	sloten met oligotroof water, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(ao)	sloten met oligotroof water	FALSE
+k(ao+)	sloten met oligotroof water, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(aom-)	sloten met mesotroof water, sloten met mesotrafente soorten: weinig in aantal	FALSE
+k(aom)	sloten met mesotroof water	FALSE
+k(aom+)	sloten met mesotroof water, sloten met mesotrafente soorten: zeer veel en/of zeer soortenrijk	FALSE
+k(cd-)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cd)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele	FALSE
+k(cd+)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cdb-)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cdb)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele en met beperkte opslag van struiken en bomen	FALSE
+k(cdb+)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van bochtige smele en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(ce-)	bermen, perceelsranden, . met vochtige tot natte dopheidevegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(ce)	bermen, perceelsranden, . met vochtige tot natte dopheidevegetatie	FALSE
+k(ce+)	bermen, perceelsranden, . met vochtige tot natte dopheidevegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cg-)	bermen, perceelsranden, . met droge struikheidevegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cg)	bermen, perceelsranden, . met droge struikheidevegetatie	FALSE
+k(cg+)	bermen, perceelsranden, . met droge struikheidevegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cgb-)	bermen, perceelsranden, . met droge struikheidevegetatie en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cgb)	bermen, perceelsranden, . met droge struikheidevegetatie en met beperkte opslag van struiken en bomen	FALSE
+k(cgb+)	bermen, perceelsranden, . met droge struikheidevegetatie en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cm-)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van pijpenstrootje, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cm)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van pijpenstrootje	FALSE
+k(cm+)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van pijpenstrootje, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cmb-)	bermen, perceelsranden, . gedegradeerde heide met dominantie van pijpenstrootje en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cmb)	bermen, perceelsranden, . gedegradeerde heide met dominantie van pijpenstrootje en met beperkte opslag van struiken en bomen	FALSE
+k(cmb+)	bermen, perceelsranden, . gedegradeerde heide met dominantie van pijpenstrootje en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cp-)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cp)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren	FALSE
+k(cp+)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(cpb-)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(cpb)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren en met beperkte opslag van struiken en bomen	FALSE
+k(cpb+)	bermen, perceelsranden, . met gedegradeerde heide met dominantie van adelaarsvaren en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(da-)	bermen, perceelsranden, . met zilte elementen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(da)	bermen, perceelsranden, . met zilte elementen	FALSE
+k(da+)	bermen, perceelsranden, . met zilte elementen, met goed ontwikkelde da en/of veel in aantal	FALSE
+k(ha-)	bermen, perceelsranden, . met struisgrasvegetatie, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(ha)	bermen, perceelsranden, . met struisgrasvegetatie	TRUE
+k(ha+)	bermen, perceelsranden, . met struisgrasvegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(hab-)	bermen, perceelsranden, . met struisgrasvegetatie en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hab)	bermen, perceelsranden, . met struisgrasvegetatie en met beperkte opslag van struiken en bomen	TRUE
+k(hab+)	bermen, perceelsranden, . met struisgrasvegetatie en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(hac-)	bermen, perceelsranden, ë met buntgrasverbond, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hac)	bermen, perceelsranden, ë met buntgrasverbond	FALSE
+k(hac+)	bermen, perceelsranden, ë met buntgrasverbond, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(had-)	bermen, perceelsranden, . met droog duingrasland van kalkarme milieus, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(had)	bermen, perceelsranden, . met droog duingrasland van kalkarme milieus	FALSE
+k(had+)	bermen, perceelsranden, . met droog duingrasland van kalkarme milieus, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hat-)	bermen, perceelsranden, ë met dwerghaververbond, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hat)	bermen, perceelsranden, ë met dwerghaververbond	TRUE
+k(hat+)	bermen, perceelsranden, ë met dwerghaververbond, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(hc-)	bermen, perceelsranden,  ... met dotterbloemgrasland, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hc)	bermen, perceelsranden,  ... met dotterbloemgrasland	FALSE
+k(hc+)	bermen, perceelsranden,  ... met dotterbloemgrasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hd-)	bermen, perceelsranden,  ... met droog duingrasland van kalkrijke milieus, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hd)	bermen, perceelsranden,  ... met droog duingrasland van kalkrijke milieus	FALSE
+k(hd+)	bermen, perceelsranden,  ... met droog duingrasland van kalkrijke milieus, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hf-)	bermen, perceelsranden,  ... met  moerasspirearuigte, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hf)	bermen, perceelsranden,  ... met  moerasspirearuigte	FALSE
+k(hf+)	bermen, perceelsranden,  ... met  moerasspirearuigte, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hfb-)	bermen, perceelsranden,  ... met  moerasspirearuigte en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hfb)	bermen, perceelsranden,  ... met  moerasspirearuigte en met beperkte opslag van struiken en bomen	FALSE
+k(hfb+)	bermen, perceelsranden,  ... met  moerasspirearuigte en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hfc-)	bermen, perceelsranden,  ...  met moerasspirearuigte met moesdistel, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hfc)	bermen, perceelsranden,  ...  met moerasspirearuigte met moesdistel	FALSE
+k(hfc+)	bermen, perceelsranden,  ...  met moerasspirearuigte met moesdistel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hfl-)	bermen, perceelsranden,  ...  met natte ruigte met grote wederik en hennegras, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hfl)	bermen, perceelsranden,  ...  met natte ruigte met grote wederik en hennegras	FALSE
+k(hfl+)	bermen, perceelsranden,  ...  met natte ruigte met grote wederik en hennegras, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hft-)	bermen, perceelsranden,  ...  met moerasspirearuigte met poelruit, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hft)	bermen, perceelsranden,  ...  met moerasspirearuigte met poelruit	FALSE
+k(hft+)	bermen, perceelsranden,  ...  met moerasspirearuigte met poelruit, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hj-)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hj)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen	FALSE
+k(hj+)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hjb-)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hjb)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen en met beperkte opslag van struiken en bomen	FALSE
+k(hjb+)	bermen, perceelsranden,  ...  met vochtig grasland gedomineerd door russen en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hk-)	bermen, perceelsranden,  ...  met kalkgrasland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hk)	bermen, perceelsranden,  ...  met kalkgrasland	TRUE
+k(hk+)	bermen, perceelsranden,  ...  met kalkgrasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(hm-)	bermen, perceelsranden,  ... met  vochtig schraalgrasland, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(hm)	bermen, perceelsranden,  ... met  vochtig schraalgrasland	FALSE
+k(hm+)	bermen, perceelsranden,  ... met  vochtig schraalgrasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(hn-)	bermen, perceelsranden,  ... met  droog heischraal grasland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hn)	bermen, perceelsranden,  ... met  droog heischraal grasland	TRUE
+k(hn+)	bermen, perceelsranden,  ... met  droog heischraal grasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(hp)	bermen, perceelsranden,  ...  met soortenarm permanent cultuurgrasland	TRUE
+k(hp+)	bermen, perceelsranden,  ...  met soortenrijk permanent cultuurgasland	TRUE
+k(hr-)	bermen, perceelsranden,  ...  met verruigd grasland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hr)	bermen, perceelsranden,  ...  met verruigd grasland	TRUE
+k(hr+)	bermen, perceelsranden,  ...  met verruigd grasland, zeer soortenrijk en/of veel voorkomend	TRUE
+k(hrb-)	bermen, perceelsranden,  ...  met verruigd grasland en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hrb)	bermen, perceelsranden,  ...  met verruigd grasland en met beperkte opslag van struiken en bomen	TRUE
+k(hrb+)	bermen, perceelsranden,  ...  met verruigd grasland en met beperkte opslag van struiken en bomen, zeer soortenrijk en/of veel voorkomend	TRUE
+k(hu-)	bermen, perceelsranden,  ...  met mesofiel hooiland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(hu)	bermen, perceelsranden,  ...  met mesofiel hooiland	TRUE
+k(hu+)	bermen, perceelsranden,  ...  met mesofiel hooiland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+k(ku-)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(ku)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie	TRUE
+k(ku+)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie, zeer soortenrijk en/of veel voorkomend	TRUE
+k(kub-)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+k(kub)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie en met beperkte opslag van struiken en bomen	TRUE
+k(kub+)	bermen, perceelsranden,  ...  met ruigte of pioniersvegetatie en met beperkte opslag van struiken en bomen, zeer soortenrijk en/of veel voorkomend	TRUE
+k(mc-)	bermen, perceelsranden,  ...  met grote zeggenvegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mc)	bermen, perceelsranden,  ...  met grote zeggenvegetatie	FALSE
+k(mc+)	bermen, perceelsranden,  ...  met grote zeggenvegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(mcb-)	bermen, perceelsranden,  ...  met grote zeggenvegetatie en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mcb)	bermen, perceelsranden,  ...  met grote zeggenvegetatie en met beperkte opslag van struiken en bomen	FALSE
+k(mcb+)	bermen, perceelsranden,  ...  met grote zeggenvegetatie en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(mr-)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mr)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond	FALSE
+k(mr+)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(mrb-)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond en met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mrb)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond en met beperkte opslag van struiken en bomen	FALSE
+k(mrb+)	bermen, perceelsranden,  ... met rietland en andere vegetaties van het rietverbond en met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(mru-)	bermen, perceelsranden,  ... met rietruigte, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mru)	bermen, perceelsranden,  ... met rietruigte	FALSE
+k(mru+)	bermen, perceelsranden,  ... met rietruigte, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(ms-)	bermen, perceelsranden,  ... met zuur laagveen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(ms)	bermen, perceelsranden,  ... met zuur laagveen	FALSE
+k(ms+)	bermen, perceelsranden,  ... met zuur laagveen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+k(mz-)	bermen, perceelsranden,  ... met brak tot zilt moeras met heen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+k(mz)	bermen, perceelsranden,  ... met brak tot zilt moeras met heen	FALSE
+k(mz+)	bermen, perceelsranden,  ... met brak tot zilt moeras met heen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+ka	eendenkooi	FALSE
+ka-	eendenkooi, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ka+	eendenkooi, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kb	bomenrij	FALSE
+kb-	bomenrij, zwak ontwikkeld en/of weinig voorkomend	FALSE
+kb+	bomenrij, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kba	bomenrij met dominantie van els (Alnus sp.)	FALSE
+kba-	bomenrij met dominantie van els (Alnus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kba+	bomenrij met dominantie van els (Alnus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbac	bomenrij met dominantie van esdoorn (Acer sp.)	FALSE
+kbac-	bomenrij met dominantie van esdoorn (Acer sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbac+	bomenrij met dominantie van esdoorn (Acer sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbae	bomenrij met dominantie van paardekastanje (Aesculus sp.)	FALSE
+kbae-	bomenrij met dominantie van paardekastanje (Aesculus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbae+	bomenrij met dominantie van paardekastanje (Aesculus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbb	bomenrij met dominantie van berk (Betulus sp.)	FALSE
+kbb-	bomenrij met dominantie van berk (Betulus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbb+	bomenrij met dominantie van berk (Betulus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbc	bomenrij met dominantie van tamme kastanje (Castanea sativa)	FALSE
+kbc-	bomenrij met dominantie van tamme kastanje (Castanea sativa), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbc+	bomenrij met dominantie van tamme kastanje (Castanea sativa), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbca	bomenrij met dominantie van haagbeuk (Carpinus betulus)	FALSE
+kbca-	bomenrij met dominantie van haagbeuk (Carpinus betulus), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbca+	bomenrij met dominantie van haagbeuk (Carpinus betulus), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbco	bomenrij met dominantie van hazelaar	FALSE
+kbco-	bomenrij met dominantie van hazelaar, zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbco+	bomenrij met dominantie van hazelaar, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbcr	bomenrij met dominantie van meidoorn (Crataegus sp.)	FALSE
+kbcr-	bomenrij met dominantie van meidoorn (Crataegus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbcr+	bomenrij met dominantie van meidoorn (Crataegus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbf	bomenrij met dominantie van beuk (Fagus sylvatica)	FALSE
+kbf-	bomenrij met dominantie van beuk (Fagus sylvatica), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbf+	bomenrij met dominantie van beuk (Fagus sylvatica), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbfr	bomenrij met dominantie van gewone es (Fraxinus excelsior)	FALSE
+kbfr-	bomenrij met dominantie van gewone es (Fraxinus excelsior), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbfr+	bomenrij met dominantie van gewone es (Fraxinus excelsior), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbgml	bomenrij met gemengd loofhout	FALSE
+kbgml-	bomenrij met gemengd loofhout, zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbgml+	bomenrij met gemengd loofhout, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbgmn	bomenrij met gemengd naaldhout	FALSE
+kbgmn-	bomenrij met gemengd naaldhout, zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbgmn+	bomenrij met gemengd naaldhout, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbj	bomenrij met dominantie van okkernoot (Juglans regia)	FALSE
+kbj-	bomenrij met dominantie van okkernoot (Juglans regia), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbj+	bomenrij met dominantie van okkernoot (Juglans regia), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kblar	bomenrij met dominantie van lork (Larix sp.)	FALSE
+kblar-	bomenrij met dominantie van lork (Larix sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kblar+	bomenrij met dominantie van lork (Larix sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbp	bomenrij met dominantie van populier (Populus sp.)	FALSE
+kbp-	bomenrij met dominantie van populier (Populus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbp+	bomenrij met dominantie van populier (Populus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpica	bomenrij met dominantie van fijnspar (Picea abies)	FALSE
+kbpica-	bomenrij met dominantie van fijnspar (Picea abies), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpica+	bomenrij met dominantie van fijnspar (Picea abies), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpinn	bomenrij met dominantie van zwarte  den (Pinus nigra)	FALSE
+kbpinn-	bomenrij met dominantie van zwarte  den (Pinus nigra), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpinn+	bomenrij met dominantie van zwarte  den (Pinus nigra), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpins	bomenrij met dominantie van grove den (Pinus sylvestris)	FALSE
+kbpins-	bomenrij met dominantie van grove den (Pinus sylvestris), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpins+	bomenrij met dominantie van grove den (Pinus sylvestris), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpl	bomenrij met dominantie van plataan (Platanus sp.)	FALSE
+kbpl-	bomenrij met dominantie van plataan (Platanus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpl+	bomenrij met dominantie van plataan (Platanus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpr	bomenrij met dominantie van Amerikaanse vogelkers (Prunus serotina)	FALSE
+kbpr-	bomenrij met dominantie van Amerikaanse vogelkers (Prunus serotina), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpr+	bomenrij met dominantie van Amerikaanse vogelkers (Prunus serotina), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbprua	bomenrij met dominantie van zoete kers (Prunus Avium)	FALSE
+kbprua-	bomenrij met dominantie van zoete kers (Prunus Avium), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbprua+	bomenrij met dominantie van zoete kers (Prunus Avium), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpse	bomenrij met dominantie van Dougglasspar	FALSE
+kbpse-	bomenrij met dominantie van Dougglasspar, zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpse+	bomenrij met dominantie van Dougglasspar, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbpt	bomenrij met dominantie van ratelpopulier (Populus tremula)	FALSE
+kbpt-	bomenrij met dominantie van ratelpopulier (Populus tremula), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbpt+	bomenrij met dominantie van ratelpopulier (Populus tremula), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbq	bomenrij met dominantie van zomereik (Quercus robur)	FALSE
+kbq-	bomenrij met dominantie van zomereik (Quercus robur), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbq+	bomenrij met dominantie van zomereik (Quercus robur), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbqr	bomenrij met dominantie van Amerikaanse eik (Quercus rubra)	FALSE
+kbqr-	bomenrij met dominantie van Amerikaanse eik (Quercus rubra), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbqr+	bomenrij met dominantie van Amerikaanse eik (Quercus rubra), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbr	bomenrij met dominantie van robinia (Robinia pseudoacacia)	FALSE
+kbr-	bomenrij met dominantie van robinia (Robinia pseudoacacia), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbr+	bomenrij met dominantie van robinia (Robinia pseudoacacia), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbs	bomenrij met dominantie van (al dan niet geknotte) wilg (Salix sp.)	FALSE
+kbs-	bomenrij met dominantie van (al dan niet geknotte) wilg (Salix sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbs+	bomenrij met dominantie van (al dan niet geknotte) wilg (Salix sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbt	bomenrij met dominantie van linde (Tilia sp.)	FALSE
+kbt-	bomenrij met dominantie van linde (Tilia sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbt+	bomenrij met dominantie van linde (Tilia sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kbu	bomenrij met dominantie van iep (Ulmus sp.)	FALSE
+kbu-	bomenrij met dominantie van iep (Ulmus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kbu+	bomenrij met dominantie van iep (Ulmus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kc	groeve	FALSE
+kd	dijk	TRUE
+kd-	dijk, deels afgegraven dijk of recente lage dijk	TRUE
+kd+	dijk, dijk met soortenrijke begroeiing	TRUE
+kf	voormalig militair fort	FALSE
+kf-	voormalig militair fort, bunker of fort met geen of louter weinig interessante vegetaties	FALSE
+kg	terril	FALSE
+kh	houtkant	TRUE
+kh-	houtkant, zwak ontwikkeld en/of weinig voorkomend	TRUE
+kh(fa-)	houtkant met beukenbos met voorjaarsflora, zonder wilde hyacint, weinig	FALSE
+kh(fa)	houtkant met beukenbos met voorjaarsflora, zonder wilde hyacint	FALSE
+kh(fa+)	houtkant met beukenbos met voorjaarsflora, zonder wilde hyacint, veel (en meestal goed ontwikkeld)	FALSE
+kh(fe-)	houtkant met beukenbos met wilde hyacint, weinig	FALSE
+kh(fe)	houtkant met beukenbos met wilde hyacint	FALSE
+kh(fe+)	houtkant met beukenbos met wilde hyacint, veel (en meestal goed ontwikkeld)	FALSE
+kh(fk-)	houtkant met beukenbos op mergel, weinig	FALSE
+kh(fk)	houtkant met beukenbos op mergel	FALSE
+kh(fk+)	houtkant met beukenbos op mergel, veel (en meestal goed ontwikkeld)	FALSE
+kh(fl-)	houtkant met beukenbos met witte veldbies, weinig	FALSE
+kh(fl)	houtkant met beukenbos met witte veldbies	FALSE
+kh(fl+)	houtkant met beukenbos met witte veldbies, veel (en meestal goed ontwikkeld)	FALSE
+kh(fm-)	houtkant met beukenbos met parelgras en lievevrouwebedstro, weinig	FALSE
+kh(fm)	houtkant met beukenbos met parelgras en lievevrouwebedstro	FALSE
+kh(fm+)	houtkant met beukenbos met parelgras en lievevrouwebedstro, veel (en meestal goed ontwikkeld)	FALSE
+kh(fs-)	houtkant met zuur beukenbos, weinig	FALSE
+kh(fs)	houtkant met zuur beukenbos	FALSE
+kh(fs+)	houtkant met zuur beukenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(qa-)	houtkant met eiken-haagbeukenbos, weinig	FALSE
+kh(qa)	houtkant met eiken-haagbeukenbos	FALSE
+kh(qa+)	houtkant met eiken-haagbeukenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(qb-)	houtkant met eiken-berkenbos, weinig	FALSE
+kh(qb)	houtkant met eiken-berkenbos	FALSE
+kh(qb+)	houtkant met eiken-berkenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(qe-)	houtkant met eiken- haagbeukenbos met wilde hyacint, weinig	FALSE
+kh(qe)	houtkant met eiken- haagbeukenbos met wilde hyacint	FALSE
+kh(qe+)	houtkant met eiken- haagbeukenbos met wilde hyacint, veel (en meestal goed ontwikkeld)	FALSE
+kh(qk-)	houtkant met eiken- haagbeukenbos op mergel, weinig	FALSE
+kh(qk)	houtkant met eiken- haagbeukenbos op mergel	FALSE
+kh(qk+)	houtkant met eiken- haagbeukenbos op mergel, veel (en meestal goed ontwikkeld)	FALSE
+kh(ql-)	houtkant met eikenbos met witte veldbies, weinig	FALSE
+kh(ql)	houtkant met eikenbos met witte veldbies	FALSE
+kh(ql+)	houtkant met eikenbos met witte veldbies, veel (en meestal goed ontwikkeld)	FALSE
+kh(qs-)	houtkant met zuur eikenbos, weinig	FALSE
+kh(qs)	houtkant met zuur eikenbos	FALSE
+kh(qs+)	houtkant met zuur eikenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(sf-)	houtkant met vochtig wilgenstruweel op voedselrijke bodem, weinig	FALSE
+kh(sf)	houtkant met vochtig wilgenstruweel op voedselrijke bodem	FALSE
+kh(sf+)	houtkant met vochtig wilgenstruweel op voedselrijke bodem, veel (en meestal goed ontwikkeld)	FALSE
+kh(sg-)	houtkant met brem- en gaspeldoornstruweel, weinig (en meestal slecht ontwikkeld)	TRUE
+kh(sg)	houtkant met brem- en gaspeldoornstruweel	TRUE
+kh(sg+)	houtkant met brem- en gaspeldoornstruweel, veel (en meestal goed ontwikkeld)	TRUE
+kh(sk-)	houtkant met struweel op kalkrijke bodem, weinig (en meestal slecht ontwikkeld)	TRUE
+kh(sk)	houtkant met struweel op kalkrijke bodem	TRUE
+kh(sk+)	houtkant met struweel op kalkrijke bodem, veel (en meestal goed ontwikkeld)	TRUE
+kh(sm-)	houtkant met gagelstruweel, weinig (en meestal slecht ontwikkeld)	FALSE
+kh(sm)	houtkant met gagelstruweel	FALSE
+kh(sm+)	houtkant met gagelstruweel, veel (en meestal goed ontwikkeld)	FALSE
+kh(so-)	houtkant met vochtig wilgenstruweel op venige of zure grond, weinig (en meestal slecht ontwikkeld)	FALSE
+kh(so)	houtkant met vochtig wilgenstruweel op venige of zure grond	FALSE
+kh(so+)	houtkant met vochtig wilgenstruweel op venige of zure grond, veel (en meestal goed ontwikkeld)	FALSE
+kh(sp-)	houtkant met doornstruweel, weinig (en meestal slecht ontwikkeld)	TRUE
+kh(sp)	houtkant met doornstruweel	TRUE
+kh(sp+)	houtkant met doornstruweel, veel (en meestal goed ontwikkeld)	TRUE
+kh(sz-)	houtkant met opslag van allerlei aard, weinig	TRUE
+kh(sz)	houtkant met opslag van allerlei aard	FALSE
+kh(sz+)	houtkant met opslag van allerlei aard, veel (en meestal goed ontwikkeld)	FALSE
+kh(va-)	houtkant met alluviaal elzen-essenbos, weinig	FALSE
+kh(va)	houtkant met alluviaal elzen-essenbos	FALSE
+kh(va+)	houtkant met alluviaal elzen-essenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(vc-)	houtkant met bronbos, weinig	FALSE
+kh(vc)	houtkant met bronbos	FALSE
+kh(vc+)	houtkant met bronbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(vf-)	houtkant met elzen-eikenbos, weinig	FALSE
+kh(vf)	houtkant met elzen-eikenbos	FALSE
+kh(vf+)	houtkant met elzen-eikenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh(vm-)	houtkant met elzenbroek, weinig	FALSE
+kh(vm)	houtkant met elzenbroek	FALSE
+kh(vm+)	houtkant met elzenbroek, veel (en meestal goed ontwikkeld)	FALSE
+kh(vn-)	houtkant met nitrofiel alluviaal elzenbos, weinig	FALSE
+kh(vn)	houtkant met nitrofiel alluviaal elzenbos	FALSE
+kh(vn+)	houtkant met nitrofiel alluviaal elzenbos, veel (en meestal goed ontwikkeld)	FALSE
+kh+	houtkant, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+kha	houtkant met dominantie van els (Alnus sp.)	FALSE
+kha-	houtkant met dominantie van els (Alnus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+kha+	houtkant met dominantie van els (Alnus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khac	houtkant met dominantie van esdoorn (Acer sp.)	FALSE
+khac-	houtkant met dominantie van esdoorn (Acer sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khac+	houtkant met dominantie van esdoorn (Acer sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khae	houtkant met dominantie van paardekastanje (Aesculus sp.)	FALSE
+khae-	houtkant met dominantie van paardekastanje (Aesculus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khae+	houtkant met dominantie van paardekastanje (Aesculus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khb	houtkant met dominantie van berk (Betulus sp.)	FALSE
+khb-	houtkant met dominantie van berk (Betulus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khb+	houtkant met dominantie van berk (Betulus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khc	houtkant met dominantie van tamme kastanje (Castanea sativa)	FALSE
+khc-	houtkant met dominantie van tamme kastanje (Castanea sativa), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khc+	houtkant met dominantie van tamme kastanje (Castanea sativa), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khca	houtkant met dominantie van haagbeuk (Carpinus betulus)	FALSE
+khca-	houtkant met dominantie van haagbeuk (Carpinus betulus), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khca+	houtkant met dominantie van haagbeuk (Carpinus betulus), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khco	houtkant met dominantie van hazelaar (Corylus avellana)	FALSE
+khco-	houtkant met dominantie van hazelaar (Corylus avellana), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khco+	houtkant met dominantie van hazelaar (Corylus avellana), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khcr	houtkant met dominantie van meidoorn (Crataegus sp.)	FALSE
+khcr-	houtkant met dominantie van meidoorn (Crataegus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khcr+	houtkant met dominantie van meidoorn (Crataegus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khf	houtkant met dominantie van beuk (Fagus sylvatica)	FALSE
+khf-	houtkant met dominantie van beuk (Fagus sylvatica), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khf+	houtkant met dominantie van beuk (Fagus sylvatica), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khfr	houtkant met dominantie van es (Fraxinus excelsior)	FALSE
+khfr-	houtkant met dominantie van es (Fraxinus excelsior), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khfr+	houtkant met dominantie van es (Fraxinus excelsior), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khfran	houtkant met dominantie van sporkehout (Frangula alnus)	FALSE
+khfran-	houtkant met dominantie van sporkehout (Frangula alnus), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khfran+	houtkant met dominantie van sporkehout (Frangula alnus), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khgml	houtkant met gemengd loofhout	FALSE
+khgml-	houtkant met gemengd loofhout, zwak ontwikkeld en/of weinig voorkomend	FALSE
+khgml+	houtkant met gemengd loofhout, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khgmn	houtkant met gemengd naaldhout	FALSE
+khgmn-	houtkant met gemengd naaldhout, zwak ontwikkeld en/of weinig voorkomend	FALSE
+khgmn+	houtkant met gemengd naaldhout, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khlar	houtkant met dominantie van lork (Larix sp.)	FALSE
+khlar-	houtkant met dominantie van lork (Larix sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khlar+	houtkant met dominantie van lork (Larix sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khlig	houtkant met dominantie liguster (Ligustrum sp.)	TRUE
+khlig-	houtkant met dominantie liguster (Ligustrum sp.), zwak ontwikkeld en/of weinig voorkomend	TRUE
+khlig+	houtkant met dominantie liguster (Ligustrum sp.), goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+khp	houtkant met dominantie van populier (Populus sp.)	FALSE
+khp-	houtkant met dominantie van populier (Populus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khp+	houtkant met dominantie van populier (Populus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khpins	houtkant met dominantie van grove den (Pinus sylvestris)	FALSE
+khpins-	houtkant met dominantie van grove den (Pinus sylvestris), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khpins+	houtkant met dominantie van grove den (Pinus sylvestris), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khpr	houtkant met dominantie van Amerikaanse vogelkers (Prunus serotina)	FALSE
+khpr-	houtkant met dominantie van Amerikaanse vogelkers (Prunus serotina), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khpr+	houtkant met dominantie van Amerikaanse vogelkers (Prunus serotina), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khprua	houtkant met dominantie van zoete kers (Prunus avium)	FALSE
+khprua-	houtkant met dominantie van zoete kers (Prunus avium), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khprua+	houtkant met dominantie van zoete kers (Prunus avium), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khpt	houtkant met dominantie van ratelpopulier (Populus tremula)	FALSE
+khpt-	houtkant met dominantie van ratelpopulier (Populus tremula), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khpt+	houtkant met dominantie van ratelpopulier (Populus tremula), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khq	houtkant met doninatie van zomereik (Quercus robur)	FALSE
+khq-	houtkant met doninatie van zomereik (Quercus robur), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khq+	houtkant met doninatie van zomereik (Quercus robur), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khqr	houtkant met dominantie van Amerikaanse eik (Quercus rubra)	FALSE
+khqr-	houtkant met dominantie van Amerikaanse eik (Quercus rubra), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khqr+	houtkant met dominantie van Amerikaanse eik (Quercus rubra), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khr	houtkant met dominantie van robinia (Robinia pseudoacacia)	FALSE
+khr-	houtkant met dominantie van robinia (Robinia pseudoacacia), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khr+	houtkant met dominantie van robinia (Robinia pseudoacacia), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khs	houtkant met dominantie van wilg (Salix sp.)	FALSE
+khs-	houtkant met dominantie van wilg (Salix sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khs+	houtkant met dominantie van wilg (Salix sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khsa	houtkant met dominantie van vlier (Sambucus sp.)	TRUE
+khsa-	houtkant met dominantie van vlier (Sambucus sp.), zwak ontwikkeld en/of weinig voorkomend	TRUE
+khsa+	houtkant met dominantie van vlier (Sambucus sp.), goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+khu	houtkant met dominantie van iep (Ulmus sp.)	FALSE
+khu-	houtkant met dominantie van iep (Ulmus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khu+	houtkant met dominantie van iep (Ulmus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khw	houtwal	TRUE
+khw-	houtwal, zwak ontwikkeld en/of weinig voorkomend	TRUE
+khw+	houtwal, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+khwa	houtwal met dominantie van els ( Alnus sp.)	FALSE
+khwa-	houtwal met dominantie van els ( Alnus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwa+	houtwal met dominantie van els ( Alnus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwac	houtwal met dominantie van esdoorn (Acer sp.)	FALSE
+khwac-	houtwal met dominantie van esdoorn (Acer sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwac+	houtwal met dominantie van esdoorn (Acer sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwb	houtwal met dominantie van berk (Betulus sp.)	FALSE
+khwb-	houtwal met dominantie van berk (Betulus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwb+	houtwal met dominantie van berk (Betulus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwca	houtwal met dominantie van haagbeuk (Carpinus betulus)	FALSE
+khwca-	houtwal met dominantie van haagbeuk (Carpinus betulus), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwca+	houtwal met dominantie van haagbeuk (Carpinus betulus), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwco	houtwal met dominantie van hazelaar (Corylus avellana)	FALSE
+khwco-	houtwal met dominantie van hazelaar (Corylus avellana), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwco+	houtwal met dominantie van hazelaar (Corylus avellana), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwcr	houtwal met dominantie van meidoorn (Crataegus sp.)	TRUE
+khwcr-	houtwal met dominantie van meidoorn (Crataegus sp.), zwak ontwikkeld en/of weinig voorkomend	TRUE
+khwcr+	houtwal met dominantie van meidoorn (Crataegus sp.), goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+khwf	houtwal met dominantie van beuk (Fagus sylvatica)	FALSE
+khwf-	houtwal met dominantie van beuk (Fagus sylvatica), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwf+	houtwal met dominantie van beuk (Fagus sylvatica), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwfr	houtwal met dominantie van es (Fraxinus excelsior)	FALSE
+khwfr-	houtwal met dominantie van es (Fraxinus excelsior), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwfr+	houtwal met dominantie van es (Fraxinus excelsior), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwgml	houtwal met gemengd loofhout	FALSE
+khwgmn	houtwal met gemengd naaldhout	FALSE
+khwp	houtwal met dominantie van populier (Populus sp.)	FALSE
+khwp-	houtwal met dominantie van populier (Populus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwp+	houtwal met dominantie van populier (Populus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwpt	houtwal met dominantie van ratelpopulier (Populus tremula)	FALSE
+khwpt-	houtwal met dominantie van ratelpopulier (Populus tremula), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwpt+	houtwal met dominantie van ratelpopulier (Populus tremula), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwq	houtwal met dominantie van zomereik (Quercus robur)	FALSE
+khwq-	houtwal met dominantie van zomereik (Quercus robur), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwq+	houtwal met dominantie van zomereik (Quercus robur), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwqr	houtwal met dominantie van Amerikaanse eik (Quercus rubra)	FALSE
+khwqr-	houtwal met dominantie van Amerikaanse eik (Quercus rubra), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwqr+	houtwal met dominantie van Amerikaanse eik (Quercus rubra), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwr	houtwal met dominantie van robinia (Robinia pseudoacacia)	FALSE
+khwr-	houtwal met dominantie van robinia (Robinia pseudoacacia), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwr+	houtwal met dominantie van robinia (Robinia pseudoacacia), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khws	houtwal met dominantie van wilg (Salix sp.)	FALSE
+khws-	houtwal met dominantie van wilg (Salix sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khws+	houtwal met dominantie van wilg (Salix sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+khwu	houtwal met dominantie van iep (Ulmus sp.)	FALSE
+khwu-	houtwal met dominantie van iep (Ulmus sp.), zwak ontwikkeld en/of weinig voorkomend	FALSE
+khwu+	houtwal met dominantie van iep (Ulmus sp.), goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ki	vliegveld	TRUE
+kj	hoogstamboomgaard	TRUE
+kj-	hoogstamboomgaard, gedegradeerde of jonge hoogstamboomgaard	TRUE
+kj+	hoogstamboomgaard, goed ontwikkelde hoogstamboomgaard	TRUE
+kk	doline of ingang ondergrondse mergelgroeve	TRUE
+kl	laagstamboomgaard	TRUE
+km	muurvegetatie	FALSE
+km-	muurvegetatie, zwak ontwikkeld en/of weinig voorkomend	FALSE
+km+	muurvegetatie, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+kn	veedrinkpoel	FALSE
+kn-	veedrinkpoel, zwak ontwikkeld en/of weinig in complex	FALSE
+kn+	veedrinkpoel, goed ontwikkeld en/of veel in complex	FALSE
+ko	stort	FALSE
+kp	park	FALSE
+kp-	park, kunstmatig aandoend park of parkachtig kerkhof met weinig natuurlijke elementen	FALSE
+kp+	park, park of parkachtig kerkhof met (veel) natuurlijke elementen	FALSE
+kpa	arboretum	FALSE
+kpk	kasteelpark	FALSE
+kpk-	kasteelpark, kunstmatig aandoend kasteelpark met weinig natuurlijke elementen	FALSE
+kpk+	kasteelpark, kasteelpark met (veel) natuurlijke elementen	FALSE
+kq	kwekerij of serre	FALSE
+kr	rots	FALSE
+ks	verlaten spoorweg	FALSE
+kt	talud	TRUE
+kt-	talud, zwak ontwikkeld en weinig in complex	TRUE
+kt(cd-)	taluds met gedegradeerde heide met dominantie van bochtige smele, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cd)	taluds met gedegradeerde heide met dominantie van bochtige smele	FALSE
+kt(cd+)	taluds met gedegradeerde heide met dominantie van bochtige smele, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cdb-)	taluds met gedegradeerde heide met dominantie van bochtige smele met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cdb)	taluds met gedegradeerde heide met dominantie van bochtige smele met beperkte opslag van struiken en bomen	FALSE
+kt(cdb+)	taluds met gedegradeerde heide met dominantie van bochtige smele met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(ce-)	taluds met vochtige tot natte dopheidevegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(ce)	taluds met vochtige tot natte dopheidevegetatie	FALSE
+kt(ce+)	taluds met vochtige tot natte dopheidevegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cg-)	taluds met droge struikheidevegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cg)	taluds met droge struikheidevegetatie	FALSE
+kt(cg+)	taluds met droge struikheidevegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	NA
+kt(cgb-)	taluds met droge struikheidevegetatie met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cgb)	taluds met droge struikheidevegetatie met beperkte opslag van struiken en bomen	FALSE
+kt(cgb+)	taluds met droge struikheidevegetatie met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cm-)	taluds met gedegradeerde heide met dominantie van pijpenstrootje, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cm)	taluds met gedegradeerde heide met dominantie van pijpenstrootje	FALSE
+kt(cm+)	taluds met gedegradeerde heide met dominantie van pijpenstrootje, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cmb-)	taluds met gedegradeerde heide met dominantie van pijpenstrootje met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cmb)	taluds met gedegradeerde heide met dominantie van pijpenstrootje met beperkte opslag van struiken en bomen	FALSE
+kt(cmb+)	taluds met gedegradeerde heide met dominantie van pijpenstrootje met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cp-)	taluds met gedegradeerde heide met dominantie van adelaarsvaren, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cp)	taluds met gedegradeerde heide met dominantie van adelaarsvaren	FALSE
+kt(cp+)	taluds met gedegradeerde heide met dominantie van adelaarsvaren, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(cpb-)	taluds met gedegradeerde heide met dominantie van adelaarsvaren met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(cpb)	taluds met gedegradeerde heide met dominantie van adelaarsvaren met beperkte opslag van struiken en bomen	FALSE
+kt(cpb+)	taluds met gedegradeerde heide met dominantie van adelaarsvaren met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(da-)	taluds met zilte elementen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(da)	taluds met zilte elementen	FALSE
+kt(da+)	taluds met zilte elementen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fa-)	taluds met beukenbos met voorjaarsflora, zonder wilde hyacint, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fa)	taluds met beukenbos met voorjaarsflora, zonder wilde hyacint	FALSE
+kt(fa+)	taluds met beukenbos met voorjaarsflora, zonder wilde hyacint, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fe-)	taluds met beukenbos met wilde hyacint, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fe)	taluds met beukenbos met wilde hyacint	FALSE
+kt(fe+)	taluds met beukenbos met wilde hyacint, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fk-)	taluds met beukenbos op mergel, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fk)	taluds met beukenbos op mergel	FALSE
+kt(fk+)	taluds met beukenbos op mergel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fl-)	taluds met beukenbos met witte veldbies, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fl)	taluds met beukenbos met witte veldbies	FALSE
+kt(fl+)	taluds met beukenbos met witte veldbies, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fm-)	taluds met beukenbos met parelgras en lievevrouwebedstro, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fm)	taluds met beukenbos met parelgras en lievevrouwebedstro	FALSE
+kt(fm+)	taluds met beukenbos met parelgras en lievevrouwebedstro, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(fs-)	taluds met zuur beukenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(fs)	taluds met zuur beukenbos	FALSE
+kt(fs+)	taluds met zuur beukenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(ha-)	taluds met struisgrasvegetatie, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(ha)	taluds met struisgrasvegetatie	TRUE
+kt(ha+)	taluds met struisgrasvegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hab-)	taluds met struisgrasvegetatie met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hab)	taluds met struisgrasvegetatie met beperkte opslag van struiken en bomen	TRUE
+kt(hab+)	taluds met struisgrasvegetatie met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hc-)	taluds met dotterbloemgrasland, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hc)	taluds met dotterbloemgrasland	FALSE
+kt(hc+)	taluds met dotterbloemgrasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hd-)	taluds met droog duingrasland van kalkrijke milieus, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hd)	taluds met droog duingrasland van kalkrijke milieus	FALSE
+kt(hd+)	taluds met droog duingrasland van kalkrijke milieus, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hf-)	taluds met moerasspirearuigte, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hf)	taluds met moerasspirearuigte	FALSE
+kt(hf+)	taluds met moerasspirearuigte, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hfb-)	taluds met moerasspirearuigte met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hfb)	taluds met moerasspirearuigte met beperkte opslag van struiken en bomen	FALSE
+kt(hfb+)	taluds met moerasspirearuigte met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hj-)	taluds met vochtig grasland gedomineerd door russen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hj)	taluds met vochtig grasland gedomineerd door russen	FALSE
+kt(hj+)	taluds met vochtig grasland gedomineerd door russen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hjb-)	taluds met vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hjb)	taluds met vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen	FALSE
+kt(hjb+)	taluds met vochtig grasland gedomineerd door russen met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hk-)	taluds met kalkgraslanden, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hk)	taluds met kalkgraslanden	TRUE
+kt(hk+)	taluds met kalkgraslanden, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hm-)	taluds met vochtig schraalgrasland, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(hm)	taluds met vochtig schraalgrasland	FALSE
+kt(hm+)	taluds met vochtig schraalgrasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(hn-)	taluds met droog heischraal grasland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hn)	taluds met droog heischraal grasland	TRUE
+kt(hn+)	taluds met droog heischraal grasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hp+)	taluds met soosrtenrijk permanent cultuurgrasland	TRUE
+kt(hr-)	taluds met verruigd grasland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hr)	taluds met verruigd grasland	TRUE
+kt(hr+)	taluds met verruigd grasland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hrb-)	taluds met verruigd grasland met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hrb)	taluds met verruigd grasland met beperkte opslag van struiken en bomen	TRUE
+kt(hrb+)	taluds met verruigd grasland met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(hu-)	taluds met mesofiel hooiland, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(hu)	taluds met mesofiel hooiland	TRUE
+kt(hu+)	taluds met mesofiel hooiland, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(ku-)	taluds met ruigte of pioniersvegetatie, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(ku)	taluds met ruigte of pioniersvegetatie	TRUE
+kt(ku+)	taluds met ruigte of pioniersvegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(kub-)	taluds met ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(kub)	taluds met ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen	TRUE
+kt(kub+)	taluds met ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(mc-)	taluds met grote zeggenvegetatie, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(mc)	taluds met grote zeggenvegetatie	FALSE
+kt(mc+)	taluds met grote zeggenvegetatie, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(mcb-)	taluds met grote zeggenvegetatie met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(mcb)	taluds met grote zeggenvegetatie met beperkte opslag van struiken en bomen	FALSE
+kt(mcb+)	taluds met grote zeggenvegetatie met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(mr-)	taluds met rietland of andere vegetaties van het rietverbond, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(mr)	taluds met rietland of andere vegetaties van het rietverbond	FALSE
+kt(mr+)	taluds met rietland of andere vegetaties van het rietverbond, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(mrb-)	taluds met rietland of andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(mrb)	taluds met rietland of andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen	FALSE
+kt(mrb+)	taluds met rietland of andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(ms-)	taluds met zuur laagveen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(ms)	taluds met zuur laagveen	FALSE
+kt(ms+)	taluds met zuur laagveen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(mz-)	taluds met brak tot zilt moeras met heen, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(mz)	taluds met brak tot zilt moeras met heen	FALSE
+kt(mz+)	taluds met brak tot zilt moeras met heen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(qa-)	taluds met eiken-haagbeukenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(qa)	taluds met eiken-haagbeukenbos	FALSE
+kt(qa+)	taluds met eiken-haagbeukenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(qb-)	taluds met eiken-berkenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(qb)	taluds met eiken-berkenbos	FALSE
+kt(qb+)	taluds met eiken-berkenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(qe-)	taluds met eiken-haagbeukenbos met wilde hyacint, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(qe)	taluds met eiken-haagbeukenbos met wilde hyacint	FALSE
+kt(qe+)	taluds met eiken-haagbeukenbos met wilde hyacint, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(qk-)	taluds met eiken-haagbeukenbos op mergel, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(qk)	taluds met eiken-haagbeukenbos op mergel	FALSE
+kt(qk+)	taluds met eiken-haagbeukenbos op mergel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(ql-)	taluds met eikenbos met witte veldbies, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(ql)	taluds met eikenbos met witte veldbies	FALSE
+kt(ql+)	taluds met eikenbos met witte veldbies, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(qs-)	taluds met zuur eikenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(qs)	taluds met zuur eikenbos	FALSE
+kt(qs+)	taluds met zuur eikenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(ru-)	taluds met ruderaal olmenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(ru)	taluds met ruderaal olmenbos	FALSE
+kt(ru+)	taluds met ruderaal olmenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(sf-)	talud met vochtig wilgenstruweel op voedselrijke bodem, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(sf)	talud met vochtig wilgenstruweel op voedselrijke bodem	FALSE
+kt(sf+)	talud met vochtig wilgenstruweel op voedselrijke bodem, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(sg-)	taluds met bremstruweel, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(sg)	taluds met bremstruweel	TRUE
+kt(sg+)	taluds met bremstruweel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(sgb-)	taluds met bremstruweel met beperkte opslag van struiken en bomen, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(sgb)	taluds met bremstruweel met beperkte opslag van struiken en bomen	TRUE
+kt(sgb+)	taluds met bremstruweel met beperkte opslag van struiken en bomen, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(sgu-)	taluds met gaspeldoornstruweel, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(sgu)	taluds met gaspeldoornstruweel	FALSE
+kt(sgu+)	taluds met gaspeldoornstruweel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(sk-)	taluds met struweel op kalkrijke bodem, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(sk)	taluds met struweel op kalkrijke bodem	TRUE
+kt(sk+)	taluds met struweel op kalkrijke bodem, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(sp-)	taluds met doornstruweel, weinig in aantal maar relatief goed ontwikkeld	TRUE
+kt(sp)	taluds met doornstruweel	TRUE
+kt(sp+)	taluds met doornstruweel, (zeer) veel in aantal en/of biotoop zeer soortenrijk	TRUE
+kt(sz-)	taluds met opslag van allerlei aard, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(sz)	taluds met opslag van allerlei aard	FALSE
+kt(sz+)	taluds met opslag van allerlei aard, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(va-)	taluds met alluviaal elzen- essenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(va)	taluds met alluviaal elzen- essenbos	FALSE
+kt(va+)	taluds met alluviaal elzen- essenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(vm-)	taluds met elzenbroek, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(vm)	taluds met elzenbroek	FALSE
+kt(vm+)	taluds met elzenbroek, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt(vn-)	taluds met nitrofiel alluviaal elzenbos, weinig in aantal maar relatief goed ontwikkeld	FALSE
+kt(vn)	taluds met nitrofiel alluviaal elzenbos	FALSE
+kt(vn+)	taluds met nitrofiel alluviaal elzenbos, (zeer) veel in aantal en/of biotoop zeer soortenrijk	FALSE
+kt+	talud, veel en/of met soortenrijke vegetatie, ook al is die niet met andere karteringseenheid aangeduid	FALSE
+ku	ruigte of pioniersvegetatie	TRUE
+ku-	ruigte of pioniersvegetatie, slechts banale soorten aanwezig	TRUE
+ku+	ruigte of pioniersvegetatie, (zeer) soortenrijk met minder algemene soorten	TRUE
+kub	ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen	TRUE
+kub-	ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen, slechts banale soorten aanwezig	TRUE
+kub+	ruigte of pioniersvegetatie met beperkte opslag van struiken en bomen, zeer soortenrijk met minder algemene soorten	TRUE
+kw	holle weg	FALSE
+kw-	holle weg, morfologisch zwak ontwikkelde holle weg, met weinig interessante vegetatie	FALSE
+kw+	holle weg, holle weg met soortenrijke grazige of beboste taluds	FALSE
+kz	opgehoogd terrein	FALSE
+l	populierenbestand	FALSE
+lar	lork (Larix sp.)	FALSE
+lh	populierenbestand vochtige bodem	FALSE
+lh+	vochtige populierenaanplant met maretak	FALSE
+lhb	populierenbestand op vochtige bodem met ondergroei van bomen en struiken	FALSE
+lhb-	populierenbestand op vochtige bodem met ondergroei van bomen en struiken, zwak ontwikkeld, weinig voorkomend en/of jonge aanplant	FALSE
+lhb+	populierenbestand op vochtige bodem met ondergroei van bomen en struiken, goed ontwikkeld en/of met zeldzame soorten (bv. Maretak)	FALSE
+lhi	populierenbestand op vochtige bodem met ondergroei van kruiden of ruigtevegetatie	FALSE
+lhi-	populierenbestand op vochtige bodem met ondergroei van kruiden of ruigtevegetatie, zwak ontwikkeld, weinig voorkomend en/of jonge aanplant	FALSE
+lhi+	populierenbestand op vochtige bodem met ondergroei van kruiden of ruigtevegetatie, goed ontwikkeld en/of met zeldzame soorten (bv. Maretak)	FALSE
+lig	wilde liguster (Ligustrum vulgare)	TRUE
+ls	populierenbestand op droge bodem	FALSE
+ls+	droge populierenaanplant met maretak	FALSE
+lsb	populierenbestand op droge bodem met ondergroei van bomen en struiken	FALSE
+lsb-	populierenbestand op droge bodem met ondergroei van bomen en struiken, zwak ontwikkeld, weinig voorkomend en/of jonge aanplant	FALSE
+lsb+	populierenbestand op droge bodem met ondergroei van bomen en struiken, goed ontwikkeld en/of met zeldzame soorten (bv. Maretak)	FALSE
+lsh	populierenbestand op droge bodem grazige ondergroei	FALSE
+lsh-	populierenbestand op droge bodem grazige ondergroei, zwak ontwikkeld, weinig voorkomend en/of jonge aanplant	FALSE
+lsh+	populierenbestand op droge bodem grazige ondergroei, goed ontwikkeld en/of met zeldzame soorten (bv. Maretak)	FALSE
+lsi	populierenbestand op droge bodem met ondergroei van kruiden of ruigtevegetatie	FALSE
+lsi-	populierenbestand op droge bodem met ondergroei van kruiden of ruigtevegetatie, zwak ontwikkeld, weinig voorkomend en/of jonge aanplant	FALSE
+lsi+	populierenbestand op droge bodem met ondergroei van kruiden of ruigtevegetatie, goed ontwikkeld en/of met zeldzame soorten (bv. Maretak)	FALSE
+m	moerassen	FALSE
+mc	grote zeggenvegetatie	FALSE
+mc-	grote zeggenvegetatie, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mc+	grote zeggenvegetatie, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mcb	grote zeggenvegetatie met beperkte opslag van struiken en bomen	FALSE
+mcb-	grote zeggenvegetatie met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mcb+	grote zeggenvegetatie met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+md	drijfzoom en/of drijftil	FALSE
+md-	drijfzoom en/of drijftil, zwak ontwikkeld en/of weinig voorkomend	FALSE
+md+	drijfzoom en/of drijftil, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mk	alkalisch laagveen	FALSE
+mk-	alkalisch laagveen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mk+	alkalisch laagveen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mm	galigaanvegetatie	FALSE
+mm-	galigaanvegetatie, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mm+	galigaanvegetatie, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mp	duinpanvegetatie van kalkrijke, vochtige milieus	FALSE
+mp-	duinpanvegetatie van kalkrijke, vochtige milieus, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mp+	duinpanvegetatie van kalkrijke, vochtige milieus, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mr	rietland en andere vegetaties van het rietverbond	FALSE
+mr-	rietland en andere vegetaties van het rietverbond, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mr+	rietland en andere vegetaties van het rietverbond, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mrb	rietland en andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen	FALSE
+mrb-	rietland en andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mrb+	rietland en andere vegetaties van het rietverbond met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+mru	rietruigte	FALSE
+mru-	rietruigte, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mru+	rietruigte, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+ms	zuur laagveen	FALSE
+ms-	zuur laagveen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+ms+	zuur laagveen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+msb	zuur laagveen met beperkte opslag van struiken en bomen	FALSE
+msb-	zuur laagveen met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+msb+	zuur laagveen met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+myr	wilde gagel (Myrica gale)	FALSE
+mz	brak tot zilt moeras met heen	FALSE
+mz-	brak tot zilt moeras met heen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+mz+	brak tot zilt moeras met heen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+n	jong loofbos (exclusief populier)	FALSE
+n-	loofhoutaanplant (exclusief populier), jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+n+	loofhoutaanplant (exclusief populier), vegetatiekundig goed ontwikkeld	FALSE
+na	oud loofbos (exclusief populier)	FALSE
+ned	Nederland	FALSE
+ng	niet gekarteerd	FALSE
+ni	jonge, recente loofhoutaanplant (voorheen geen bos)	FALSE
+p	naaldhoutbestand (niet grove den)	FALSE
+pa	naaldhoutbestand (niet grove den) zonder duidelijke ondergroei	FALSE
+pa-	naaldhoutbestand (niet grove den) zonder duidelijke ondergroei, jonge boomlaag of weinig voorkomend in complex	FALSE
+pa+	naaldhoutbestand (niet grove den) zonder duidelijke ondergroei, veel voorkomend in complex	FALSE
+pi	jonge aanplant van naaldhout (niet grove den)	FALSE
+pi-	jonge aanplant van naaldhout (niet grove den), weinig voorkomend in complex	FALSE
+pi+	jonge aanplant van naaldhout (niet grove den), veel voorkomend in complex	FALSE
+pica	fijnspar (Picea abies)	FALSE
+pics	sitkaspar (Picea sitchensis)	FALSE
+pinm	zeeden (Pinus maritima)	FALSE
+pinn	zwarte den (Pinus nigra)	FALSE
+pins	grove den (Pinus sylvestris)	FALSE
+pint	Weymouthden (Pinus strobus)	FALSE
+plat	plataan (Platanus sp.)	FALSE
+pm	naaldhoutbestand (niet grove den) met ondergroei	FALSE
+pmb	naaldhoutbestand (niet grove den) met ondergroei van bomen en struiken	FALSE
+pmb-	naaldhoutbestand (niet grove den) met ondergroei van bomen en struiken, weinig voorkomend in complex	FALSE
+pmb+	naaldhoutbestand (niet grove den) met ondergroei van bomen en struiken, veel voorkomend in complex	FALSE
+pmc	naaldhoutbestand (niet grove den) met ondergroei van dwergstruiken	FALSE
+pmh	naaldhoutbestand (niet grove den) met ondergroei van grassen en kruiden	FALSE
+pmh-	naaldhoutbestand (niet grove den) met ondergroei van grassen en kruiden, weinig voorkomend in complex	FALSE
+pmh+	naaldhoutbestand (niet grove den) met ondergroei van grassen en kruiden, veel voorkomend in complex	FALSE
+pmp	naaldhoutbestand (niet grove den) met ondergroei van adelaarsvaren	FALSE
+pms	naaldhoutbestand (niet grove den) met ondergroei van bramen, varens of jonge struiken	FALSE
+pms-	naaldhoutbestand (niet grove den) met ondergroei van bramen, varens of jonge struiken, weinig voorkomend in complex	FALSE
+pms+	naaldhoutbestand (niet grove den) met ondergroei van bramen, varens of jonge struiken, veel voorkomend in complex	FALSE
+pop	populier (Populus sp.)	FALSE
+potr	ratelpopulier (Populus tremula)	FALSE
+pp	naaldhoutbestand van grove den	FALSE
+ppa	grove dennenbestand zonder duidelijke ondergroei	FALSE
+ppa-	grove dennenbestand zonder duidelijke ondergroei, weinig voorkomend in complex	FALSE
+ppa+	grove dennenbestand zonder duidelijke ondergroei, veel voorkomend in complex	FALSE
+ppi	jonge aanplant van grove den	FALSE
+ppi-	jonge aanplant van grove den, weinig voorkomend in complex	FALSE
+ppi+	jonge aanplant van grove den, veel voorkomend in complex	FALSE
+ppm	grove dennenbestand met ondergroei	FALSE
+ppmb	grove dennenbestand met ondergroei van bomen en struiken	FALSE
+ppmb-	grove dennenbestand met ondergroei van bomen en struiken, weinig voorkomend in complex	FALSE
+ppmb+	grove dennenbestand met ondergroei van bomen en struiken, veel voorkomend in complex	FALSE
+ppmc	naaldhoutbestand met ondergroei van dwergstruiken	FALSE
+ppmc+	naaldhoutbestand met ondergroei van dwergstruiken, veel voorkomend in complex	FALSE
+ppmh	grove dennenbestand met ondergroei van grassen en kruiden	FALSE
+ppmh-	grove dennenbestand met ondergroei van grassen en kruiden, weinig voorkomend in complex	FALSE
+ppmh+	grove dennenbestand met ondergroei van grassen en kruiden, veel voorkomend in complex	FALSE
+ppmp	naaldhoutbestand met ondergroei van adelaarsvaren	FALSE
+ppmp+	naaldhoutbestand met ondergroei van adelaarsvaren, veel voorkomend in complex	FALSE
+ppms	grove dennenbestand met ondergroei van bramen, varens, heide of jonge struiken	FALSE
+ppms-	grove dennenbestand met ondergroei van bramen, varens, heide of jonge struiken, weinig voorkomend in complex	FALSE
+ppms+	grove dennenbestand met ondergroei van bramen, varens, heide of jonge struiken, veel voorkomend in complex	FALSE
+prua	zoete kers (Prunus avium)	FALSE
+prus	Amerikaanse vogelkers (Prunus serotina)	FALSE
+pse	Douglasspar (Pseudotsuga menziesii)	FALSE
+q	eikenbossen	FALSE
+qa	eiken-haagbeukenbos	FALSE
+qa-	eiken-haagbeukenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+qa+	eiken-haagbeukenbos, vegetatiekundig goed ontwikkeld	FALSE
+qb	eiken-berkenbos	FALSE
+qb-	eiken-berkenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+qb+	eiken-berkenbos, vegetatiekundig goed ontwikkeld	FALSE
+qe	eiken-haagbeukenbos met wilde hyacint	FALSE
+qe-	eiken-haagbeukenbos met wilde hyacint, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+qe+	eiken-haagbeukenbos met wilde hyacint, vegetatiekundig goed ontwikkeld	FALSE
+qk	eiken-haagbeukenbos op mergel	FALSE
+qk-	eiken-haagbeukenbos op mergel, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+qk+	eiken-haagbeukenbos op mergel, vegetatiekundig goed ontwikkeld	FALSE
+ql	eikenbos met witte veldbies	FALSE
+ql-	eikenbos met witte veldbies, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+ql+	eikenbos met witte veldbies, vegetatiekundig goed ontwikkeld	FALSE
+qs	zuur eikenbos	FALSE
+qs-	zuur eikenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+qs+	zuur eikenbos, vegetatiekundig goed ontwikkeld	FALSE
+que	zomereik (Quercus robur)	FALSE
+quep	wintereik (Quercus petreae)	FALSE
+quer	Amerikaanse eik (Quercus rubra)	FALSE
+rhod	Pontische rododendron (Rhododendron ponticum)	FALSE
+rob	robinia (Robinia pseudoacacia)	FALSE
+ru	ruderaal olmenbos	FALSE
+ru-	ruderaal olmenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+ru+	ruderaal olmenbos, vegetatiekundig goed ontwikkeld	FALSE
+rud	ruderaal olmenbos van de binnenduinrand	FALSE
+rud-	ruderaal olmenbos van de binnenduinrand, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+rud+	ruderaal olmenbos van de binnenduinrand, vegetatiekundig goed ontwikkeld	FALSE
+s	struwelen	TRUE
+sal	wilg (Salix sp.)	FALSE
+sam	vlier (Sambucus sp.)	FALSE
+sd	duinstruweel	FALSE
+sd-	duinstruweel, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sd+	duinstruweel, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+sdb	duinstruweel met beperkte opslag van struiken en bomen	FALSE
+sdb-	duinstruweel met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sdb+	duinstruweel met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+se	kapvlakte	FALSE
+se-	kapvlakte, zwak ontwikkeld en/of weinig voorkomend	FALSE
+se+	kapvlakte, (zeer) soortenrijk met minder algemene soorten	FALSE
+sf	vochtig wilgenstruweel op voedselrijke bodem	FALSE
+sf-	vochtig wilgenstruweel op voedselrijke bodem, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sf+	vochtig wilgenstruweel op voedselrijke bodem, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+sg	bremstruweel	TRUE
+sg-	bremstruweel, zwak ontwikkeld en/of weinig voorkomend	TRUE
+sg+	bremstruweel, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+sgb	bremstruweel met beperkte opslag van struiken en bomen	TRUE
+sgb-	bremstruweel met beperkte opslag van struiken en bomen, zwak ontwikkeld en/of weinig voorkomend	TRUE
+sgb+	bremstruweel met beperkte opslag van struiken en bomen, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+sgu	gaspeldoornstruweel	FALSE
+sgu-	gaspeldoornstruweel, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sgu+	gaspeldoornstruweel, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+sk	struweel op kalkrijke bodem	TRUE
+sk-	struweel op kalkrijke bodem, zwak ontwikkeld en/of weinig voorkomend	TRUE
+sk+	struweel op kalkrijke bodem, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+sm	gagelstruweel	FALSE
+sm-	gagelstruweel, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sm+	gagelstruweel, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+smb	gagelstruweel met beperkte opslag van bomen	FALSE
+smb-	gagelstruweel met beperkte opslag van bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+smb+	gagelstruweel met beperkte opslag van bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+so	vochtig wilgenstruweel op venige of zure grond	FALSE
+so-	vochtig wilgenstruweel op venige of zure grond, zwak ontwikkeld en/of weinig voorkomend	FALSE
+so+	vochtig wilgenstruweel op venige of zure grond, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+sob	vochtig wilgenstruweel op venige of zure grond met beperkte opslag van bomen	FALSE
+sob-	vochtig wilgenstruweel op venige of zure grond met beperkte opslag van bomen, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sob+	vochtig wilgenstruweel op venige of zure grond met beperkte opslag van bomen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+sp	doornstruweel	TRUE
+sp-	doornstruweel, zwak ontwikkeld en/of weinig voorkomend	TRUE
+sp+	doornstruweel, goed ontwikkeld en/of veelvuldig voorkomend	TRUE
+spoor	spoorweg	FALSE
+spr	braamstruweel	TRUE
+sz	opslag van allerlei aard	FALSE
+sz-	opslag van allerlei aard, zwak ontwikkeld en/of weinig voorkomend	FALSE
+sz+	opslag van allerlei aard, (zeer) soortenrijk met minder algemene soorten of sterke bosontwikkeling	FALSE
+t	hoogveen	FALSE
+t+	hoogveen, goed ontwikkeld en/of veelvuldig voorkomend	FALSE
+tax	taxus (Taxus baccata)	FALSE
+til	linde (Tilia sp.)	FALSE
+tsu	westelijke hemlockspar (Tsuga heterophylla)	FALSE
+u	bebouwing en industrie	FALSE
+ua	minder dichte bebouwing	FALSE
+ua-	minder dichte bebouwing, weinig in complex	FALSE
+uc	campings en caravanterreinen	FALSE
+ud	dichte bebouwing	FALSE
+ui	industrie	FALSE
+ui-	industrie, weinig in complex	FALSE
+ulm	iep (Ulmus sp.)	FALSE
+un	bebouwing in een (half)natuurlijke omgeving	FALSE
+un-	bebouwing in een (half)natuurlijke omgeving, weinig in complex	FALSE
+ur	bebouwing in agrarische omgeving	FALSE
+ur-	bebouwing in agrarische omgeving, weinig in complex	FALSE
+ur+	bebouwing in agrarische omgeving, veel in complex	FALSE
+uv	recreatiezone	FALSE
+uv-	recreatiezone, weinig in complex	FALSE
+uv+	recreatiezone, veel in complex	FALSE
+v	vallei- en moerasbossen	FALSE
+va	alluviaal elzen-essenbos	FALSE
+va-	alluviaal elzen-essenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+va+	alluviaal elzen-essenbos, vegetatiekundig goed ontwikkeld	FALSE
+vc	bronbos	FALSE
+vc-	bronbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vc+	bronbos, vegetatiekundig goed ontwikkeld	FALSE
+vf	elzen-eikenbos	FALSE
+vf-	elzen-eikenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vf+	elzen-eikenbos, vegetatiekundig goed ontwikkeld	FALSE
+vm	elzenbroek	FALSE
+vm-	elzenbroek, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vm+	elzenbroek, vegetatiekundig goed ontwikkeld	FALSE
+vn	nitrofiel alluviaal elzenbos	FALSE
+vn-	nitrofiel alluviaal elzenbos, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vn+	nitrofiel alluviaal elzenbos, vegetatiekundig goed ontwikkeld	FALSE
+vo	oligotroof elzenbroek met veenmossen	FALSE
+vo-	oligotroof elzenbroek met veenmossen, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vo+	oligotroof elzenbroek met veenmossen, vegetatiekundig goed ontwikkeld	FALSE
+vr	ruderaal essen-elzenbos	FALSE
+vt	venig berkenbroek	FALSE
+vt-	venig berkenbroek, jonge boomlaag en/of vegetatiekundig zwak ontwikkeld	FALSE
+vt+	venig berkenbroek, vegetatiekundig goed ontwikkeld	FALSE
+wal	Wallonië	FALSE
+wat	waterloop	FALSE
+weg	weg	FALSE
+zee	zee	FALSE
