@@ -11,6 +11,8 @@ jachtgebieden <- here("downloads", "jachtter.shp")
 vlaanderen <- here("downloads", "refgew.shp")
 wegen <- here("downloads", "wegsegment.shp")
 waterlopen <- here("downloads", "wlas.shp")
+spoorwegen <- here("downloads", "spoorweg.shp")
+extra_grenzen <- here("downloads", "extra.shp")
 
 if (!file.exists(file.path(target_folder, "open_ruimte.gpkg"))) {
   read_vc("bwk_eenheid", root = here("downloads")) %>%
@@ -254,7 +256,7 @@ refine_level <- function(
     "native:extractbyexpression",
     INPUT = sprintf("%s/kader_%02i.gpkg", target_folder, current_level),
     EXPRESSION =
-      "ha > 150 OR te_breed = 1 OR te_hoog = 1 OR (ratio < 0.1 AND ha > 1)"
+      "ha > 50 OR te_breed = 1 OR te_hoog = 1 OR (ratio < 0.1 AND ha > 1)"
   ) %>%
     qgis_output("OUTPUT") %>%
     # selecteer de overeenkomstige eiland polygonen
@@ -292,16 +294,6 @@ refine_level <- function(
     # split de nieuwe eilandpolygonen in afzonderlijke polygonen
     setNames("INPUT") %>%
     c(list(algorithm = "native:multiparttosingleparts")) %>%
-    do.call(what = qgis_run_algorithm) %>%
-    qgis_output("OUTPUT") %>%
-    # herstel buffer
-    setNames("INPUT") %>%
-    c(
-      list(
-        algorithm = "native:buffer", DISTANCE = 9.8, DISSOLVE = FALSE,
-        END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5
-      )
-    ) %>%
     do.call(what = qgis_run_algorithm) %>%
     qgis_output("OUTPUT") %>%
     # voeg een nieuwe id toe aan de eilandpolygonen
@@ -401,5 +393,95 @@ if (!file.exists(file.path(target_folder, "kader_02.gpkg"))) {
   refine_level(
     current_level = 1, split_laag = waterlopen, split_var = "LBLCATC",
     split_val = "Geklasseerd, eerste categorie", target_folder = target_folder
+  )
+}
+
+message("kader 3")
+if (!file.exists(file.path(target_folder, "kader_03.gpkg"))) {
+  refine_level(
+    current_level = 2, split_laag = spoorwegen, split_var = "FID",
+    split_val = 0, target_folder = target_folder
+  )
+}
+
+message("kader 4")
+if (!file.exists(file.path(target_folder, "kader_04.gpkg"))) {
+  refine_level(
+    current_level = 3, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = "primaire weg II", target_folder = target_folder
+  )
+}
+
+message("kader 5")
+if (!file.exists(file.path(target_folder, "kader_05.gpkg"))) {
+  refine_level(
+    current_level = 4, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = c(
+      "secundaire weg type 1", "secundaire weg type 2", "secundaire weg type 3"
+    ), target_folder = target_folder
+  )
+}
+
+message("kader 6")
+if (!file.exists(file.path(target_folder, "kader_06.gpkg"))) {
+  refine_level(
+    current_level = 5, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = "lokale weg type 1", target_folder = target_folder
+  )
+}
+
+message("kader 7")
+if (!file.exists(file.path(target_folder, "kader_07.gpkg"))) {
+  refine_level(
+    current_level = 6, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = "lokale weg type 2", target_folder = target_folder
+  )
+}
+
+message("kader 8")
+if (!file.exists(file.path(target_folder, "kader_08.gpkg"))) {
+  refine_level(
+    current_level = 7, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = "lokale weg type 3", target_folder = target_folder
+  )
+}
+
+message("kader 9")
+if (!file.exists(file.path(target_folder, "kader_09.gpkg"))) {
+  refine_level(
+    current_level = 8, split_laag = wegen, split_var = "LBLWEGCAT",
+    split_val = "niet van toepassing", target_folder = target_folder
+  )
+}
+
+message("kader 10")
+if (!file.exists(file.path(target_folder, "kader_10.gpkg"))) {
+  refine_level(
+    current_level = 9, split_laag = waterlopen, split_var = "LBLCATC",
+    split_val = "Geklasseerd, tweede categorie", target_folder = target_folder
+  )
+}
+
+message("kader 11")
+if (!file.exists(file.path(target_folder, "kader_11.gpkg"))) {
+  refine_level(
+    current_level = 10, split_laag = waterlopen, split_var = "LBLCATC",
+    split_val = "Geklasseerd, derde categorie", target_folder = target_folder
+  )
+}
+
+message("kader 12")
+if (!file.exists(file.path(target_folder, "kader_12.gpkg"))) {
+  refine_level(
+    current_level = 11, split_laag = waterlopen, split_var = "LBLCATC",
+    split_val = "Niet geklasseerd", target_folder = target_folder
+  )
+}
+
+message("kader 13")
+if (!file.exists(file.path(target_folder, "kader_13.gpkg"))) {
+  refine_level(
+    current_level = 12, split_laag = extra_grenzen, split_var = "gebruik",
+    split_val = "X", target_folder = target_folder
   )
 }
