@@ -1,6 +1,9 @@
 library(here)
 library(openssl)
 library(git2rdata)
+library(osmdata)
+library(tidyverse)
+library(sf)
 
 options(timeout = max(1000, getOption("timeout")))
 
@@ -185,4 +188,25 @@ if (!file_test("-f", here(dl, "refgew.shp"))) {
     files = file.path(zippath, relevant), setTimes = TRUE, exdir = dl
   )
   file.rename(here(dl, relevant), here(dl, tolower(relevant)))
+}
+
+here(dl, "refgew.shp") %>%
+  read_sf() %>%
+  st_transform(crs = 4326) %>%
+  st_bbox() -> vlaanderen_bbox
+
+overpass_url <- "https://lz4.overpass-api.de/api/interpreter"
+set_overpass_url(overpass_url[1])
+qq <- opq(bbox = unname(vlaanderen_bbox), timeout = getOption("timeout"))
+
+if (!file_test("-f", here(dl, "spoorweg.shp"))) {
+  qq %>%
+    add_osm_feature(key = "railway", value = "rail") %>%
+    osmdata_sf() %>%
+    `[[`("osm_lines") %>%
+    st_transform(crs = 31370) %>%
+    st_buffer(10) %>%
+    select(.data$osm_id) %>%
+    st_union() %>%
+    st_write(here(dl, "spoorweg.shp"))
 }
