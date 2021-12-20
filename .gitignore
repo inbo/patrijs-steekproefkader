@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 *.gpkg
+*.pbf
 *.qgz
 *.zip

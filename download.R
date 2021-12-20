@@ -36,6 +36,29 @@ if (!file_test("-f", here(dl, "jachtter.shp"))) {
   file.rename(here(dl, relevant), here(dl, tolower(relevant)))
 }
 
+# OpenStreetMap
+if (!file_test("-f", here(dl, "geofabrik_belgium-latest.osm.pbf"))) {
+  target <- "geofabrik_belgium-latest.osm.pbf"
+  if (!file_test("-f", here(dl, target))) {
+    download_zenodo(doi = "10.5281/zenodo.5792949", path = dl)
+  }
+  hash <- sha512(file(here(dl, target)))
+  hashes <- read_vc("checksum", dl)
+  if (any(hashes$file == target)) {
+    stopifnot(
+      "Hash of downloaded file doesn't match the stored hash" =
+        unclass(as.character(hash)) == hashes$sha512[hashes$file == target]
+    )
+  } else {
+    write_vc(
+      rbind(
+        data.frame(file = target, sha512 = unclass(as.character(hash))), hashes
+      ),
+      "checksum", root = dl, sorting = "file", optimize = FALSE
+    )
+  }
+}
+
 # biologische waarderingskaart
 if (!file_test("-f", here(dl, "bwkhab.shp"))) {
   target <- "bwk.zip"
