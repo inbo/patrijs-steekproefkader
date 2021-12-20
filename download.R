@@ -13,7 +13,7 @@ dir.create(dl, showWarnings = FALSE)
 if (!file_test("-f", here(dl, "jachtter.shp"))) {
   target <- "jacht.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5584204", path = dl)
+    download_zenodo(doi = "10.5281/zenodo.5792818", path = dl)
   }
   hash <- sha512(file(here(dl, target)))
   if (file_test("-f", here(dl, "checksum.tsv"))) {

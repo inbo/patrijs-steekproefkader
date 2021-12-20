@@ -20,6 +20,31 @@
       "Repository": "CRAN",
       "Hash": "030aaec5bc6553f35347cbb1e70b1a17"
     },
+    "INBOmd": {
+      "Package": "INBOmd",
+      "Version": "0.5.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "inbo",
+      "RemoteRepo": "INBOmd",
+      "RemoteRef": "main",
+      "RemoteSha": "1ec1bd489781507a3841311731e32eb2b223ae92",
+      "Hash": "6cdecb651325ec189ea2f72a7361c672"
+    },
+    "INBOtheme": {
+      "Package": "INBOtheme",
+      "Version": "0.5.10",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "inbo",
+      "RemoteRepo": "INBOtheme",
+      "RemoteRef": "master",
+      "RemoteSha": "06caf5f0b53e67052d48aae50851423969af4d29",
+      "Remotes": "clauswilke/colorblindr",
+      "Hash": "6819467ca3a92693fe101c6d04af9e4a"
+    },
     "KernSmooth": {
       "Package": "KernSmooth",
       "Version": "2.23-20",
@@ -40,6 +65,27 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "130c0caba175739d98f2963c6a407cf6"
+    },
+    "R.methodsS3": {
+      "Package": "R.methodsS3",
+      "Version": "1.8.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4bf6453323755202d5909697b6f7c109"
+    },
+    "R.oo": {
+      "Package": "R.oo",
+      "Version": "1.24.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5709328352717e2f0a9c012be8a97554"
+    },
+    "R.utils": {
+      "Package": "R.utils",
+      "Version": "2.11.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a7ecb8e60815c7a18648e84cd121b23a"
     },
     "R6": {
       "Package": "R6",
@@ -110,6 +156,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "dc5f7a6598bb025d20d66bb758f12879"
+    },
+    "bookdown": {
+      "Package": "bookdown",
+      "Version": "0.24",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3837766a1e1b527af25fa3e2d12a2800"
     },
     "broom": {
       "Package": "broom",
@@ -316,14 +369,10 @@
     },
     "git2r": {
       "Package": "git2r",
-      "Version": "0.28.0.9000",
+      "Version": "0.29.0",
       "Source": "Repository",
-      "Repository": "https://ropensci.r-universe.dev",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/ropensci/git2r",
-      "RemoteRef": "master",
-      "RemoteSha": "19440b16752a4b939a3bd5f33ff185a65be07d71",
-      "Hash": "36f4604a69aa796e559611c4bfdc9389"
+      "Repository": "CRAN",
+      "Hash": "b114135c4749076bd5ef74a5827b6f62"
     },
     "git2rdata": {
       "Package": "git2rdata",
@@ -577,6 +626,13 @@
       "Repository": "CRAN",
       "Hash": "826128c244cab92a7f617ed5b3ad7c2a"
     },
+    "pdftools": {
+      "Package": "pdftools",
+      "Version": "3.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b7a8772f77a852ec8fe678644fd5ba6e"
+    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.6.3",
@@ -651,6 +707,20 @@
       "RemoteRef": "master",
       "RemoteSha": "4073f5123f3d86f484f62178fdeb8bd50fb58a4b",
       "Hash": "d840f882a2e144a216be6569cb870476"
+    },
+    "qpdf": {
+      "Package": "qpdf",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5a2907cd44279b5861ac5f813465b5c9"
+    },
+    "qrcode": {
+      "Package": "qrcode",
+      "Version": "0.1.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "0f4288a6cfbcb3640f8fcb0adc523c75"
     },
     "rappdirs": {
       "Package": "rappdirs",
