@@ -6,3 +6,5 @@
 *.pbf
 *.qgz
 *.zip
+open_ruimte/*
+output/*
