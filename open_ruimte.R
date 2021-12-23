@@ -30,6 +30,7 @@ if (!file_test("-f", natural)) {
 
   # select only non NULL landuse
   osm_gpkg %>%
+    paste0("|layername=multipolygons") %>%
     setNames("INPUT") %>%
     c(list(
       algorithm = "native:extractbyattribute", FIELD = "landuse", VALUE = NULL,
@@ -60,6 +61,7 @@ if (!file_test("-f", natural)) {
 
   # select only landcover
   osm_gpkg %>%
+    paste0("|layername=multipolygons") %>%
     setNames("INPUT") %>%
     c(list(
       algorithm = "native:extractbyattribute", FIELD = "other_tags",
@@ -91,6 +93,7 @@ if (!file_test("-f", natural)) {
 
   # select only non NULL natural
   osm_gpkg %>%
+    paste0("|layername=multipolygons") %>%
     setNames("INPUT") %>%
     c(list(
       algorithm = "native:extractbyattribute", FIELD = "natural", VALUE = NULL,
@@ -437,7 +440,15 @@ current_input %>%
   c(list(
     algorithm = "native:intersection", OVERLAY = jacht,
     INPUT_FIELDS = NULL, OVERLAY_FIELDS = c("VELDID", "WBENR"),
-    OUTPUT = here(target_folder, "open_ruimte.gpkg")
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:retainfields",
+    OUTPUT = here(target_folder, "open_ruimte.gpkg"),
+    FIELDS = c("VELDID", "WBENR")
   )) %>%
   do.call(what = qgis_run_algorithm)
 qgis_tmp_clean()
