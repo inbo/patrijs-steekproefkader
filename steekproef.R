@@ -1,5 +1,7 @@
 library(here)
 library(tidyverse)
+library(sf)
+library(deldir)
 library(osmextract)
 library(qgisprocess)
 qgis_configure()
@@ -614,15 +616,204 @@ here(target_folder, "open_ruimte_lambert75.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:extractbyattribute", FIELD = "ok",
-    OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+    OPERATOR = "=",  VALUE = 0,
+    OUTPUT = here(target_folder, "open_ruimte_klein_rest.gpkg"),
     FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_10.gpkg")
+  )) %>%
+  do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
+
+list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
+  as.list() %>%
+  do.call(what = "qgis_list_input") %>%
+  list() %>%
+  setNames("LAYERS") %>%
+  c(list(
+    algorithm = "native:mergevectorlayers",
+    OUTPUT = qgis_tmp_vector(),
+    CRS = paste(
+      "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+      "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+      "+y_0=5400088.438 +ellps=intl",
+      "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+      "+units=m +no_defs"
+    )
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+    FIELDS = c("VELDID", "WBENR")
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-    FORMULA = "$area / 10000", FIELD_TYPE = 1,
-    OUTPUT = here(target_folder, "open_ruimte_klein_rest.gpkg")
+    FORMULA = "$area / 10000", FIELD_TYPE = "Float", OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:extractbyattribute", FIELD = "ha", VALUE = 0.01,
+    OPERATOR = "≥", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:fieldcalculator", FIELD_NAME = "x_min",
+    FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Float",
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:fieldcalculator", FIELD_NAME = "x_max",
+    FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Float",
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:fieldcalculator", FIELD_NAME = "y_min",
+    FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Float",
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:fieldcalculator", FIELD_NAME = "y_max",
+    FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Float",
+    OUTPUT = here(target_folder, "open_ruimte_merge.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
+
+get_penalty <- function(bp) {
+  bp %>%
+    summarise(
+      ha = sum(.data$ha), across(ends_with("min"), min),
+      across(ends_with("max"), max)
+    ) %>%
+    mutate(
+      dx = .data$x_max - .data$x_min,
+      dy = .data$y_max - .data$y_min,
+      penalty = ifelse(
+        pmax(.data$dx, .data$dy) > 25, Inf, pmax(.data$dx, .data$dy) / 25
+      ) +
+      ifelse(
+        pmin(.data$dx, .data$dy) > 19, Inf, pmin(.data$dx, .data$dy) / 19
+      ) +
+      ifelse(.data$ha > 150, Inf, .data$ha / 150)
+    ) %>%
+    summarise(penalty = sum(.data$penalty)) %>%
+    pull(.data$penalty)
+}
+
+here(target_folder, "open_ruimte_merge.gpkg") %>%
+  read_sf() %>%
+  filter(.data$ha >= 0.01) -> to_merge
+list.files(target_folder, pattern = "veld") %>%
+  str_replace("veld_(.*).gpkg", "\\1") -> done
+to_do <- sort(unique(to_merge$VELDID[!to_merge$VELDID %in% done]))
+for (current_field in to_do) {
+  message(current_field)
+  to_merge %>%
+    filter(.data$VELDID == current_field) -> merge_base
+  merge_base %>%
+    st_drop_geometry() %>%
+    select(-.data$VELDID, -.data$WBENR) %>%
+    mutate(
+      grouping = row_number(),
+      dx = .data$x_max - .data$x_min,
+      dy = .data$y_max - .data$y_min
+    ) -> base_points
+  merge_base %>%
+    st_centroid() %>%
+    st_coordinates() %>%
+    deldir() %>%
+    `[[`("delsgs") %>%
+    transmute(
+      from = pmin(.data$ind1, .data$ind2), to = pmax(.data$ind1, .data$ind2),
+      distance = sqrt((.data$x1 - .data$x2) ^ 2 + (.data$y1 - .data$y2) ^ 2)
+    ) %>%
+    filter(.data$distance < 1000) %>%
+    select(-.data$distance) %>%
+    arrange(.data$from, .data$to) -> connections
+  base_points %>%
+    filter(
+      .data$ha > 150 | pmin(.data$dx, .data$dy) > 19 |
+        pmax(.data$dx, .data$dy) > 25
+    ) %>%
+    pull(.data$grouping) -> too_large
+  connections %>%
+    filter(!.data$from %in% too_large, !.data$to %in% too_large) -> connections
+  while (nrow(connections) > 0) {
+    base_points %>%
+      filter(.data$grouping %in% c(connections$from, connections$to)) %>%
+      group_by(.data$grouping) %>%
+      summarise(ha = sum(.data$ha)) %>%
+      slice_min(.data$ha, n = 1) %>%
+      pull(.data$grouping) -> smallest
+    connections %>%
+      filter(.data$from == smallest) %>%
+      select(candidate = .data$to) %>%
+      bind_rows(
+        connections %>%
+          filter(.data$to == smallest) %>%
+          select(candidate = .data$from)
+      ) %>%
+      pull(.data$candidate) -> candidate
+    base_points %>%
+      filter(.data$grouping == smallest) -> current_small
+    penalties <- sapply(
+      candidate,
+      function(cand, bp = base_points) {
+        bp %>%
+          filter(.data$grouping == cand) %>%
+          bind_rows(current_small) %>%
+          get_penalty()
+      }
+    )
+    if (any(is.finite(penalties))) {
+      best <- candidate[which.min(penalties)]
+      if (best < smallest) {
+        base_points$grouping[base_points$grouping == smallest] <- best
+        connections$from[connections$from == smallest] <- best
+        connections$to[connections$to == smallest] <- best
+      } else {
+        base_points$grouping[base_points$grouping == best] <- smallest
+        connections$from[connections$from == best] <- smallest
+        connections$to[connections$to == best] <- smallest
+      }
+      connections %>%
+        distinct() %>%
+        filter(.data$from < .data$to) -> connections
+    }
+    if (any(is.infinite(penalties))) {
+      connections %>%
+        filter(
+          !.data$from %in% candidate[is.infinite(penalties)] |
+            .data$to != smallest,
+          !.data$to %in% candidate[is.infinite(penalties)] |
+            .data$from != smallest
+        ) -> connections
+    }
+  }
+  merge_base %>%
+    transmute(
+      id = base_points$grouping %>%
+        factor() %>%
+        as.integer() %>%
+        sprintf(fmt = "%2$s_%1$02i", .data$VELDID)
+    ) %>%
+    st_make_valid() %>%
+    group_by(id) %>%
+    summarise(geom = st_union(.data$geom)) %>%
+    st_write(here(target_folder, sprintf("veld_%s.gpkg", current_field)))
+}
