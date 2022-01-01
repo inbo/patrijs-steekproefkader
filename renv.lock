@@ -843,10 +843,10 @@
     },
     "sf": {
       "Package": "sf",
-      "Version": "1.0-3",
+      "Version": "1.0-5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "efcdd149b21e8948ce31d6d5b7a36729"
+      "Hash": "200bfddf8f0ca222a7edfd2d64425fb9"
     },
     "sodium": {
       "Package": "sodium",

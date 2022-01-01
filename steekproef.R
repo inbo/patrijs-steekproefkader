@@ -12,13 +12,6 @@ dir.create(target_folder, showWarnings = FALSE)
 here("open_ruimte", "open_ruimte.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
-    algorithm = "native:extractbyattribute", FIELD = "WBENR", VALUE = NULL,
-    OPERATOR = "is not null", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
-  )) %>%
-  do.call(what = qgis_run_algorithm) %>%
-  qgis_output("OUTPUT") %>%
-  setNames("INPUT") %>%
-  c(list(
     algorithm = "native:reprojectlayer",
     OUTPUT = here(target_folder, "open_ruimte_lambert75.gpkg"),
     TARGET_CRS = paste(
@@ -40,7 +33,8 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100"
+      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float",
+      OUTPUT = qgis_tmp_vector()
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -50,7 +44,8 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100"
+      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float",
+      OUTPUT = qgis_tmp_vector()
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -60,7 +55,8 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-      FORMULA = "$area / 10000"
+      FORMULA = "$area / 10000", FIELD_TYPE = "Float",
+      OUTPUT = qgis_tmp_vector()
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -87,6 +83,7 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
     FAIL_OUTPUT = here(target_folder, "open_ruimte_ok_1.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
 
 download_folder <- here("downloads")
 osm_pbf <- here(download_folder, "geofabrik_belgium-latest.osm.pbf")
@@ -170,6 +167,7 @@ osm_gpkg %>%
     VALUE = "service", FAIL_OUTPUT = here(target_folder, "highway_service.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
 
 osm_gpkg %>%
   paste0("|layername=lines") %>%
@@ -217,6 +215,7 @@ osm_gpkg %>%
     FAIL_OUTPUT = here(target_folder, "waterway_drain.gpkg"), VALUE = "drain"
   )) %>%
   do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
 
 to_buffer <- list.files(
   target_folder, pattern = "^(high|water)way.*.gpkg", full.names = TRUE
@@ -245,6 +244,7 @@ for (i in to_buffer) {
       OUTPUT = here(target_folder, paste0("buffer_", basename(i)))
     )) %>%
     do.call(what = qgis_run_algorithm)
+  qgis_tmp_clean()
 }
 
 
@@ -362,6 +362,7 @@ here(target_folder, "open_ruimte_lambert75.gpkg") %>%
     FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_3.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:difference",
@@ -369,7 +370,7 @@ here(target_folder, "open_ruimte_lambert75.gpkg") %>%
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
-  qgis_output("OUTPUT") %>%
+  qgis_output("OUTPUT")  %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
@@ -694,6 +695,9 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   )) %>%
   do.call(what = qgis_run_algorithm)
 
+#' @importFrom dplyr %>% mutate pull summarise
+#' @importFrom rlang .data
+#' @importFrom tidyselect across ends_with
 get_penalty <- function(bp) {
   bp %>%
     summarise(
@@ -807,13 +811,240 @@ for (current_field in to_do) {
   }
   merge_base %>%
     transmute(
+      .data$WBENR, .data$VELDID,
       id = base_points$grouping %>%
         factor() %>%
         as.integer() %>%
         sprintf(fmt = "%2$s_%1$02i", .data$VELDID)
     ) %>%
     st_make_valid() %>%
-    group_by(id) %>%
-    summarise(geom = st_union(.data$geom)) %>%
     st_write(here(target_folder, sprintf("veld_%s.gpkg", current_field)))
+}
+
+list.files(
+  target_folder, pattern = "^veld_(1|2).*.gpkg$", full.names = TRUE
+) %>%
+  as.list() %>%
+  do.call(what = "qgis_list_input") %>%
+  list() %>%
+  setNames("LAYERS") %>%
+  c(list(
+    algorithm = "native:mergevectorlayers",
+    OUTPUT = qgis_tmp_vector(),
+    CRS = paste(
+      "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+      "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+      "+y_0=5400088.438 +ellps=intl",
+      "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+      "+units=m +no_defs"
+    )
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  c(list.files(
+    target_folder, pattern = "^veld_(3|4|5).*.gpkg$", full.names = TRUE
+  )) %>%
+  as.list() %>%
+  do.call(what = "qgis_list_input") %>%
+  list() %>%
+  setNames("LAYERS") %>%
+  c(list(
+    algorithm = "native:mergevectorlayers",
+    OUTPUT = part_1,
+    CRS = paste(
+      "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+      "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+      "+y_0=5400088.438 +ellps=intl",
+      "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+      "+units=m +no_defs"
+    )
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+    FIELDS = c("WBENR", "VELDID", "id")
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:dissolve", FIELD = "id", OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:buffer", DISTANCE = 5, DISSOLVE = FALSE,
+    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:clip", OUTPUT = qgis_tmp_vector(),
+    OVERLAY = here(target_folder, "to_refine.gpkg")
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  # bereken de oppervlakte in ha
+  setNames("INPUT") %>%
+  c(
+    list(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
+      FORMULA = "$area / 10000"
+    )
+  ) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:extractbyattribute", FIELD = "ha", VALUE = 0.025,
+    OPERATOR = ">", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:dissolve", FIELD = "id",
+    OUTPUT = here(target_folder, "open_ruimte_ok_2.gpkg")
+  )) %>%
+  do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
+
+here(target_folder, "open_ruimte_ok_1.gpkg") %>%
+  setNames("INPUT") %>%
+  c(
+    list(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "id",
+      FORMULA = "format('%1_01', \"VELDID\")", FIELD_TYPE = "String",
+      OUTPUT = qgis_tmp_vector()
+    )
+  ) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  as.list() %>%
+  c(here(target_folder, "open_ruimte_ok_2.gpkg")) %>%
+  do.call(what = "qgis_list_input") %>%
+  list() %>%
+  setNames("LAYERS") %>%
+  c(list(
+    algorithm = "native:mergevectorlayers",
+    OUTPUT = qgis_tmp_vector(),
+    CRS = paste(
+      "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+      "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+      "+y_0=5400088.438 +ellps=intl",
+      "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+      "+units=m +no_defs"
+    )
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+    FIELDS = c("WBENR", "VELDID", "id")
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  # bereken de breedte van de bounding box in hm
+  setNames("INPUT") %>%
+  c(list(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
+      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float",
+      OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  # bereken de hoogte van de bounding box in hm
+  setNames("INPUT") %>%
+  c(list(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
+      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float",
+      OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  # landscape of portrait
+  setNames("INPUT") %>%
+  c(list(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "landscape",
+      FORMULA = '"dx" > "dy"', FIELD_TYPE = "Integer",
+      OUTPUT = here(target_folder, "telblok.gpkg")
+  )) %>%
+  do.call(what = qgis_run_algorithm)
+qgis_tmp_clean()
+
+wbe <- 534
+
+
+qgis_run_algorithm(
+  algorithm = "native:atlaslayouttopdf", LAYOUT = "luchtfoto",
+  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
+  OUTPUT = here(target_folder, sprintf("patrijs_%s_luchtfoto.pdf", wbe)),
+  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
+  SORT_BY_EXPRESSION = '"id"'
+)
+qgis_run_algorithm(
+  algorithm = "native:atlaslayouttopdf", LAYOUT = "osm",
+  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
+  OUTPUT = here(target_folder, sprintf("patrijs_%s_openstreetmap.pdf", wbe)),
+  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
+  SORT_BY_EXPRESSION = '"id"'
+)
+qgis_run_algorithm(
+  algorithm = "native:atlaslayouttopdf", LAYOUT = "grb",
+  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
+  OUTPUT = here(target_folder, sprintf("patrijs_%s_grb.pdf", wbe)),
+  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
+  SORT_BY_EXPRESSION = '"id"'
+)
+
+
+
+qgis_arguments("native:atlaslayouttopdf")
+qgis_argument_spec_by_name("native:atlaslayouttopdf", "LAYOUT")
+
+
+qgis_process run native:atlaslayouttopdf --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7022 --LAYOUT=patrijs_luchtfoto --COVERAGE_LAYER='/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/steekproef/telblok.gpkg|layername=telblok' --FILTER_EXPRESSION=' "WBENR" =   '\''534'\''' --SORTBY_EXPRESSION='"id"' --SORTBY_REVERSE=false --FORCE_VECTOR=false --GEOREFERENCE=true --INCLUDE_METADATA=true --DISABLE_TILED=false --SIMPLIFY=true --TEXT_FORMAT=0 --OUTPUT='/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/steekproef/patrijs_534_luchtfoto.pdf'
+
+processing.run("native:atlaslayouttopdf", {'LAYOUT':'patrijs_osm','COVERAGE_LAYER':None,'FILTER_EXPRESSION':'','SORTBY_EXPRESSION':'','SORTBY_REVERSE':False,'LAYERS':None,'DPI':None,'FORCE_VECTOR':False,'GEOREFERENCE':True,'INCLUDE_METADATA':True,'DISABLE_TILED':False,'SIMPLIFY':True,'TEXT_FORMAT':0,'OUTPUT':'TEMPORARY_OUTPUT'})
+
+{
+  "area_units": "m2",
+  "distance_units": "meters",
+  "ellipsoid": "EPSG:7022",
+  "inputs": {
+    "COVERAGE_LAYER": null,
+    "DISABLE_TILED": false,
+    "DPI": null,
+    "FILTER_EXPRESSION": "",
+    "FORCE_VECTOR": false,
+    "GEOREFERENCE": true,
+    "INCLUDE_METADATA": true,
+    "LAYERS": null,
+    "LAYOUT": "patrijs_osm",
+    "OUTPUT": "TEMPORARY_OUTPUT",
+    "SIMPLIFY": true,
+    "SORTBY_EXPRESSION": "",
+    "SORTBY_REVERSE": false,
+    "TEXT_FORMAT": 0
+  }
 }
