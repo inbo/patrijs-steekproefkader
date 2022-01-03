@@ -699,7 +699,9 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
 
 get_penalty <- function(bp) {
   bp <- dplyr::summarise(
-    bp, ha = sum(.data$ha), dplyr::across(dplyr::ends_with("min"), min),
+    bp,
+    ha = sum(rlang::.data$ha),
+    dplyr::across(dplyr::ends_with("min"), min),
     dplyr::across(dplyr::ends_with("max"), max)
   )
   bp <- dplyr::mutate(
