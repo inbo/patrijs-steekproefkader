@@ -1,3 +1,4 @@
+renv::restore()
 library(keyring)
 library(zen4R)
 library(osmextract)

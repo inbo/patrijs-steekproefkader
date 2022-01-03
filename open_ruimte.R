@@ -1,3 +1,4 @@
+renv::restore()
 library(here)
 library(osmextract)
 library(tidyverse)

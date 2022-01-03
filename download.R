@@ -1,3 +1,4 @@
+renv::restore()
 library(here)
 library(zen4R)
 library(openssl)
