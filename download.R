@@ -13,7 +13,9 @@ dir.create(dl, showWarnings = FALSE)
 if (!file_test("-f", here(dl, "jachtter.shp"))) {
   target <- "jacht.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5792818", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5792818", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   if (file_test("-f", here(dl, "checksum.tsv"))) {
@@ -40,7 +42,9 @@ if (!file_test("-f", here(dl, "jachtter.shp"))) {
 if (!file_test("-f", here(dl, "geofabrik_belgium-latest.osm.pbf"))) {
   target <- "geofabrik_belgium-latest.osm.pbf"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5792949", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5792949", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   hashes <- read_vc("checksum", dl)
@@ -63,7 +67,9 @@ if (!file_test("-f", here(dl, "geofabrik_belgium-latest.osm.pbf"))) {
 if (!file_test("-f", here(dl, "bwkhab.shp"))) {
   target <- "bwk.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5583440", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5583440", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   hashes <- read_vc("checksum", dl)
@@ -92,7 +98,9 @@ if (!file_test("-f", here(dl, "bwkhab.shp"))) {
 if (!file_test("-f", here(dl, "refgew.shp"))) {
   target <- "gemeente.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5584281", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5584281", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   hashes <- read_vc("checksum", dl)
@@ -111,7 +119,9 @@ if (!file_test("-f", here(dl, "refgew.shp"))) {
   }
   bestanden <- unzip(here(dl, "gemeente.zip"), list = TRUE)
   zippath <- unique(
-    dirname(bestanden$Name[grep("Refgew\\.shp", bestanden$Name)])
+    dirname(
+      bestanden$Name[grep(paste("Refgew", ".shp", sep = "\\"), bestanden$Name)]
+    )
   )
   relevant <- paste0("Refgew", c(".dbf", ".prj", ".shp", ".shx"))
   unzip(
@@ -125,7 +135,9 @@ if (!file_test("-f", here(dl, "refgew.shp"))) {
 if (!file_test("-f", here(dl, "wlas.shp"))) {
   target <- "waterlopen.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5584530", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5584530", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   hashes <- read_vc("checksum", dl)
@@ -154,7 +166,9 @@ if (!file_test("-f", here(dl, "wlas.shp"))) {
 if (!file_test("-f", here(dl, "refgew.shp"))) {
   target <- "wegenregister.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.5584542", path = dl)
+    download_zenodo(
+      doi = paste("10.5281", "zenodo.5584542", sep = "/"), path = dl
+    )
   }
   hash <- sha512(file(here(dl, target)))
   hashes <- read_vc("checksum", dl)
@@ -173,7 +187,11 @@ if (!file_test("-f", here(dl, "refgew.shp"))) {
   }
   bestanden <- unzip(here(dl, "wegenregister.zip"), list = TRUE)
   zippath <- unique(
-    dirname(bestanden$Name[grep("Wegsegment\\.shp", bestanden$Name)])
+    dirname(
+      bestanden$Name[
+        grep(paste("Wegsegment", ".shp", sep = "\\"), bestanden$Name)
+      ]
+    )
   )
   relevant <- paste0("Wegsegment", c(".dbf", ".prj", ".shp", ".shx"))
   unzip(
@@ -185,7 +203,9 @@ if (!file_test("-f", here(dl, "refgew.shp"))) {
 
 # spoorwegen
 if (!file_test("-f", here(dl, "spoorweg.shp"))) {
-  download_zenodo(doi = "10.5281/zenodo.5584573", path = dl)
+  download_zenodo(
+    doi = paste("10.5281", "zenodo.5584573", sep = "/"), path = dl
+  )
   relevant <- paste0("spoorweg", c(".dbf", ".prj", ".shp", ".shx"))
   hash <- lapply(
     here(dl, relevant),

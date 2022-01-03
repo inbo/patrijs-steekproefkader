@@ -33,7 +33,7 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float",
+      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float", # nolint
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -44,7 +44,7 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float",
+      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float", # nolint
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -55,7 +55,7 @@ here("open_ruimte", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-      FORMULA = "$area / 10000", FIELD_TYPE = "Float",
+      FORMULA = "$area / 10000", FIELD_TYPE = "Float", # nolint
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -652,7 +652,8 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-    FORMULA = "$area / 10000", FIELD_TYPE = "Float", OUTPUT = qgis_tmp_vector()
+    FORMULA = "$area / 10000", FIELD_TYPE = "Float", # nolint
+    OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
@@ -666,7 +667,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "x_min",
-    FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Float",
+    FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Float", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -674,7 +675,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "x_max",
-    FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Float",
+    FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Float", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -682,7 +683,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "y_min",
-    FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Float",
+    FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Float", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -690,33 +691,32 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "y_max",
-    FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Float",
+    FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Float", # nolint
     OUTPUT = here(target_folder, "open_ruimte_merge.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
 
-#' @importFrom dplyr %>% mutate pull summarise
-#' @importFrom rlang .data
-#' @importFrom tidyselect across ends_with
 get_penalty <- function(bp) {
-  bp %>%
-    summarise(
-      ha = sum(.data$ha), across(ends_with("min"), min),
-      across(ends_with("max"), max)
-    ) %>%
-    mutate(
-      dx = .data$x_max - .data$x_min,
-      dy = .data$y_max - .data$y_min,
-      penalty = ifelse(
-        pmax(.data$dx, .data$dy) > 25, Inf, pmax(.data$dx, .data$dy) / 25
-      ) +
-      ifelse(
-        pmin(.data$dx, .data$dy) > 19, Inf, pmin(.data$dx, .data$dy) / 19
-      ) +
-      ifelse(.data$ha > 150, Inf, .data$ha / 150)
-    ) %>%
-    summarise(penalty = sum(.data$penalty)) %>%
-    pull(.data$penalty)
+  bp <- dplyr::summarise(
+    bp, ha = sum(.data$ha), dplyr::across(dplyr::ends_with("min"), min),
+    dplyr::across(dplyr::ends_with("max"), max)
+  )
+  bp <- dplyr::mutate(
+    bp,
+    dx = rlang::.data$x_max - rlang::.data$x_min,
+    dy = rlang::.data$y_max - rlang::.data$y_min,
+    penalty = ifelse(
+      pmax(rlang::.data$dx, rlang::.data$dy) > 25, Inf,
+      pmax(rlang::.data$dx, rlang::.data$dy) / 25
+    ) +
+    ifelse(
+      pmin(rlang::.data$dx, rlang::.data$dy) > 19, Inf,
+      pmin(rlang::.data$dx, rlang::.data$dy) / 19
+    ) +
+    ifelse(rlang::.data$ha > 150, Inf, rlang::.data$ha / 150)
+  )
+  bp <- dplyr::summarise(bp, penalty = sum(rlang::.data$penalty))
+  bp <- dplyr::pull(bp, rlang::.data$penalty)
 }
 
 here(target_folder, "open_ruimte_merge.gpkg") %>%
@@ -908,7 +908,7 @@ list.files(
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-      FORMULA = "$area / 10000"
+      FORMULA = "$area / 10000" #nolint
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -968,7 +968,7 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float",
+      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float", #nolint
       OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -977,7 +977,7 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float",
+      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float", #nolint
       OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -991,60 +991,3 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   )) %>%
   do.call(what = qgis_run_algorithm)
 qgis_tmp_clean()
-
-wbe <- 534
-
-
-qgis_run_algorithm(
-  algorithm = "native:atlaslayouttopdf", LAYOUT = "luchtfoto",
-  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
-  OUTPUT = here(target_folder, sprintf("patrijs_%s_luchtfoto.pdf", wbe)),
-  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
-  SORT_BY_EXPRESSION = '"id"'
-)
-qgis_run_algorithm(
-  algorithm = "native:atlaslayouttopdf", LAYOUT = "osm",
-  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
-  OUTPUT = here(target_folder, sprintf("patrijs_%s_openstreetmap.pdf", wbe)),
-  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
-  SORT_BY_EXPRESSION = '"id"'
-)
-qgis_run_algorithm(
-  algorithm = "native:atlaslayouttopdf", LAYOUT = "grb",
-  PROJECT_PATH = here(target_folder, "steekproef.qgz"),
-  OUTPUT = here(target_folder, sprintf("patrijs_%s_grb.pdf", wbe)),
-  FILTER_EXPRESSION = sprintf("\"WBE_NR\" = '%s'", wbe),
-  SORT_BY_EXPRESSION = '"id"'
-)
-
-
-
-qgis_arguments("native:atlaslayouttopdf")
-qgis_argument_spec_by_name("native:atlaslayouttopdf", "LAYOUT")
-
-
-qgis_process run native:atlaslayouttopdf --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7022 --LAYOUT=patrijs_luchtfoto --COVERAGE_LAYER='/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/steekproef/telblok.gpkg|layername=telblok' --FILTER_EXPRESSION=' "WBENR" =   '\''534'\''' --SORTBY_EXPRESSION='"id"' --SORTBY_REVERSE=false --FORCE_VECTOR=false --GEOREFERENCE=true --INCLUDE_METADATA=true --DISABLE_TILED=false --SIMPLIFY=true --TEXT_FORMAT=0 --OUTPUT='/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/steekproef/patrijs_534_luchtfoto.pdf'
-
-processing.run("native:atlaslayouttopdf", {'LAYOUT':'patrijs_osm','COVERAGE_LAYER':None,'FILTER_EXPRESSION':'','SORTBY_EXPRESSION':'','SORTBY_REVERSE':False,'LAYERS':None,'DPI':None,'FORCE_VECTOR':False,'GEOREFERENCE':True,'INCLUDE_METADATA':True,'DISABLE_TILED':False,'SIMPLIFY':True,'TEXT_FORMAT':0,'OUTPUT':'TEMPORARY_OUTPUT'})
-
-{
-  "area_units": "m2",
-  "distance_units": "meters",
-  "ellipsoid": "EPSG:7022",
-  "inputs": {
-    "COVERAGE_LAYER": null,
-    "DISABLE_TILED": false,
-    "DPI": null,
-    "FILTER_EXPRESSION": "",
-    "FORCE_VECTOR": false,
-    "GEOREFERENCE": true,
-    "INCLUDE_METADATA": true,
-    "LAYERS": null,
-    "LAYOUT": "patrijs_osm",
-    "OUTPUT": "TEMPORARY_OUTPUT",
-    "SIMPLIFY": true,
-    "SORTBY_EXPRESSION": "",
-    "SORTBY_REVERSE": false,
-    "TEXT_FORMAT": 0
-  }
-}

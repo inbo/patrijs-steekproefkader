@@ -12,7 +12,9 @@ paste(
   curl_download(here(target, "jacht.zip"))
 
 zenodo <- ZenodoManager$new(token = key_get("zenodo"))
-myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.5584204")
+myrec <- zenodo$getDepositionByDOI(
+  paste("10.5281", "zenodo.5584204", sep = "/")
+)
 myrec <- zenodo$depositRecordVersion(
   myrec, delete_latest_files = TRUE, here(target, "jacht.zip"), publish = TRUE
 )
