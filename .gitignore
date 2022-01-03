@@ -3,8 +3,10 @@
 .RData
 .Ruserdata
 *.gpkg
+*.gpkg-shm
+*.gpkg-wal
+*.json
 *.pbf
-*.qgz
 *.zip
 open_ruimte/*
 output/*
