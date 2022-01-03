@@ -5,6 +5,7 @@
 *.gpkg
 *.gpkg-shm
 *.gpkg-wal
+*.html
 *.json
 *.pbf
 *.zip
