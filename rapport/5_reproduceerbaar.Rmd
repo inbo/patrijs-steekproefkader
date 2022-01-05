@@ -1,0 +1,51 @@
+# Aanmaak van de kaartlagen
+
+In hoofdstuk \@ref(s:relevant) beschreven we welke kenmerken we gebruiken om de open ruimte kaart aan te maken.
+We kiezen we bewust om deze set van selectieregels in een computerscript te gieten.
+Dat heeft meerdere voordelen over het handmatig uitvoeren van de selectie.
+Een computerscript heeft als grote voordeel dat we elke stap in de code moeten beschrijven.
+Op deze manier documenteren we eenduidig welke stappen we uitvoeren.
+De selectie uitwerken als een computerscript vraagt nauwelijks meer tijd dan de selectie eenmalig handmatig uitvoeren.
+Aangezien we dezelfde selectie in de toekomst opnieuw moeten uitvoeren, kunnen we tijd uit sparen.
+
+Verder publiceren we zowel de computerscripts [@code], de basiskaartlagen [@osm-snapshot,  @jachtterreinen] als de uiteindelijke kaartlagen [@telblok, @open-ruimte] onder een open licentie en met versiebeheer.
+De open publicatie laat toe dat iedereen kan (laten) nakijken op welke manier de kaartlagen tot stand kwamen.
+Doordat we enkel gebruik maken van [vrije software](https://nl.wikipedia.org/wiki/Vrije_software_en_opensourcesoftware) is het mogelijk om onze code zelf uit te voeren zonder dat hiervoor betalende software nodig is.
+We maken gebruik van de statistische software [R](https://nl.wikipedia.org/wiki/R_(softwarepakket)) [@R].
+Onze code maakt gebruikt van verschillende bijkomende packages.
+We sommen hieronder de belangrijkste kort op.
+De volledige lijst met packages en bijhorende versie is [online](https://raw.githubusercontent.com/inbo/patrijs-steekproefkader/main/renv.lock) beschikbaar.
+
+- `qgisprocess` [@qgisprocess]: laat toe om vanuit een R script geografische bewerkingen uit te voeren met het open source geografisch informatie systeem [QGIS](https://nl.wikipedia.org/wiki/QGIS) [@QGIS-software].
+- `osmextract` [@osmextract]: haalt informatie op uit OpenStreetMap.
+- `zen4R` [@zen4R]: informatie downloaden en publiceren via [Zenodo](https://www.zenodo.org)
+- `renv` [@renv]: package waarmee we een voorgedefinieerde lijst van packages met elk een specifieke versie kan laten installeren.
+
+```{r download, results='asis'}
+tribble(
+  ~materiaal, ~link,
+  "open ruimte kaart in GIS formaat", "https://doi.org/10.5281/zenodo.5814834",
+  "telblokken in GIS formaat", "https://doi.org/10.5281/zenodo.5814901",
+  "telblokken in pdf met luchtfoto als achtergrond", "",
+  "- West-Vlaanderen", "https://doi.org/10.5281/zenodo.5812598",
+  "- Oost-Vlaanderen", "https://doi.org/10.5281/zenodo.5814973",
+  "- Antwerpen", "https://doi.org/10.5281/zenodo.5815050",
+  "- Limburg", "https://doi.org/10.5281/zenodo.5815084",
+  "- Vlaams Brabant", "https://doi.org/10.5281/zenodo.5815090",
+  "de telblokken in pdf met OpenStreetMap als achtergrond", "",
+  "- West-Vlaanderen", "https://doi.org/10.5281/zenodo.5815408",
+  "- Oost-Vlaanderen", "https://doi.org/10.5281/zenodo.5815401",
+  "- Antwerpen", "https://doi.org/10.5281/zenodo.5815393",
+  "- Limburg", "https://doi.org/10.5281/zenodo.5815380",
+  "- Vlaams Brabant", "https://doi.org/10.5281/zenodo.5815210",
+  "computerscripts",  "https://doi.org/10.5281/zenodo.5814814",
+  "ruwe data OpenStreetMap", "https://doi.org/10.5281/zenodo.5792949",
+  "jachtterreinen", "https://doi.org/10.5281/zenodo.5792818"
+) %>%
+  mutate(link = sprintf("[%1$s](%1$s)", link)) %>%
+  kable(
+    caption = "Links naar downloadbaar materiaal", escape = FALSE,
+    format = "simple"
+  )
+```
+

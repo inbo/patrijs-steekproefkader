@@ -1,0 +1,117 @@
+# Selectie van relevante gebieden uit OpenStreetMap {#s:relevant}
+
+In dit hoofdstuk geven we aan welke kenmerken we uit [OpenStreetMap](https://www.openstreetmap.org) gebruiken om de voor patrijs relevante open ruimte te definiëren.
+We gebruiken hiervoor de kenmerken [`landuse`](https://wiki.openstreetmap.org/wiki/NL:Key:landuse) (landgebruik), [`natural`](https://wiki.openstreetmap.org/wiki/NL:Key:natural) (natuurlijk landschap) en [`landcover`](https://wiki.openstreetmap.org/w/index.php?title=Key:landcover&redirect=no) (bodembedekking).
+De links in voorgaande zin verwijzen naar de volledige lijst van mogelijke klassen.
+Door deze lijst te vergelijken met onderstaande sectie weet de lezer welke klassen we niet gebruiken bij de selectie.
+
+## Positieve selectie
+
+We selecteren alle gebieden die voldoen aan een van de onderstaande kenmerken.
+Om de kaart zo compact mogelijk te maken voegen we naastliggende polygonen samen tot een geheel.
+Daarnaast snijden we ze bij tot de jachtterreinen.
+Het resultaat van deze kaart is een maximale kaart van de open ruimte binnen de Vlaamse jachtterreinen.
+
+### Akker
+
+- OSM definitie: `landuse = farmland`
+- Objecttype: landbouwgebied
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmland
+
+### Weiland of grasland in landbouwbeheer
+
+- OSM definitie: `landuse = meadow`
+- Objecttype: weide
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dmeadow
+
+### Natuurlijk grasland
+
+- OSM definitie: `natural = grassland`
+- Objecttype: natuurlijk grasland
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dgrassland
+
+### Drassig weiland of moeras
+
+- OSM definitie: `natural = wetland`
+- Objecttype: natuurlijk grasland
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwetland
+
+We gebruiken enkel gebieden die ofwel expliciet als drassig weiland (`wetland = wet_meadow`) aangeduidt zijn, ofwel geen
+bijkomende aanduiding hebben (geen `wetland = ...`).
+Categorieën die we buiten beschouwing laten zijn:
+
+- moeras (`wetland = swamp` of `wetland = marsh`)
+- rietveld (`wetland = reedbed`)
+- ven (`wetland = fen`)
+- veen (`wetland = bog`)
+- slik (`wetland = tidalflat`)
+- schorre (`wetland = saltmarsh`)
+
+### Particuliere weides
+
+Soms gebruikt om kleinere weides met paarden, schapen, ... aan te duiden.
+
+- OSM definitie: `landuse = animal_keeping`
+- Objecttype: _niet beschikbaar_
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Danimal_keeping
+
+### Overige gras
+
+- OSM definitie: `landuse = grass` of `landcover = grass`
+- Objecttype: gras
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landcover%3Dgrass en https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgrass
+
+### Boomgaard
+
+- OSM definitie: `landuse = orchard`
+- Objecttype: boomgaard
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dorchard
+
+Een combinatie van weide met (hoogstam)boomgaard is `landuse = meadow, meadow = orchard`.
+
+### Wijngaard
+
+- OSM definitie: `landuse = vineyard`
+- Objecttype: wijngaard
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dvineyard
+
+## Negatieve selectie
+
+Soms zijn er in OpenStreetMap grote gebieden als één landgebruik aangeduid en komen daarbinnen kleinere gebieden met een ander landgebruik voor.
+Bijvoorbeeld een groot bosgebied met hier en daar een weiland.
+Of een groot akkergebied met hier en daar een klein bos.
+Wanneer we enkel met een positieve selectie werken dan krijgen we enkel bij het eerste voorbeeld een correcte selectie (enkel het weiland).
+In het tweede voorbeeld selecteren we teveel (de bossen die overlappen met het akkergebied).
+
+Daarom we knippen we onderstaande landgebruiken uit de maximale kaart met open ruimte.
+We doen dit enkel wanneer het gaat om kleine (negatieve) gebieden die volledig binnen een groot (positief) gebied liggen.
+
+### Woongebied
+
+- OSM definitie: `landuse = residential`
+- Objecttype: woongebied
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dresidential
+
+### Boerenerf
+
+- OSM definitie: `landuse = farmyard`
+- Objecttype: boerenerf
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmyard
+
+### Beheerd bos
+
+- OSM definitie: `landuse = forest`
+- Objecttype: beheerd bos
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dforest
+
+### Natuurlijk bos
+
+- OSM definitie: `natural = wood`
+- Objecttype: natuurlijk bos
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwood
+
+### Industrie
+
+- OSM definitie: `landuse = industrial`
+- Objecttype: industriegebied
+- OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial

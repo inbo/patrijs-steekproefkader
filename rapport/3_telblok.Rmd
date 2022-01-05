@@ -1,0 +1,234 @@
+# Opdelen van open ruimte in telblokken
+
+De wildbeheereenheden die wensen te jagen op patrijs, dienen de patrijzen te monitoren binnen de open ruimte in hun werkingsgebied.
+Volgens @telprotocol kan een teller een gebied van 125 tot 175 ha inventariseren.
+Daarom delen we de open ruimte van de WBE in een meerdere telblokken.
+Hierbij streven we naar telblokken die hoogstens 150 ha open ruimte bevatten.
+Vanuit de jagerij kwam het signaal dat ze verkiezen om geen telblokken te hebben die meerdere jachtterreinen omvatten.
+Aangezien sommige jachtterreinen weinig open ruimte bevatten zullen sommige telblokken hierdoor klein zijn.
+Het is de bedoeling dat we van elk telblok een kaart maken die afdrukbaar is op een A4 bij schaal 1:10.000.
+Daarom moet elk telblok passen binnen een begrenzingsvak met een lange zijde van maximum 2500 m en korte zijde van maximum 1900 m.
+
+In een eerste stap gaan we na voor welke jachtterreinen de open ruimte kleiner dan 150 ha is en het geheel een begrenzingsvlak heeft dat voldoende klein is.
+Voor deze jachtterrein is de volledige open ruimte binnen het jachtterrein het telblok.
+
+Bij de grotere jacchtterreinen zullen we eerste de open ruimte in kleinere eenheden splitsen.
+Eerste relatief kleine eenheden maken en die nadien samenzetten tot telblokken, laat toe een zo optimaal mogelijke indeling te maken.
+Daarom streven we in deze fase naar eenheden kleiner dan 50 ha en met een begrenzingsvak van minder dan 1900 m langs elke zijde.
+In eerste instantie kijken we naar de reeds bestaande eenheden binnen een jachtterrein.
+Deze eenheden zijn volledig van elkaar gescheiden door delen die geen open ruimte of geen jachtgebied zijn.
+Eenheden die reeds voldoende klein zijn (< 150 ha en begrenzingsvak < 1900 m langs elke zijde) zetten we apart.
+
+Grotere eenheden proberen we in kleinere eenheden te splitsen langs grenzen die in het veld duidelijk zichtbaar zijn.
+Hiervoor gebruiken we de beschikbare informatie over wegen ([`highway`](https://wiki.openstreetmap.org/wiki/Key:highway)) en waterlopen ([`waterway`](https://wiki.openstreetmap.org/wiki/Key:waterway)) uit OpenStreetMap.
+In tabel \@ref(tab:indeling) geven we aantal welke elementen we gebruiken en in welke volgorde.
+We starten met de belangrijkste elementen die er toe doen.
+Vandaar dat we eerst splitsen langs steenwegen en dan langs lokale verbindingswegen.
+Splitsen langs belangrijkere wegen zoals snelwegen is niet relevant aangezien er geen eenheden zijn waar een snelweg doorloopt.
+Na elke split zetten we de eenheden nu voldoende klein zijn afzonderlijk.
+De overige eenheden splitsen we met het volgende element.
+Wanneer we alle elementen van tabel \@ref(tab:indeling) afgewerkt hebben blijven er nog een paar grote eenheden over.
+Mogelijk zijn in deze gebieden nog niet alle element toegevoegd aan OpenStreetMap.
+Een andere mogelijkheid is dat er in het gebied geen elementen aanwezig zijn die de eenheid doorsnijden.
+
+```{r indeling}
+tribble(
+  ~key, ~value, ~omschrijving, ~url,
+  "highway", "secondary", "steenwegen",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary",
+  "highway", "tertiary", "lokale verbindingswegen",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary",
+  "waterway", "stream", "beek",
+    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream",
+  "highway", "unclassified", "lokale wegen",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dunclassified",
+  "highway", "track", "veldweg geschikt voor landbouwvoertuigen",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
+  "waterway", "ditch", "gracht",
+    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dditch",
+  "waterway", "ditch", "afwateringskanaal",
+    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain",
+  "highway", "path", "veldweg niet geschikt voor landbouwvoertuigen",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
+  "highway", "serivce", "private toegangsweg",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dservice"
+) %>%
+  transmute(
+    .data$key, value = sprintf("[%s](%s)", .data$value, .data$url),
+    .data$omschrijving
+  ) %>%
+  kable(
+    caption = "Gebruikte informatie uit OpenStreetMap om te grote eenheden
+      stapsgewijs te verkleinen.",
+    escape = FALSE, format = "simple"
+  )
+```
+
+Nu we de open ruimte in kleinere eenheden opgedeeld hebben, komen we in de fase dat we deze eenheden terug samenvoegen tot telblokken.
+We kijken per jachtterrein welke eenheden vlak bij elkaar liggen.
+In figuur \@ref(fig:samen-1) geven we een fictief voorbeeld van een aantal eenheden in een jachtgebied.
+
+```{r samen-1, fig.cap = "Voorbeeld met een aantal fictieve eenheden met aanduiding van hun zwaartepunt, label en oppervlakte."}
+tribble(
+  ~x, ~y, ~id, ~opp,
+     0, -20, "A", 20,
+     0, 500, "B", 35,
+   400, -50, "C", 10,
+   500, 400, "D", 12,
+  1500, 200, "E", 50,
+  1000, 1200, "F", 150
+) %>%
+  mutate(
+    delta = sqrt(.data$opp) * 50,
+    label = sprintf("%s (%iha)", .data$id, .data$opp),
+    x_min = .data$x - .data$delta,
+    x_max = .data$x + .data$delta,
+    y_min = .data$y - .data$delta,
+    y_max = .data$y + .data$delta
+  ) -> punten
+bind_rows(
+  select(punten, x = .data$x_min, y = .data$y_min, .data$id),
+  select(punten, x = .data$x_min, y = .data$y_max, .data$id),
+  select(punten, x = .data$x_max, y = .data$y_max, .data$id),
+  select(punten, x = .data$x_max, y = .data$y_min, .data$id)
+) -> vlakken
+ggplot(punten, aes(x = x, y = y)) +
+  geom_polygon(data = vlakken, aes(group = id), fill = NA) +
+  geom_point() +
+  geom_text(aes(label = label), hjust = 0.5, vjust = -0.5) +
+  theme_void() +
+  coord_equal()
+```
+
+Om dit te kunnen automatiseren bepalen we eerst van elke eenheid zijn [zwaartepunt](https://nl.wikipedia.org/wiki/Zwaartepunt) (centroïde).
+Vervolgens berekenen we een [Delaunay-triangulatie](https://nl.wikipedia.org/wiki/Delaunay-triangulatie) van deze zwaartepunten.
+Op deze manier verbinden we twee zwaartepunten zodat een set van niet overlappende driehoeken ontstaat.
+We veronderstellen dat wanneer het zwaartepunt van twee eenheden met elkaar verbonden is, deze eenheden naast elkaar liggen zonder dat er een andere eenheid tussen ligt.
+Wanneer deze eenheden gescheiden zijn door iets wat geen open ruimte is (bos, dorpskern, ...) kan het zijn dat ze alsnog ver uit elkaar liggen.
+Daarom beperken we ons tot de verbonden zwaartepunten die minder dan 1 km uit elkaar liggen.
+In figuur \@ref(fig:samen-2) tonen we de Delaunay-triagulatie toegepast op het voorbeeld uit fig. \@ref(fig:samen-1).
+Merk dat eenheid "E" te ver van de andere eenheden ligt.
+We verbreken ook verbindingen met eenheden die reeds te groot zijn.
+In het voorbeeld is dat "F".
+
+```{r samen-2, fig.cap = "Toevoegen van Delaunay-triangulatie met aanduiding van de afstand tussen de zwaartepunten."}
+punten %>%
+  select(.data$x, .data$y) %>%
+  as.matrix() %>%
+  deldir() %>%
+  `[[`("delsgs") %>%
+  mutate(
+    afstand = sqrt((x1 - x2) ^ 2 + (y1 - y2) ^ 2),
+    dichtbij = ifelse(afstand <= 1000, "ja", "nee"),
+    label = sprintf("%.0fm", .data$afstand),
+    x = (x1 + x2) / 2,
+    y = (y1 + y2) / 2,
+    hoek = ifelse(
+      .data$x1 < .data$x2,
+      atan2(.data$y2 - .data$y1, .data$x2 - .data$x1),
+      atan2(.data$y1 - .data$y2, .data$x1 - .data$x2)
+    ) %>%
+      `*`(180 / pi)
+  ) -> segment
+ggplot(punten, aes(x = x, y = y)) +
+  geom_polygon(data = vlakken, aes(group = id), fill = NA) +
+  geom_segment(
+    data = segment,
+    aes(x = x1, xend = x2, y = y1, yend = y2, colour = dichtbij),
+  ) +
+  geom_point() +
+  geom_text(aes(label = id), hjust = -0.3, vjust = -0.3) +
+  geom_text(
+    data = segment, vjust = -0.2, show.legend = FALSE,
+    aes(label = label, angle = hoek, colour = dichtbij)
+  ) +
+  theme_void() +
+  coord_equal()
+```
+
+We willen zoveel mogelijk kleine telblokken vermijden.
+Dan kunnen we door te kijken bij welke eenheden we de kleinste eenheid kunnen samenvoegen.
+We kijken met welke eenheden de kleinste eenheid verbonden is.
+In ons voorbeeld is "C" de kleinste eenheid en is deze verbonden met "A" en "D".
+De vraag is nu welke groep het meest compacte resultaat geeft.
+We vatten de compactheid in formule \@ref(eq:penalty).
+Hierbij is $O_i$ de oppervlakte van de eenheid $i$ in ha, $L_i$ de langste zijde en $K_i$ de kortste zijde van het begrenzingsvak.
+In tabel \@ref(tab:compact-eenheid) geven we deze maten voor elke eenheid of groep van eenheden.
+(Groepen van) eenheden die niet voldoen aan de voorwaarden $O_i < 150$, $L_i < 2500$ en $K_i < 1900$ zijn te groot en gebruiken we niet.
+
+\begin{equation}
+  P = \sum^N_{i=1} \left(\frac{O_i}{150} + \frac{L_i}{2500} + \frac{K_i}{1900}\right)
+  (\#eq:penalty)
+\end{equation}
+
+```{r compact-eenheid}
+tribble(
+  ~groep, ~id,
+  "AC", "A", "AC", "C",
+  "CD", "C", "CD", "D",
+  "ACD", "A", "ACD", "C", "ACD", "D",
+  "BD", "B", "BD", "D",
+  "ABCD", "A", "ABCD", "B", "ABCD", "C", "ABCD", "D"
+) %>%
+  inner_join(punten, by = "id") %>%
+  bind_rows(
+    punten %>%
+      filter(.data$id != "F") %>%
+      mutate(groep = .data$id)
+  ) %>%
+  group_by(.data$groep) %>%
+  summarise(
+    opp = sum(.data$opp),
+    x_min = min(.data$x_min),
+    x_max = min(.data$x_max),
+    y_min = min(.data$y_min),
+    y_max = min(.data$y_max)
+  ) %>%
+  transmute(
+    .data$groep, O = .data$opp,
+    L = pmax(.data$x_max - .data$x_min, .data$y_max - .data$y_min),
+    K = pmin(.data$x_max - .data$x_min, .data$y_max - .data$y_min),
+    P = .data$O / 150 + .data$L / 2500 + .data$K / 1900
+  ) -> penalty
+penalty %>%
+  arrange(.data$O) %>%
+  rename_with(.cols = -.data$groep, .fn = sprintf, fmt = "$%s_i$") %>%
+  kable(
+    digits = c(0, 0, 0, 0, 2),
+    caption = "Compactheidmaten per eenheid of groep van eenheden."
+  )
+```
+
+```{r compact}
+tribble(
+  ~combinatie, ~groep,
+  "A, B, C, D, E", list(c("A", "B", "C", "D", "E")),
+  "AC, B, D, E", list(c("AC", "B", "D", "E")),
+  "A, B, CD, E", list(c("A", "B", "CD", "E")),
+  "ACD, B, E", list(c("ACD", "B", "E")),
+  "AC, BD, E", list(c("AC", "BD", "E")),
+  "ACBD, E", list(c("ABCD", "E"))
+) %>%
+  unnest(.data$groep) %>%
+  unnest(.data$groep) %>%
+  inner_join(penalty, by = "groep") %>%
+  group_by(.data$combinatie) %>%
+  summarise(P = sum(.data$P)) %>%
+  arrange(desc(.data$P)) %>%
+  kable(
+    caption =
+  "Compactheidscore voor verschillende combinaties van (groepen van) eenheden.",
+    digits = 2
+  )
+```
+
+In tabel \@ref(tab:compact) geven we de totale compactheidscore voor verschillende combinaties van (groepen van) eenheden.
+We zien dat "C" samenvoegen met "A" of "D" een betere score geeft.
+De beste combinatie is deze waarbij we "A" en "C" samenvoegen.
+De kleinste eenheid is nu "D", welke verbonden is met "AC" en "B".
+De bese combinatie daarvan is "BD".
+Wat er voor zorgt dat "AC" de kleinste eenheid is, welke alleen met "BD" verbonden is.
+Nadat we deze samenvoegen tot "ABCD", is "E" de kleinste eenheid.
+Deze heeft geen verbindingen met andere eenheden, zodat we deze overslaan.
+De tweede kleinste eenheid is "ABCD" welke eveneens geen verbindingen heeft en we bijgevolg overslaan.
+Nu hebben we alle eenheden behandeld en krijgt dit fictieve jachtterrein drie telblokken "ABCD", "E" en "F".

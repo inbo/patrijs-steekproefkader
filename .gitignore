@@ -9,5 +9,6 @@
 *.json
 *.pbf
 *.zip
+cover.txt
 open_ruimte/*
 output/*
