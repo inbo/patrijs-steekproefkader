@@ -50,7 +50,7 @@ tribble(
     "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain",
   "highway", "path", "veldweg niet geschikt voor landbouwvoertuigen",
     "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
-  "highway", "serivce", "private toegangsweg",
+  "highway", "service", "private toegangsweg",
     "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dservice"
 ) %>%
   transmute(
@@ -194,7 +194,7 @@ penalty %>%
   arrange(.data$O) %>%
   rename_with(.cols = -.data$groep, .fn = sprintf, fmt = "$%s_i$") %>%
   kable(
-    digits = c(0, 0, 0, 0, 2),
+    digits = c(0, 0, 0, 0, 2), escape = FALSE,
     caption = "Compactheidmaten per eenheid of groep van eenheden."
   )
 ```

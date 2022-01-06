@@ -1,6 +1,7 @@
 book_filename: "steekproefkader.Rmd"
 output_dir: "../output"
 delete_merged_file: FALSE
+edit: https://github.com/inbo/patrijs-steekproefkader/edit/main/rapport/%s
 language:
   label:
     fig:    'Figuur '

@@ -36,7 +36,7 @@ Het resultaat van deze kaart is een maximale kaart van de open ruimte binnen de 
 - Objecttype: natuurlijk grasland
 - OSM Wiki: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwetland
 
-We gebruiken enkel gebieden die ofwel expliciet als drassig weiland (`wetland = wet_meadow`) aangeduidt zijn, ofwel geen
+We gebruiken enkel gebieden die ofwel expliciet als drassig weiland (`wetland = wet_meadow`) aangeduid zijn, ofwel geen
 bijkomende aanduiding hebben (geen `wetland = ...`).
 Categorieën die we buiten beschouwing laten zijn:
 
@@ -46,6 +46,15 @@ Categorieën die we buiten beschouwing laten zijn:
 - veen (`wetland = bog`)
 - slik (`wetland = tidalflat`)
 - schorre (`wetland = saltmarsh`)
+
+Is dit landgebruik wel relevant voor patrijs?
+Wanneer we deze gebieden vergelijken met de biologische waarderingskaart [@BWK], stellen we vast dat het meerendeel van de percelen een BWK code bevatten die we vorige jaar als open ruimte beschouwden.
+We kunnen ze eveneens vergelijking met de waarnemingen van de tellingen van patrijs uit het voorjaar van 2021.
+Als er in de onmiddellijke omgeving waarnemingen van patrijs zijn, dan zijn er meestal ook waarnemingen van patrijs in deze gebieden.
+Merk op dat deze set zowel percelen omvat die expliciet als drassig weiland aangeduid zijn en andere percelen waarbij het type `wetland` niet gespecifiëerd is.
+In deze laatste groep kan een aantal percelen bevatten in de praktijk geen drassig weiland maar moeras, rietveld, ... zijn.
+In dat geval zijn ze ten onrechte opgenomen in de open ruimte.
+Wanneer dit in OpenStreetMap gecorrigeerd is, zullen dergelijke percelen bij de volgende versie van de open ruimte kaart automatisch uit de selectie gehaald worden.
 
 ### Particuliere weides
 

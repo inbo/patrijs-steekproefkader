@@ -19,11 +19,15 @@ reviewer:
     email: "thomas.scheppers@inbo.be"
     orcid: 0000-0002-5098-9326
 year: 2022
+reportnr: 2
+depotnr: D/2022/3241/023
+doi: doi.org/10.21436/inbor.70809860
 
 # report specific options. See ?INBOmd::report() for full list and more details.
-shortauthor: Onkelinx, T.
+shortauthor: Onkelinx, T. & Carmen, R.
 corresponding: thierry.onkelinx@inbo.be
-cover_photo: tbd
+cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
+cover_description: Roepende patrijs in maïsveld. © Yves Adams
 
 # pdf report specific options. See ?INBOmd::report() for full list and more details.
 embargo: 2021-12-10
@@ -46,8 +50,50 @@ output:
 
 # Samenvatting {-}
 
-De tekst voor de verplichte samenvatting.
-Hou het [Heerlijk Helder](https://overheid.vlaanderen.be/communicatie/heerlijk-helder).
+**Waarom een open ruimte kaart?**
+
+Het Agentschap voor Natuur en Bos (ANB) opent de jacht op patrijs een gebied enkel indien aan meerdere voorwaarden voldaan is.
+Een van deze voorwaarden is dat er voldoende patrijzen aanwezig zijn.
+Hiervoor gebruikt ANB als dat er minstens 3 broedparen per 100 ha open ruimte zijn.
+Daarom moet een wildbeheereenheid (WBE) die op patrijs wenst te jagen, eerst inventariseren waar er allemaal patrijzen rondlopen.
+Op basis van deze waarnemingen bepaalt het Instituut voor Natuur- en Bosonderzoek (INBO) het aantal broedparen in elke WBE.
+Tenslotte delen we dit aantal broedparen door de oppervlakte open ruimte om tot de dichtheid van patrijs (broedparen per 100 ha open ruimte) te komen.
+Om deze oppervlakte te kennen, hebben we nood aan een kaart die bepaalt wat open ruimte is.
+
+**Waarom een nieuwe open ruimte kaart?**
+
+Ne de tellingen van voorjaar 2021 lieten meerdere jagers ons weten dat de gebruikte open ruimte kaart niet altijd overeenkomt met de werkelijkheid.
+Sommige percelen zijn open ruimte maar bebouwd of bebost.
+Waardoor de oppervlakte open ruimte overschat en de dichtheid van patrijs onderschat is.
+
+De vorige versie van de open ruimte kaart is gebaseerd op de meest recente publicatie van de biologische waarderingskaart (BWK).
+Hoewel deze versie in 2020 gepubliceerd is, wil dat niet zeggen dat alle informatie uit 2020 stamt.
+In de praktijk bleek zowat driekwart ouder dan 2007.
+Vandaar dat we op zoek gaan naar een betere bron.
+
+**Een _open_ open ruimte kaart**
+
+Na het afwegen van een aantal mogelijkheden, kozen we [OpenStreetMap](https://www.openstreetmap.org) als bronkaart.
+Net zoals alle andere kandidaten, is deze kaart niet perfect.
+Ze is evenwel goed genoeg om te gebruiken.
+En heeft als troef dat fouten relatief eenvoudig en snel te verbeteren zijn.
+Bij de start van de inventarisatie krijgen de jagers een voorlopige versie van de open ruimte kaart.
+Wanneer een jager een fout in de open ruimte kaart vaststelt, kan deze de fout melden of zelf aanpassen in OpenStreetMap.
+Na het berekenen van het aantal broedparen kunnen we de finale versie van de open ruimte kaart op basis van de meest recente informatie uit OpenStreetMap.
+
+Dit is een belangrijk verschil met de overige bruikbare kaarten.
+Deze beschikken niet over een mogelijkheid om ze bij te werken.
+Verder zijn ze gebaseerd om informatie die minstens 1 tot 2 jaar oud is.
+
+Voor de jagers biedt deze manier van werken hun de mogelijkheid om zelf bij te dragen aan een correcte open ruimte kaart.
+Aangezien OpenStreetMap de informatie met open gebruiksvoorwaarden aanbiedt, kan iedereen genieten van een verbeterde OpenStreetMap kaart.
+
+**Een [reproduceerbare](https://nl.wikipedia.org/wiki/Reproduceerbaarheid) open ruimte kaart**
+
+In dit rapport beschrijven we hoe we de informatie van OpenStreetMap omzetten naar een open ruimte kaart.
+De omzetting hebben we als een computerprogramma uitgewerkt.
+We publiceren die computerprogramma samen met de open ruimte kaart en de gebruikte bronkaarten (OpenStreetMap en grenzen jachtgebieden).
+Op die manier kan iedereen de gebruikte regels (laten) nakijken of zelf uitvoeren.
 
 \benglish
 
@@ -112,6 +158,7 @@ if (interactive()) {
       opts_chunk$set(dev = "cairo_pdf", dpi = 300)
       theme_set(theme_inbo(base_size = 9))
       update_geom_defaults("point", list(size = 1.5))
+      update_geom_defaults("text", list(size = 2))
     },
     epub3 = {
       opts_chunk$set(dev = "png", dpi = 300)
