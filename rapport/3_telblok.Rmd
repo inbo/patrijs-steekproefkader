@@ -30,6 +30,7 @@ De overige eenheden splitsen we met het volgende element.
 Wanneer we alle elementen van tabel \@ref(tab:indeling) afgewerkt hebben blijven er nog een paar grote eenheden over.
 Mogelijk zijn in deze gebieden nog niet alle elementen toegevoegd aan OpenStreetMap.
 Een andere mogelijkheid is dat er in het gebied geen elementen aanwezig zijn die de eenheid doorsnijden.
+We kunnen niet anders dan deze eenheden als telblokken groter dan 150 ha te gebruiken.
 
 ```{r indeling}
 tribble(
@@ -151,8 +152,11 @@ Dat kunnen we door te kijken bij welke eenheden we de kleinste eenheid kunnen sa
 We kijken met welke eenheden de kleinste eenheid verbonden is.
 In ons voorbeeld is "C" de kleinste eenheid en deze is verbonden met "A" en "D".
 De vraag is nu welke groep het meest compacte resultaat geeft.
-We vatten de compactheid in formule \@ref(eq:penalty).
+We vatten de compactheid van een groep van $N$ eenheden in formule \@ref(eq:penalty).
 Hierbij is $O_i$ de oppervlakte van de eenheid $i$ in ha, $L_i$ de langste zijde en $K_i$ de kortste zijde van het begrenzingsvak.
+Hoe kleiner de waarde van $O_i$, $L_i$ en $K_i$, hoe compacter het telblok $i$ is.
+De globale maat $P$ hangt enerzijds af van het aantal telblokken en anderzijds van hun compactheid.
+Een lage $P$ is een goede balans tussen zo weinig mogelijk telblokken en compacte telblokken.
 In tabel \@ref(tab:compact-eenheid) geven we deze maten voor elke eenheid of groep van eenheden.
 (Groepen van) eenheden die niet voldoen aan de voorwaarden $O_i < 150$, $L_i < 2500$ en $K_i < 1900$ zijn te groot en gebruiken we niet.
 
@@ -223,10 +227,10 @@ tribble(
 ```
 
 In tabel \@ref(tab:compact) geven we de totale compactheidscore voor verschillende combinaties van (groepen van) eenheden.
-We zien dat "C" samenvoegen met "A" of "D" een betere score geeft.
+We zien dat "C" samenvoegen met "A" of "D" een betere (lagere) score geeft.
 De beste combinatie is deze waarbij we "A" en "C" samenvoegen.
 De kleinste eenheid is nu "D", welke verbonden is met "AC" en "B".
-De bese combinatie daarvan is "BD".
+De beste combinatie daarvan is "BD".
 Wat er voor zorgt dat "AC" de kleinste eenheid is, welke alleen met "BD" verbonden is.
 Nadat we deze samenvoegen tot "ABCD", is "E" de kleinste eenheid.
 Deze heeft geen verbindingen met andere eenheden, zodat we deze overslaan.

@@ -43,7 +43,7 @@ site: bookdown::bookdown_site
 
 output:
   INBOmd::gitbook: default
-  INBOmd::report: default
+  INBOmd::pdf_report: default
   INBOmd::ebook: default
   bookdown::dontrun: default
 ---
@@ -52,11 +52,11 @@ output:
 
 **Waarom een open ruimte kaart?**
 
-Het Agentschap voor Natuur en Bos (ANB) opent de jacht op patrijs in een wildbeheereenheid enkel indien aan meerdere voorwaarden voldaan is.
+Het [Agentschap voor Natuur en Bos (ANB)](https://www.natuurenbos.be/) opent de jacht op patrijs in een wildbeheereenheid enkel indien aan meerdere voorwaarden voldaan is.
 Een van deze voorwaarden is dat er voldoende patrijzen aanwezig zijn.
 ANB hanteert een minimum van 3 broedparen per 100 ha open ruimte.
 Daarom moet een wildbeheereenheid (WBE) die op patrijs wenst te jagen, eerst inventariseren waar er allemaal patrijzen rondlopen.
-Op basis van deze waarnemingen bepaalt het Instituut voor Natuur- en Bosonderzoek (INBO) het aantal broedparen in elke WBE.
+Op basis van deze waarnemingen bepaalt het [Instituut voor Natuur- en Bosonderzoek (INBO)](https://www.vlaanderen.be/inbo/) het aantal broedparen in elke WBE.
 Tenslotte delen we dit aantal broedparen door de oppervlakte open ruimte om tot de dichtheid van patrijs (broedparen per 100 ha open ruimte) te komen.
 Om deze oppervlakte te kennen, hebben we nood aan een kaart die bepaalt wat open ruimte is.
 
@@ -66,7 +66,7 @@ Na de tellingen van het voorjaar 2021 lieten meerdere jagers ons weten dat de ge
 Sommige percelen zijn aangeduid als open ruimte maar zijn in werkelijkheid bebouwd of bebost.
 Waardoor de oppervlakte open ruimte overschat en de dichtheid van patrijs onderschat is.
 
-De vorige versie van de open ruimte kaart is gebaseerd op de meest recente publicatie van de biologische waarderingskaart (BWK).
+De vorige versie van de open ruimte kaart is gebaseerd op de meest recente publicatie van de [biologische waarderingskaart (BWK).
 Hoewel deze versie in 2020 gepubliceerd werd, wil dat niet zeggen dat alle informatie uit 2020 stamt.
 In de praktijk bleek zowat driekwart van de gegevens ouder dan 2007.
 Vandaar dat we op zoek gaan naar een betere bron.
@@ -94,42 +94,6 @@ In dit rapport beschrijven we hoe we de informatie van OpenStreetMap omzetten na
 De omzetting hebben we als een computerprogramma uitgewerkt.
 We publiceren dit computerprogramma samen met de open ruimte kaart en de gebruikte bronkaarten (OpenStreetMap en grenzen jachtgebieden).
 Op die manier kan iedereen de gebruikte regels (laten) nakijken of zelf uitvoeren.
-
-\benglish
-
-# English abstract {-}
-
-Insert a translation of the summary here.
-\eenglish
-
-<!-- hier komt de inhoudstafel bij pdf -->
-\mainmatter
-
-# Inleiding
-
-Sinds 2008 is de jacht op patrijs in Vlaanderen gebonden aan een aantal voorwaarden.
-De eerste voorwaarde vermeldt het voldoen aan een gemiddelde dichtheid van minstens 3 broedparen per 100 ha open ruimte.
-Het Instituut voor Natuur- en Bosonderzoek (INBO) staat in voor de berekening van deze dichtheden en brengt hierover advies uit aan het Agentschap voor Natuur en Bos (ANB).
-
-Aangezien de jachtwetgeving geen definitie geeft van de open ruimte, kozen we bij de invoering van deze regelgeving om te werken met de biologische waarderingskaart ([BWK](https://www.vlaanderen.be/inbo/de-biologische-waarderingskaart/bwk-belang/)).
-De BWK is een gebiedsdekkende inventaris van het biologische milieu en van de bodembedekking van het volledige Vlaams Gewest.
-Deze kaart wordt door het INBO opgemaakt aan de hand van een inventarisatie met behulp van vooraf gedefinieerde karteringseenheden.
-De verschillende karteringseenheden werden beoordeeld als behorende tot de categorie "open ruimte" of "niet-open ruimte" voor patrijs.
-Op deze manier kon een afbakening van de open ruimte bepaald worden.
-
-Voor de berekeningen van de dichtheden van de broedparen werd steeds gewerkt met de meest recente versie van de BWK.
-Ook @Onkelinx2021 gebruikte de meest recente versie van de BWK [@BWK].
-De verschillende versies verwijzen echter naar de kaart als geheel, niet naar de laatste update van elk polygoon in de kaart.
-Zo stelt De Saeger et al. (2020) dat in de meest actuele versie ongeveer driekwart van de oppervlakte van het niet urbaan gebied gebaseerd is op een kartering van 2007 of ouder (fig. 1‐1 in @BWK).
-Het gevolg is dat de BWK voor sommige gebieden niet langer het actuele landgebruik weergeeft.
-Wat op zijn beurt weer aanleiding geeft tot fouten in de kaart met open ruimte relevant voor patrijs.
-
-In het kader van de uitrol van een standaard telprotocol voor patrijs, werd daarom beslist om een alternatieve bepaling van de open ruimte voor patrijs uit te werken.
-Gezien de hoeveelheid vragen en opmerkingen over de vorige kaart, willen we de nieuwe kaart tevens transparant, open en reproduceerbaar maken.
-Elke betrokkene kan hierdoor de werkwijze (laten) nakijken of zelf opnieuw (laten) uitvoeren.
-Om dit te kunnen garanderen, gebruiken we enkel kaartmateriaal dat als [open data](https://nl.wikipedia.org/wiki/Open_data) beschikbaar is en [vrije software](https://nl.wikipedia.org/wiki/Vrije_software_en_opensourcesoftware).
-In dit rapport beschreven we welke alternatieve kaarten we in overweging genomen hebben.
-Vervolgens beschrijven we op welke manier we de nieuwe open ruimte kaart uitwerken.
 
 ```{r setup, include = FALSE}
 library(knitr)
