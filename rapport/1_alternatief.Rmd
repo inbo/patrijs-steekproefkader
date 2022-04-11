@@ -6,12 +6,12 @@ Een belangrijke randvoorwaarde die we stellen is dat de kaartlaag als open data 
 Verder willen we een kaart die voldoende recent is en regelmatig zal bijgewerkt worden in de toekomst.
 Anders lopen we binnen een paar jaar terug tegen het probleem aan waar we met de eerste kaart mee kampten, namelijk verouderd kaartmateriaal.
 
-Om het verschil tussen de verschillende kaartlagen zichtbaar te maken tonen we telkens een kaart van hetzelfde ramdon gekozen gebied in Vlaanderen.
+Om het verschil tussen de verschillende kaartlagen zichtbaar te maken tonen we telkens een kaart van hetzelfde gebied in Vlaanderen.
 Figuur \@ref(fig:basis) toont de meest recente luchtfoto's van dit gebied.
 We selecteerden dit gebied omdat het een inzicht geeft in de verschillen tussen de kaartlagen.
 In de webversie van dit rapport zijn de kaarten interactief.
 Daar kan de lezer de kaart verplaatsen naar een gebied naar eigen keuze.
-De lezer kan in de webversie eveneens de laag met de jachtterreinen activeren.
+De lezer kan in de online eveneens de laag met de jachtterreinen activeren.
 
 ```{r basis, fig.cap = "Basiskaart met de meest recente luchtfoto's."}
 basis <- leaflet(width = "100%", height = "770") %>%
@@ -66,7 +66,7 @@ Bron: https://www.geopunt.be/catalogus/datasetfolder/2c64ca0c-5053-4a66-afac-24d
 De meest recente versie geeft het landgebruik voor 2018 weer.
 In principe zal men de kaart elke drie jaar vernieuwen.
 De kaart is beschikbaar onder de [modellicentie gratis hergebruik](https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html).
-Het betreft een rasterkaart met resolutie van 1x1 m gebaseerd op zomerluchtfoto's.
+Het betreft een rasterkaart met resolutie van 1 x 1 m gebaseerd op zomerluchtfoto's.
 
 Een segmentatiealgoritme deelt de rastercellen op in vier klassen: "landbouw", "laag groen", "hoog groen" en "niet groen".
 De klasse "laag groen" maakt deze laag minder geschikt als bron.
@@ -74,7 +74,7 @@ Ze omvat zowel relevante gebieden (graslanden) als niet relevante gebieden (tuin
 Daarnaast is deze kaart niet foutenvrij doordat het segmentatiealgoritme de luchtfoto's niet steeds correct interpreteert.
 Zo werden verschillende akkers waar op het moment van de foto veel plassen op stonden foutief geklasseerd als "niet groen".
 
-(ref:groenkaart) Groenkaart versie 2018. De legende is beschikbaar in fig \@ref(fig:groenkaart-legende).
+(ref:groenkaart) Groenkaart versie 2018. De legende is beschikbaar in fig. \@ref(fig:groenkaart-legende).
 
 ```{r groenkaart, fig.cap = "(ref:groenkaart)"}
 basis %>%
@@ -113,7 +113,7 @@ Bron: https://www.geopunt.be/catalogus/datasetfolder/fe979929-a2b5-4353-94c5-608
 De meest recente versie geeft het landgebruik voor 2019 weer.
 In principe zal men de kaart elke drie jaar vernieuwen.
 De kaart is beschikbaar onder de [modellicentie gratis hergebruik](https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html).
-Het betreft een rasterkaart met resolutie van 10x10 m bekomen door meerdere databronnen met elkaar te combineren [@landgebruik].
+Het betreft een rasterkaart met resolutie van 10 x 10 m bekomen door meerdere databronnen met elkaar te combineren [@landgebruik].
 
 Deze kaart omvat 18 klassen van landgebruik.
 Relevant voor patrijs zijn "akker" en "grasland".
@@ -158,7 +158,7 @@ Bron: https://www.geopunt.be/catalogus/datasetfolder/13cc8a4e-7292-4cb8-afc7-6e0
 De meest recente versie geeft de situatie van 2020 weer.
 In principe zal men de kaart jaarlijks vernieuwen.
 De kaart is beschikbaar onder de [modellicentie gratis hergebruik](https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html).
-Het betreft een vectoriele polygonenkaart gebaseerd op de perceelsaangifte van de [verzamelaanvragen](https://lv.vlaanderen.be/nl/landbouwbeleid/landbouwbeleid-eu/gemeenschappelijk-landbouwbeleid-glb-2020/informatiefiches) van de [landbouwers](https://lv.vlaanderen.be/nl/bedrijfsvoering/verzamelaanvraag-randvoorwaarden/verzamelaanvraag/algemene-voorwaarden#waarvoor%20dient%20VA).
+Het betreft een vectoriële polygonenkaart gebaseerd op de perceelsaangifte van de [verzamelaanvragen](https://lv.vlaanderen.be/nl/landbouwbeleid/landbouwbeleid-eu/gemeenschappelijk-landbouwbeleid-glb-2020/informatiefiches) van de [landbouwers](https://lv.vlaanderen.be/nl/bedrijfsvoering/verzamelaanvraag-randvoorwaarden/verzamelaanvraag/algemene-voorwaarden#waarvoor%20dient%20VA).
 
 De kaart bevat voor elk perceel de gewasgroep en de hoofdteelt.
 Op basis van deze informatie kunnen we open ruimte definiëren.
@@ -201,12 +201,12 @@ include_graphics("landbouw-legende.png")
 
 Bron: https://www.openstreetmap.org
 
-OpenStreetmap is een kaart waar wereldwijd vrijwilligers aan bijdragen.
+OpenStreetMap is een kaart waar wereldwijd vrijwilligers aan bijdragen.
 Het updaten van de kaart hangt bijgevolg af van de vrijwilligers.
 De databank bevat de geschiedenis van alle objecten.
 De meest recente toestand van elke locatie is beschikbaar als een vectoriële [polygonenkaartlaag](https://download.geofabrik.de/europe/belgium.html).
 Ze bieden de informatie tevens aan als verschillende kant en klaar [online kaarten](https://wiki.openstreetmap.org/wiki/NL:Using_OpenStreetMap#Kant_en_klare_online_kaarten).
-De kaart is beschikbaar onder de [Open Database License](https://wiki.openstreetmap.org/wiki/NL:Open_Database_License).
+De kaart is beschikbaar onder de [`Open Database License`](https://wiki.openstreetmap.org/wiki/NL:Open_Database_License).
 
 Elke polygoon bevat informatie in een gestandaardiseerd formaat.
 Naast landgebruik kan er informatie zijn over gebouwen, administratieve gebieden, ...
@@ -246,7 +246,7 @@ Ze is gebiedsdekkend zodat we ook informatie hebben over de gebieden die niet do
 Daarnaast biedt deze kaart als enige het voordeel dat ze relatief eenvoudig bij te werken valt.
 Aanpassingen in de OpenStreetMap databank zijn bovendien een paar dagen later beschikbaar in de afgeleide producten.
 Dit laat ons toe om voor de start van de tellingen van de voorjaarsstand van patrijs een versie van de open ruimte kaart te publiceren die gebaseerd is op een recente versie van OpenStreetMap.
-Tijdens de tellingen van de voorjaarsstand van patrijs kunnen jagers in het veld controleren hoe accurraat deze kaart is.
+Tijdens de tellingen van de voorjaarsstand van patrijs kunnen jagers in het veld controleren hoe accuraat deze kaart is.
 Afwijkingen te wijten aan fouten in OpenStreetMap kunnen ze dan melden aan OpenStreetMap of zelf (laten) corrigeren.
 Na de tellingen van de voorjaarsstand van patrijs maken we een nieuwe versie van de open ruimte kaart aan.
 Ook nu baseren we ons op de meest recente informatie uit OpenStreetMap.

@@ -7,7 +7,7 @@ Het Instituut voor Natuur- en Bosonderzoek (INBO) staat in voor de berekening va
 Aangezien de jachtwetgeving geen definitie geeft van de open ruimte, kozen we bij de invoering van deze regelgeving om te werken met de biologische waarderingskaart ([BWK](https://www.vlaanderen.be/inbo/de-biologische-waarderingskaart/bwk-belang/)).
 De BWK is een gebiedsdekkende inventaris van het biologische milieu en van de bodembedekking van het volledige Vlaams Gewest.
 Deze kaart wordt door het INBO opgemaakt aan de hand van een inventarisatie met behulp van vooraf gedefinieerde karteringseenheden.
-De verschillende karteringseenheden werden beoordeeld als behorende tot de categorie "open ruimte" of "niet-open ruimte" voor patrijs.
+De verschillende karteringseenheden werden beoordeeld als behorende tot de categorie "open ruimte" of "niet open ruimte" voor patrijs.
 Op deze manier kon een afbakening van de open ruimte bepaald worden.
 
 Voor de berekeningen van de dichtheden van de broedparen werd steeds gewerkt met de meest recente versie van de BWK.

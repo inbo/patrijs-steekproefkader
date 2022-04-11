@@ -1,4 +1,4 @@
-\benglish
+\benglish <!-- spell-check: ignore -->
 
 # English abstract {-}
 
@@ -45,7 +45,7 @@ We established the conversion as a computer program.
 We publish that computer program together with the open space map and the source maps that were used (OpenStreetMap and hunting area boundaries).
 In this way, everyone can check the rules (or have them checked), use, or implement them themselves.
 
-\eenglish
+\eenglish <!-- spell-check: ignore -->
 
 <!-- hier komt de inhoudstafel bij pdf -->
-\mainmatter
+\mainmatter <!-- spell-check: ignore -->

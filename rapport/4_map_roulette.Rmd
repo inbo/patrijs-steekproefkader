@@ -6,10 +6,12 @@ Daarom hebben ze https://maproulette.org/ ontwikkelt.
 Daarmee bieden ze de vrijwilligers uitdagingen aan die elk bestaan uit een aantal taken rond een zelfde thema.
 Een taak is dan een mogelijk probleem in de OpenStreetMap databank dat in principe makkelijk te verhelpen is.
 Vrijwilligers kunnen een taak aannemen om het probleem in detail te bekijken.
-Vervolgens geven ze aan of a) ze het probleem opgelost hebben, b) het probleem ondertussen reeds opgelost was, c) het probleem zich niet stelde (de OpenStreetMap data was correct), d) het probleem te moeilijk is om op te lossen.
+Vervolgens geven ze aan of 1) ze het probleem opgelost hebben, 2) het probleem ondertussen reeds opgelost was, 3) het probleem zich niet stelde (de OpenStreetMap data was correct), 4) het probleem te moeilijk is om op te lossen.
 
 Om dit meer concreet te maken verwijzen we naar een eerste [uitdaging](https://maproulette.org/browse/challenges/23674) die we zelf aangemaakt hebben.
-Hierbij hebben we gekeken waar er grasland _sensu lato_ is volgens de landbouwgebruikpercelen (§\@ref(s:landbouw)).
+Hierbij hebben we gekeken waar er grasland 
+_sensu lato_ <!-- spell-check: ignore -->
+is volgens de landbouwgebruikspercelen (§\@ref(s:landbouw)).
 Vervolgens selecteerden we de percelen binnen de jachtterreinen.
 In het ideale geval zitten al deze percelen in onze open ruimte kaart.
 Om dit na te gaan verwijderen we in de selectie alles wat als grasland of akker in OpenStreetMap staat.

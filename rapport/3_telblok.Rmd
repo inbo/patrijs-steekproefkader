@@ -12,7 +12,7 @@ Daarom moet elk telblok passen binnen een begrenzingsvak met een lange zijde van
 In een eerste stap gaan we na voor welke jachtterreinen de open ruimte kleiner dan 150 ha is en het geheel een begrenzingsvlak heeft dat voldoende klein is.
 Voor deze jachtterrein is de volledige open ruimte binnen het jachtterrein het telblok.
 
-Bij de grotere jacchtterreinen zullen we eerste de open ruimte in kleinere eenheden splitsen.
+Bij de grotere jachtterreinen zullen we eerste de open ruimte in kleinere eenheden splitsen.
 Eerst relatief kleine eenheden maken en die nadien samenvoegen tot telblokken, laat toe een zo goed mogelijke indeling te maken.
 Daarom streven we in deze fase naar eenheden kleiner dan 50 ha en met een begrenzingsvak van minder dan 1900 m langs elke zijde.
 In eerste instantie kijken we naar de reeds bestaande eenheden binnen een jachtterrein.
@@ -101,16 +101,16 @@ ggplot(punten, aes(x = x, y = y)) +
   coord_equal()
 ```
 
-Om dit te kunnen automatiseren bepalen we eerst van elke eenheid zijn [zwaartepunt](https://nl.wikipedia.org/wiki/Zwaartepunt) (centroïde).
+Om dit te kunnen automatiseren bepalen we eerst van elke eenheid zijn [zwaartepunt](https://nl.wikipedia.org/wiki/Zwaartepunt) (zwaartepunt).
 Vervolgens berekenen we een [Delaunay-triangulatie](https://nl.wikipedia.org/wiki/Delaunay-triangulatie) van deze zwaartepunten.
 Op deze manier verbinden we twee zwaartepunten zodat een set van niet overlappende driehoeken ontstaat.
 We veronderstellen dat, wanneer het zwaartepunt van twee eenheden met elkaar verbonden is, deze eenheden naast elkaar liggen zonder dat er een andere eenheid tussen ligt.
 Wanneer deze eenheden gescheiden zijn door iets wat geen open ruimte is (bos, dorpskern, ...) kan het zijn dat ze alsnog ver uit elkaar liggen.
 Daarom beperken we ons tot de verbonden zwaartepunten die minder dan 1 km uit elkaar liggen.
-In figuur \@ref(fig:samen-2) tonen we de Delaunay-triagulatie toegepast op het voorbeeld uit fig. \@ref(fig:samen-1).
-Merk op dat eenheid "E" te ver van de andere eenheden ligt.
+In figuur \@ref(fig:samen-2) tonen we de Delaunay-triangulatie toegepast op het voorbeeld uit fig. \@ref(fig:samen-1).
+Merk op dat eenheid `E` te ver van de andere eenheden ligt.
 We verbreken ook verbindingen met eenheden die reeds te groot zijn.
-In het voorbeeld is dat "F".
+In het voorbeeld is dat `F`.
 
 ```{r samen-2, fig.cap = "Toevoegen van Delaunay-triangulatie met aanduiding van de afstand tussen de zwaartepunten."}
 punten %>%
@@ -150,7 +150,7 @@ ggplot(punten, aes(x = x, y = y)) +
 We willen zoveel mogelijk kleine telblokken vermijden.
 Dat kunnen we door te kijken bij welke eenheden we de kleinste eenheid kunnen samenvoegen.
 We kijken met welke eenheden de kleinste eenheid verbonden is.
-In ons voorbeeld is "C" de kleinste eenheid en deze is verbonden met "A" en "D".
+In ons voorbeeld is `C` de kleinste eenheid en deze is verbonden met `A` en `D`.
 De vraag is nu welke groep het meest compacte resultaat geeft.
 We vatten de compactheid van een groep van $N$ eenheden in formule \@ref(eq:penalty).
 Hierbij is $O_i$ de oppervlakte van de eenheid $i$ in ha, $L_i$ de langste zijde en $K_i$ de kortste zijde van het begrenzingsvak.
@@ -160,10 +160,12 @@ Een lage $P$ is een goede balans tussen zo weinig mogelijk telblokken en compact
 In tabel \@ref(tab:compact-eenheid) geven we deze maten voor elke eenheid of groep van eenheden.
 (Groepen van) eenheden die niet voldoen aan de voorwaarden $O_i < 150$, $L_i < 2500$ en $K_i < 1900$ zijn te groot en gebruiken we niet.
 
+<!-- spell-check: ignore:start -->
 \begin{equation}
   P = \sum^N_{i=1} \left(\frac{O_i}{150} + \frac{L_i}{2500} + \frac{K_i}{1900}\right)
   (\#eq:penalty)
 \end{equation}
+<!-- spell-check: ignore:end -->
 
 ```{r compact-eenheid}
 tribble(
@@ -227,12 +229,12 @@ tribble(
 ```
 
 In tabel \@ref(tab:compact) geven we de totale compactheidscore voor verschillende combinaties van (groepen van) eenheden.
-We zien dat "C" samenvoegen met "A" of "D" een betere (lagere) score geeft.
-De beste combinatie is deze waarbij we "A" en "C" samenvoegen.
-De kleinste eenheid is nu "D", welke verbonden is met "AC" en "B".
-De beste combinatie daarvan is "BD".
-Wat er voor zorgt dat "AC" de kleinste eenheid is, welke alleen met "BD" verbonden is.
-Nadat we deze samenvoegen tot "ABCD", is "E" de kleinste eenheid.
+We zien dat `C` samenvoegen met `A` of `D` een betere (lagere) score geeft.
+De beste combinatie is deze waarbij we `A` en `C` samenvoegen.
+De kleinste eenheid is nu `D`, welke verbonden is met `AC` en `B`.
+De beste combinatie daarvan is `BD`.
+Wat er voor zorgt dat `AC` de kleinste eenheid is, welke alleen met `BD` verbonden is.
+Nadat we deze samenvoegen tot `ABCD`, is `E` de kleinste eenheid.
 Deze heeft geen verbindingen met andere eenheden, zodat we deze overslaan.
-De tweede kleinste eenheid is "ABCD" welke eveneens geen verbindingen heeft en we bijgevolg overslaan.
-Nu hebben we alle eenheden behandeld en krijgt dit fictieve jachtterrein drie telblokken "ABCD", "E" en "F".
+De tweede kleinste eenheid is `ABCD` welke eveneens geen verbindingen heeft en we bijgevolg overslaan.
+Nu hebben we alle eenheden behandeld en krijgt dit fictieve jachtterrein drie telblokken `ABCD`, `E` en `F`.
