@@ -2,16 +2,16 @@
 
 De belangrijkste voorwaarde is een kaartlaag die bruikbare informatie levert om te bepalen wat open ruimte voor de patrijs is en wat niet.
 
-Een belangrijke randwaarde die we stellen is dat de kaartlaag als open data beschikbaar moet zijn.
+Een belangrijke randvoorwaarde die we stellen is dat de kaartlaag als open data beschikbaar moet zijn.
 Verder willen we een kaart die voldoende recent is en regelmatig zal bijgewerkt worden in de toekomst.
 Anders lopen we binnen een paar jaar terug tegen het probleem aan waar we met de eerste kaart mee kampten, namelijk verouderd kaartmateriaal.
 
-Om het verschil tussen de verschillende kaartlagen zichtbaar te maken geven we telkens een kaart.
-Figuur \@ref(fig:basis) toont de meest recente luchtfotos van dit gebied.
+Om het verschil tussen de verschillende kaartlagen zichtbaar te maken tonen we telkens een kaart van hetzelfde ramdon gekozen gebied in Vlaanderen.
+Figuur \@ref(fig:basis) toont de meest recente luchtfoto's van dit gebied.
 We selecteerden dit gebied omdat het een inzicht geeft in de verschillen tussen de kaartlagen.
 In de webversie van dit rapport zijn de kaarten interactief.
 Daar kan de lezer de kaart verplaatsen naar een gebied naar eigen keuze.
-De lezer kan eveneens de laag met de jachtterreinen activeren.
+De lezer kan in de webversie eveneens de laag met de jachtterreinen activeren.
 
 ```{r basis, fig.cap = "Basiskaart met de meest recente luchtfoto's."}
 basis <- leaflet(width = "100%", height = "770") %>%
@@ -74,7 +74,7 @@ Ze omvat zowel relevante gebieden (graslanden) als niet relevante gebieden (tuin
 Daarnaast is deze kaart niet foutenvrij doordat het segmentatiealgoritme de luchtfoto's niet steeds correct interpreteert.
 Zo werden verschillende akkers waar op het moment van de foto veel plassen op stonden foutief geklasseerd als "niet groen".
 
-(ref:groenkaart) Groenkaart versie 2018. De legende is beschikbaar in fig. \@ref(fig:groenkaart-legende).
+(ref:groenkaart) Groenkaart versie 2018. De legende is beschikbaar in fig \@ref(fig:groenkaart-legende).
 
 ```{r groenkaart, fig.cap = "(ref:groenkaart)"}
 basis %>%
@@ -113,7 +113,7 @@ Bron: https://www.geopunt.be/catalogus/datasetfolder/fe979929-a2b5-4353-94c5-608
 De meest recente versie geeft het landgebruik voor 2019 weer.
 In principe zal men de kaart elke drie jaar vernieuwen.
 De kaart is beschikbaar onder de [modellicentie gratis hergebruik](https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html).
-Het betreft een rasterkaart met resolutie van 10x10 m gebaseerd door meerdere databronnen met elkaar te combineren [@landgebruik].
+Het betreft een rasterkaart met resolutie van 10x10 m bekomen door meerdere databronnen met elkaar te combineren [@landgebruik].
 
 Deze kaart omvat 18 klassen van landgebruik.
 Relevant voor patrijs zijn "akker" en "grasland".
@@ -232,7 +232,7 @@ basis %>%
 
 # Keuze van de basiskaartlaag
 
-Geen enkele van kaarten uit het overige hoofdstuk is de perfecte oplossing waar we naar op zoek zijn.
+Geen enkele van de kaarten uit het vorige hoofdstuk is de perfecte oplossing waar we naar op zoek zijn.
 Elk van de kaarten heeft zijn voor- en nadelen.
 De groenkaart (§\@ref(s:groenkaart)) en de landsgebruikskaart (§\@ref(s:landgebruik)) hebben een te ruwe opdeling in klassen.
 De landbouwgebruikspercelen (§\@ref(s:landbouw)) is een goede kaart, doch enkel voor de percelen in professioneel landbouwgebruik.
@@ -245,13 +245,13 @@ Ze heeft een voldoende fijne indeling in klassen.
 Ze is gebiedsdekkend zodat we ook informatie hebben over de gebieden die niet door de landbouw in gebruik zijn.
 Daarnaast biedt deze kaart als enige het voordeel dat ze relatief eenvoudig bij te werken valt.
 Aanpassingen in de OpenStreetMap databank zijn bovendien een paar dagen later beschikbaar in de afgeleide producten.
-Dit laat ons toe om voor de start van de tellingen van de voorjaarsstand van patrijs een versie van de open ruimte kaart te publiceren die gebaseerd op een recente versie van OpenStreetMap.
+Dit laat ons toe om voor de start van de tellingen van de voorjaarsstand van patrijs een versie van de open ruimte kaart te publiceren die gebaseerd is op een recente versie van OpenStreetMap.
 Tijdens de tellingen van de voorjaarsstand van patrijs kunnen jagers in het veld controleren hoe accurraat deze kaart is.
-Fouten te wijten aan fouten in OpenStreetMap kunnen ze dan melden aan OpenStreetMap of zelf (laten) corrigeren.
+Afwijkingen te wijten aan fouten in OpenStreetMap kunnen ze dan melden aan OpenStreetMap of zelf (laten) corrigeren.
 Na de tellingen van de voorjaarsstand van patrijs maken we een nieuwe versie van de open ruimte kaart aan.
 Ook nu baseren we ons op de meest recente informatie uit OpenStreetMap.
 Op die manier stromen verbeteringen in OpenStreetMap door naar de open ruimte kaart.
-En houden we bij het bepalen van de gemiddelde dichtheid van patrijs in de WBE rekening met de meest recent beschikbare informatie.
+En zo houden we bij het bepalen van de gemiddelde dichtheid van patrijs in de WBE rekening met de meest recent beschikbare informatie.
 
 In het volgende hoofdstuk beschrijven we welke selecties we uitvoeren op basis van OpenStreetMap om de open ruimte kaart aan te maken.
 Iedereen kan op basis van deze regels vaststellen waarom we een bepaald perceel al dan niet als open ruimte indelen.

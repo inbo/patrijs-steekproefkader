@@ -6,14 +6,14 @@ Daarom hebben ze https://maproulette.org/ ontwikkelt.
 Daarmee bieden ze de vrijwilligers uitdagingen aan die elk bestaan uit een aantal taken rond een zelfde thema.
 Een taak is dan een mogelijk probleem in de OpenStreetMap databank dat in principe makkelijk te verhelpen is.
 Vrijwilligers kunnen een taak aannemen om het probleem in detail te bekijken.
-Vervolgens geven ze aan of ze a) het probleem opgelost hebben, b) het probleem ondertussen reeds opgelost was, c) het probleem zich niet stelde (de OpenStreetMap data was correct), d) het probleem te moeilijk is om op te lossen.
+Vervolgens geven ze aan of a) ze het probleem opgelost hebben, b) het probleem ondertussen reeds opgelost was, c) het probleem zich niet stelde (de OpenStreetMap data was correct), d) het probleem te moeilijk is om op te lossen.
 
 Om dit meer concreet te maken verwijzen we naar een eerste [uitdaging](https://maproulette.org/browse/challenges/23674) die we zelf aangemaakt hebben.
 Hierbij hebben we gekeken waar er grasland _sensu lato_ is volgens de landbouwgebruikpercelen (§\@ref(s:landbouw)).
 Vervolgens selecteerden we de percelen binnen de jachtterreinen.
 In het ideale geval zitten al deze percelen in onze open ruimte kaart.
 Om dit na te gaan verwijderen we in de selectie alles wat als grasland of akker in OpenStreetMap staat.
-We verwijderen tevens de smalle smalle slierten (< 5 m) die ontstaan wanneer de grenzen van verschillende kaartlagen niet perfect overlappen.
+We verwijderen tevens smalle slierten (< 5 m) die ontstaan wanneer de grenzen van verschillende kaartlagen niet perfect overlappen.
 Van de overgebleven gebieden houden we enkel de stukken over die minstens 1 ha groot zijn.
 Eind november 2021 bleken een kleine 1200 gebieden (gemiddeld iets minder dan 2 ha groot) gespreid over Vlaanderen aan deze selectie te voldoen.
 Elk van deze gebiedjes hebben we als taak toegevoegd aan de uitdaging "ontbrekende graslanden in Vlaanderen".

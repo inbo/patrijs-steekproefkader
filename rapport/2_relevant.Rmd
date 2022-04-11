@@ -8,7 +8,7 @@ Door deze lijst te vergelijken met onderstaande sectie weet de lezer welke klass
 ## Positieve selectie
 
 We selecteren alle gebieden die voldoen aan een van de onderstaande kenmerken.
-Om de kaart zo compact mogelijk te maken voegen we naastliggende polygonen samen tot een geheel.
+Om de kaart zo compact mogelijk te maken voegen we aangrenzende polygonen samen tot een geheel.
 Daarnaast snijden we ze bij tot de jachtterreinen.
 Het resultaat van deze kaart is een maximale kaart van de open ruimte binnen de Vlaamse jachtterreinen.
 
@@ -49,10 +49,10 @@ Categorieën die we buiten beschouwing laten zijn:
 
 Is dit landgebruik wel relevant voor patrijs?
 Wanneer we deze gebieden vergelijken met de biologische waarderingskaart [@BWK], stellen we vast dat het meerendeel van de percelen een BWK code bevatten die we vorige jaar als open ruimte beschouwden.
-We kunnen ze eveneens vergelijking met de waarnemingen van de tellingen van patrijs uit het voorjaar van 2021.
+We kunnen ze eveneens vergelijken met de waarnemingen van de tellingen van patrijs uit het voorjaar van 2021.
 Als er in de onmiddellijke omgeving waarnemingen van patrijs zijn, dan zijn er meestal ook waarnemingen van patrijs in deze gebieden.
 Merk op dat deze set zowel percelen omvat die expliciet als drassig weiland aangeduid zijn en andere percelen waarbij het type `wetland` niet gespecifiëerd is.
-In deze laatste groep kan een aantal percelen bevatten in de praktijk geen drassig weiland maar moeras, rietveld, ... zijn.
+Deze laatste groep kan een aantal percelen bevatten die in de praktijk geen drassig weiland maar moeras, rietveld, ... zijn.
 In dat geval zijn ze ten onrechte opgenomen in de open ruimte.
 Wanneer dit in OpenStreetMap gecorrigeerd is, zullen dergelijke percelen bij de volgende versie van de open ruimte kaart automatisch uit de selectie gehaald worden.
 

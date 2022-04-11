@@ -2,7 +2,7 @@
 
 De wildbeheereenheden die wensen te jagen op patrijs, dienen de patrijzen te monitoren binnen de open ruimte in hun werkingsgebied.
 Volgens @telprotocol kan een teller een gebied van 125 tot 175 ha inventariseren.
-Daarom delen we de open ruimte van de WBE in een meerdere telblokken.
+Daarom delen we de open ruimte van de WBE op in een meerdere telblokken.
 Hierbij streven we naar telblokken die hoogstens 150 ha open ruimte bevatten.
 Vanuit de jagerij kwam het signaal dat ze verkiezen om geen telblokken te hebben die meerdere jachtterreinen omvatten.
 Aangezien sommige jachtterreinen weinig open ruimte bevatten zullen sommige telblokken hierdoor klein zijn.
@@ -13,7 +13,7 @@ In een eerste stap gaan we na voor welke jachtterreinen de open ruimte kleiner d
 Voor deze jachtterrein is de volledige open ruimte binnen het jachtterrein het telblok.
 
 Bij de grotere jacchtterreinen zullen we eerste de open ruimte in kleinere eenheden splitsen.
-Eerste relatief kleine eenheden maken en die nadien samenzetten tot telblokken, laat toe een zo optimaal mogelijke indeling te maken.
+Eerst relatief kleine eenheden maken en die nadien samenvoegen tot telblokken, laat toe een zo goed mogelijke indeling te maken.
 Daarom streven we in deze fase naar eenheden kleiner dan 50 ha en met een begrenzingsvak van minder dan 1900 m langs elke zijde.
 In eerste instantie kijken we naar de reeds bestaande eenheden binnen een jachtterrein.
 Deze eenheden zijn volledig van elkaar gescheiden door delen die geen open ruimte of geen jachtgebied zijn.
@@ -21,14 +21,14 @@ Eenheden die reeds voldoende klein zijn (< 150 ha en begrenzingsvak < 1900 m lan
 
 Grotere eenheden proberen we in kleinere eenheden te splitsen langs grenzen die in het veld duidelijk zichtbaar zijn.
 Hiervoor gebruiken we de beschikbare informatie over wegen ([`highway`](https://wiki.openstreetmap.org/wiki/Key:highway)) en waterlopen ([`waterway`](https://wiki.openstreetmap.org/wiki/Key:waterway)) uit OpenStreetMap.
-In tabel \@ref(tab:indeling) geven we aantal welke elementen we gebruiken en in welke volgorde.
+Tabel \@ref(tab:indeling) toont welke elementen we gebruiken en in welke volgorde.
 We starten met de belangrijkste elementen die er toe doen.
 Vandaar dat we eerst splitsen langs steenwegen en dan langs lokale verbindingswegen.
 Splitsen langs belangrijkere wegen zoals snelwegen is niet relevant aangezien er geen eenheden zijn waar een snelweg doorloopt.
-Na elke split zetten we de eenheden nu voldoende klein zijn afzonderlijk.
+Na elke split zetten we de eenheden die nu voldoende klein zijn apart.
 De overige eenheden splitsen we met het volgende element.
 Wanneer we alle elementen van tabel \@ref(tab:indeling) afgewerkt hebben blijven er nog een paar grote eenheden over.
-Mogelijk zijn in deze gebieden nog niet alle element toegevoegd aan OpenStreetMap.
+Mogelijk zijn in deze gebieden nog niet alle elementen toegevoegd aan OpenStreetMap.
 Een andere mogelijkheid is dat er in het gebied geen elementen aanwezig zijn die de eenheid doorsnijden.
 
 ```{r indeling}
@@ -59,7 +59,7 @@ tribble(
   ) %>%
   kable(
     caption = "Gebruikte informatie uit OpenStreetMap om te grote eenheden
-      stapsgewijs te verkleinen.",
+      stapsgewijs te verkleinen, in volgorde van gebruik.",
     escape = FALSE, format = "simple"
   )
 ```
@@ -103,11 +103,11 @@ ggplot(punten, aes(x = x, y = y)) +
 Om dit te kunnen automatiseren bepalen we eerst van elke eenheid zijn [zwaartepunt](https://nl.wikipedia.org/wiki/Zwaartepunt) (centroïde).
 Vervolgens berekenen we een [Delaunay-triangulatie](https://nl.wikipedia.org/wiki/Delaunay-triangulatie) van deze zwaartepunten.
 Op deze manier verbinden we twee zwaartepunten zodat een set van niet overlappende driehoeken ontstaat.
-We veronderstellen dat wanneer het zwaartepunt van twee eenheden met elkaar verbonden is, deze eenheden naast elkaar liggen zonder dat er een andere eenheid tussen ligt.
+We veronderstellen dat, wanneer het zwaartepunt van twee eenheden met elkaar verbonden is, deze eenheden naast elkaar liggen zonder dat er een andere eenheid tussen ligt.
 Wanneer deze eenheden gescheiden zijn door iets wat geen open ruimte is (bos, dorpskern, ...) kan het zijn dat ze alsnog ver uit elkaar liggen.
 Daarom beperken we ons tot de verbonden zwaartepunten die minder dan 1 km uit elkaar liggen.
 In figuur \@ref(fig:samen-2) tonen we de Delaunay-triagulatie toegepast op het voorbeeld uit fig. \@ref(fig:samen-1).
-Merk dat eenheid "E" te ver van de andere eenheden ligt.
+Merk op dat eenheid "E" te ver van de andere eenheden ligt.
 We verbreken ook verbindingen met eenheden die reeds te groot zijn.
 In het voorbeeld is dat "F".
 
@@ -147,9 +147,9 @@ ggplot(punten, aes(x = x, y = y)) +
 ```
 
 We willen zoveel mogelijk kleine telblokken vermijden.
-Dan kunnen we door te kijken bij welke eenheden we de kleinste eenheid kunnen samenvoegen.
+Dat kunnen we door te kijken bij welke eenheden we de kleinste eenheid kunnen samenvoegen.
 We kijken met welke eenheden de kleinste eenheid verbonden is.
-In ons voorbeeld is "C" de kleinste eenheid en is deze verbonden met "A" en "D".
+In ons voorbeeld is "C" de kleinste eenheid en deze is verbonden met "A" en "D".
 De vraag is nu welke groep het meest compacte resultaat geeft.
 We vatten de compactheid in formule \@ref(eq:penalty).
 Hierbij is $O_i$ de oppervlakte van de eenheid $i$ in ha, $L_i$ de langste zijde en $K_i$ de kortste zijde van het begrenzingsvak.
