@@ -4,7 +4,15 @@ library(sf)
 library(here)
 library(jsonlite)
 
+layout <- c("Cartoweb", "luchtfoto", "OSM")
+layout <- tail(layout, -1)
+provincie <- c("WEVL", "OOVL", "ANTW", "LIMB", "VLBR")
 target_folder <- normalizePath(file.path("~", "patrijs"))
+expand_grid(target_folder, layout, provincie) %>%
+  transmute(path = file.path(target_folder, layout, provincie)) %>%
+  pull(.data$path) %>%
+  walk(dir.create, showWarnings = FALSE, recursive = TRUE)
+
 source_folder <- here("steekproef")
 
 target_folder %>%
@@ -17,9 +25,10 @@ here(source_folder, "telblok.gpkg") %>%
   st_drop_geometry() %>%
   filter(!is.na(.data$WBENR)) %>%
   distinct(.data$VELDID) %>%
-  expand_grid(layout = c("OSM", "luchtfoto")) %>%
+  expand_grid(layout = layout) %>%
   anti_join(done, by = c("VELDID", "layout")) %>%
-  arrange(.data$VELDID, .data$layout) %>%
+  arrange(.data$layout, desc(.data$VELDID)) %>%
+  head(2000) %>%
   transmute(
     PARAMETERS = map2(.data$layout, .data$VELDID, ~list(
       LAYOUT = sprintf("\'%s\'", .x),
@@ -31,7 +40,8 @@ here(source_folder, "telblok.gpkg") %>%
     )),
     OUTPUTS = map2(.data$layout, .data$VELDID, ~list(
       OUTPUT = sprintf(
-        "\'%s/%s/jachtveld_%s_%s.pdf'", target_folder, .x, .y, .x
+        "\'%s/%s/%s/jachtveld_%s_%s.pdf'", target_folder, .x,
+        provincie[as.integer(str_sub(.y, 1, 1))], .y, .x
       )
     ))
   ) %>%
@@ -41,6 +51,5 @@ here(source_folder, "telblok.gpkg") %>%
     )
   ) %>%
   pull(.data$cmd) %>%
-  head(2000) %>%
   toJSON(auto_unbox = TRUE) %>%
   writeLines(here(source_folder, "batch.json"))
