@@ -54,7 +54,7 @@ Als er in de onmiddellijke omgeving waarnemingen van patrijs zijn, dan zijn er m
 Merk op dat deze set zowel percelen omvat die expliciet als drassig weiland aangeduid zijn en andere percelen waarbij het type `wetland` niet gespecificeerd is.
 Deze laatste groep kan een aantal percelen bevatten die in de praktijk geen drassig weiland maar moeras, rietveld, ... zijn.
 In dat geval zijn ze ten onrechte opgenomen in de open ruimte.
-Wanneer dit in OpenStreetMap gecorrigeerd is, zullen dergelijke percelen bij de volgende versie van de open ruimte kaart automatisch uit de selectie gehaald worden.
+Wanneer dit in OpenStreetMap gecorrigeerd is, zullen dergelijke percelen bij de volgende versie van de open-ruimte-kaart automatisch uit de selectie gehaald worden.
 
 ### Particuliere weides
 

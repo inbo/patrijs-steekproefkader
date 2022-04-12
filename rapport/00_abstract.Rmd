@@ -17,10 +17,10 @@ To obtain the area of open space in each GMU, we need a map that defines what op
 After the spring 2021 censuses, several hunters informed us that the open space map that was used does not always correspond to reality.
 Some plots were classified as open space on the map but are a built-up or forested area in reality.
 This overestimated the area of open space and underestimated the density of partridge.
-The previous version of the open space map is based on the most recent publication of the biological valuation map (BWK).
-Although this version of BWK was published in 2020, that does not mean that all the information was from 2020.
+The previous version of the open space map is based on the most recent publication of the biological valuation map (BVM).
+Although this version of the BVM was published in 2020, it does not mean that all the information was from 2020.
 Actually, about three quarters of the information turned out to be older than 2007.
-Hence, we are looking for a better source.
+For that reason, we went looking for a better source.
 
 **An _open_ open space map**
 

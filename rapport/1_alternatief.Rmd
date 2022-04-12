@@ -9,7 +9,7 @@ Anders lopen we binnen een paar jaar terug tegen het probleem aan waar we met de
 Om het verschil tussen de verschillende kaartlagen zichtbaar te maken tonen we telkens een kaart van hetzelfde gebied in Vlaanderen.
 Figuur \@ref(fig:basis) toont de meest recente luchtfoto's van dit gebied.
 We selecteerden dit gebied omdat het een inzicht geeft in de verschillen tussen de kaartlagen.
-In de webversie van dit rapport zijn de kaarten interactief.
+In de online versie van dit rapport zijn de kaarten interactief.
 Daar kan de lezer de kaart verplaatsen naar een gebied naar eigen keuze.
 De lezer kan in de online eveneens de laag met de jachtterreinen activeren.
 
@@ -245,15 +245,15 @@ Ze heeft een voldoende fijne indeling in klassen.
 Ze is gebiedsdekkend zodat we ook informatie hebben over de gebieden die niet door de landbouw in gebruik zijn.
 Daarnaast biedt deze kaart als enige het voordeel dat ze relatief eenvoudig bij te werken valt.
 Aanpassingen in de OpenStreetMap databank zijn bovendien een paar dagen later beschikbaar in de afgeleide producten.
-Dit laat ons toe om voor de start van de tellingen van de voorjaarsstand van patrijs een versie van de open ruimte kaart te publiceren die gebaseerd is op een recente versie van OpenStreetMap.
+Dit laat ons toe om voor de start van de tellingen van de voorjaarsstand van patrijs een versie van de open-ruimte-kaart te publiceren die gebaseerd is op een recente versie van OpenStreetMap.
 Tijdens de tellingen van de voorjaarsstand van patrijs kunnen jagers in het veld controleren hoe accuraat deze kaart is.
 Afwijkingen te wijten aan fouten in OpenStreetMap kunnen ze dan melden aan OpenStreetMap of zelf (laten) corrigeren.
-Na de tellingen van de voorjaarsstand van patrijs maken we een nieuwe versie van de open ruimte kaart aan.
+Na de tellingen van de voorjaarsstand van patrijs maken we een nieuwe versie van de open-ruimte-kaart aan.
 Ook nu baseren we ons op de meest recente informatie uit OpenStreetMap.
-Op die manier stromen verbeteringen in OpenStreetMap door naar de open ruimte kaart.
+Op die manier stromen verbeteringen in OpenStreetMap door naar de open-ruimte-kaart.
 En zo houden we bij het bepalen van de gemiddelde dichtheid van patrijs in de WBE rekening met de meest recent beschikbare informatie.
 
-In het volgende hoofdstuk beschrijven we welke selecties we uitvoeren op basis van OpenStreetMap om de open ruimte kaart aan te maken.
+In het volgende hoofdstuk beschrijven we welke selecties we uitvoeren op basis van OpenStreetMap om de open-ruimte-kaart aan te maken.
 Iedereen kan op basis van deze regels vaststellen waarom we een bepaald perceel al dan niet als open ruimte indelen.
 De eigenschappen van een polygoon kan je op https://www.openstreetmap.org eenvoudig opvragen via "Nabije objecten opvragen".
 Hiervoor selecteer je rechts de tool die als icoon een pijltje met vraagteken heeft.

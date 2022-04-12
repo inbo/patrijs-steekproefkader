@@ -13,7 +13,7 @@ Hierbij hebben we gekeken waar er grasland
 _sensu lato_ <!-- spell-check: ignore -->
 is volgens de landbouwgebruikspercelen (§\@ref(s:landbouw)).
 Vervolgens selecteerden we de percelen binnen de jachtterreinen.
-In het ideale geval zitten al deze percelen in onze open ruimte kaart.
+In het ideale geval zitten al deze percelen in onze open-ruimte-kaart.
 Om dit na te gaan verwijderen we in de selectie alles wat als grasland of akker in OpenStreetMap staat.
 We verwijderen tevens smalle slierten (< 5 m) die ontstaan wanneer de grenzen van verschillende kaartlagen niet perfect overlappen.
 Van de overgebleven gebieden houden we enkel de stukken over die minstens 1 ha groot zijn.
@@ -22,7 +22,7 @@ Elk van deze gebiedjes hebben we als taak toegevoegd aan de uitdaging "ontbreken
 Na drie weken hadden 10 vrijwilligers samen 70% van de taken opgelost.
 In tabel \@ref(tab:delta) geven we een overzicht van de situaties waarop de taken betrekking hadden.
 
-(ref:delta) Overzicht van voorkomen situaties bij percelen die als grasland _sensu lato_ opgegeven zijn in de landbouwgebruikspercelen van 2020 en niet als grasland of akker opgenomen zijn in OpenStreetMap.
+(ref:delta) Overzicht van voorkomen situaties bij percelen die als een vorm van grasland opgegeven zijn in de landbouwgebruikspercelen van 2020 en niet als grasland of akker opgenomen zijn in OpenStreetMap.
 
 ```{r delta}
 tribble(

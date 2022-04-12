@@ -22,4 +22,4 @@ Gezien de hoeveelheid vragen en opmerkingen over de vorige kaart, willen we de n
 Elke betrokkene kan hierdoor de werkwijze (laten) nakijken of zelf opnieuw (laten) uitvoeren.
 Om dit te kunnen garanderen, gebruiken we enkel kaartmateriaal dat als [open data](https://nl.wikipedia.org/wiki/Open_data) beschikbaar is en [vrije software](https://nl.wikipedia.org/wiki/Vrije_software_en_opensourcesoftware).
 In dit rapport beschreven we welke alternatieve kaarten we in overweging genomen hebben.
-Vervolgens beschrijven we op welke manier we de nieuwe open ruimte kaart uitwerken.
+Vervolgens beschrijven we op welke manier we de nieuwe open-ruimte-kaart uitwerken.
