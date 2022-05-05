@@ -10,7 +10,7 @@ author:
     name: Carmen
     email: "raisa.carmen@inbo.be"
     orcid: 0000-0003-1025-8702
-style: INBO
+style: Vlaanderen
 lang: nl
 
 reviewer: 
@@ -28,6 +28,14 @@ shortauthor: Onkelinx, T. & Carmen, R.
 corresponding: thierry.onkelinx@inbo.be
 cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
 cover_description: Roepende patrijs in maïsveld. © Yves Adams
+cooperation:
+  - Agentschap voor Natuur en Bos
+  - VAC Brussel - Herman Teirlinck
+  - Havenlaan 88 bus 75
+  - 1000 Brussel
+  - https://natuurenbos.be
+cooperation_logo: anb.jpg
+
 
 # pdf report specific options. See ?INBOmd::report() for full list and more details.
 embargo: 2021-12-10
@@ -44,7 +52,7 @@ site: bookdown::bookdown_site
 output:
   INBOmd::gitbook: default
   INBOmd::pdf_report: default
-  INBOmd::ebook: default
+  INBOmd::epub_book: default
   bookdown::dontrun: default
 ---
 
@@ -66,7 +74,7 @@ Na de tellingen van het voorjaar 2021 lieten meerdere jagers ons weten dat de ge
 Sommige percelen zijn aangeduid als open ruimte maar zijn in werkelijkheid bebouwd of bebost.
 Waardoor de oppervlakte open ruimte overschat en de dichtheid van patrijs onderschat is.
 
-De vorige versie van de open-ruimte-kaart is gebaseerd op de meest recente publicatie van de [biologische waarderingskaart (BWK).
+De vorige versie van de open-ruimte-kaart is gebaseerd op de meest recente publicatie van de [biologische waarderingskaart (BWK)](https://www.vlaanderen.be/inbo/de-biologische-waarderingskaart/wat-is-de-biologische-waarderingskaart/).
 Hoewel deze versie in 2020 gepubliceerd werd, wil dat niet zeggen dat alle informatie uit 2020 stamt.
 In de praktijk bleek zowat driekwart van de gegevens ouder dan 2007.
 Vandaar dat we op zoek gaan naar een betere bron.
@@ -80,7 +88,7 @@ Bij de start van de inventarisatie krijgen de jagers een voorlopige versie van d
 Wanneer een jager een fout in de open-ruimte-kaart vaststelt, kan deze de fout melden of zelf aanpassen in OpenStreetMap.
 Na het berekenen van het aantal broedparen kunnen we de finale versie van de open-ruimte-kaart vastleggen op basis van de meest recente informatie uit OpenStreetMap.
 
-Dit is een belangrijk verschil met de overige bruikbare kaarten.
+Dit is een belangrijk verschil met de overige onderzochte kaarten.
 Die kan je namelijk niet bijwerken.
 Verder zijn ze gebaseerd op informatie die minstens 1 tot 2 jaar oud is.
 
