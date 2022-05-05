@@ -1,4 +1,4 @@
-# Selectie van relevante gebieden uit OpenStreetMap {#s:relevant}
+# Selectie van relevante gebieden uit OpenStreetMap {#s-relevant}
 
 In dit hoofdstuk geven we aan welke kenmerken we uit [OpenStreetMap](https://www.openstreetmap.org) gebruiken om de voor patrijs relevante open ruimte te definiëren.
 We gebruiken hiervoor de kenmerken [`landuse`](https://wiki.openstreetmap.org/wiki/NL:Key:landuse) (landgebruik), [`natural`](https://wiki.openstreetmap.org/wiki/NL:Key:natural) (natuurlijk landschap) en [`landcover`](https://wiki.openstreetmap.org/w/index.php?title=Key:landcover&redirect=no) (bodembedekking).
