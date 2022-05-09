@@ -28,6 +28,7 @@ shortauthor: Onkelinx, T. & Carmen, R.
 corresponding: thierry.onkelinx@inbo.be
 cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
 cover_description: Roepende patrijs in maïsveld. © Yves Adams
+cover: cover.pdf
 cooperation:
   - Agentschap voor Natuur en Bos
   - VAC Brussel - Herman Teirlinck
