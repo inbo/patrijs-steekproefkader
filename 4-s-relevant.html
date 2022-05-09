@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html  lang="nl">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>4 Selectie van relevante gebieden uit OpenStreetMap | Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering</title>
+  <meta name="description" content="4 Selectie van relevante gebieden uit OpenStreetMap | Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="4 Selectie van relevante gebieden uit OpenStreetMap | Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/rapport/cover.png" />
+  
+  <meta name="github-repo" content="inbo/patrijs-steekproefkader" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Selectie van relevante gebieden uit OpenStreetMap | Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering" />
+  
+  
+  <meta name="twitter:image" content="/home/thierry/Insync/thierry.onkelinx@inbo.be/google_drive/github_linux/projecten/steekproefkader_patrijs/rapport/cover.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="3-keuze-van-de-basiskaartlaag.html"/>
+<link rel="next" href="5-opdelen-van-open-ruimte-in-telblokken.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/INBOmd-0.5.3/flanders_report.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+<a href=".">
+<img src="cover.png" alt = "Onkelinx, T. &amp; Carmen, R. (2022) Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering" class = "thumbnail"></a><br>
+<a class="chapter" href="#">10.21436/inbor.70809860</a>
+<br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="libs/INBOmd-0.5.3/img/cc-by.svg" class = "cc"/>
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Samenvatting</a></li>
+<li class="chapter" data-level="" data-path="english-abstract.html"><a href="english-abstract.html"><i class="fa fa-check"></i>English abstract</a></li>
+<li class="chapter" data-level="1" data-path="1-inleiding.html"><a href="1-inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a></li>
+<li class="chapter" data-level="2" data-path="2-op-zoek-naar-alternatieve-kaartlagen.html"><a href="2-op-zoek-naar-alternatieve-kaartlagen.html"><i class="fa fa-check"></i><b>2</b> Op zoek naar alternatieve kaartlagen</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-op-zoek-naar-alternatieve-kaartlagen.html"><a href="2-op-zoek-naar-alternatieve-kaartlagen.html#s:groenkaart"><i class="fa fa-check"></i><b>2.1</b> Groenkaart</a></li>
+<li class="chapter" data-level="2.2" data-path="2-op-zoek-naar-alternatieve-kaartlagen.html"><a href="2-op-zoek-naar-alternatieve-kaartlagen.html#s:landgebruik"><i class="fa fa-check"></i><b>2.2</b> Landgebruik</a></li>
+<li class="chapter" data-level="2.3" data-path="2-op-zoek-naar-alternatieve-kaartlagen.html"><a href="2-op-zoek-naar-alternatieve-kaartlagen.html#s:landbouw"><i class="fa fa-check"></i><b>2.3</b> Landbouwgebruikspercelen</a></li>
+<li class="chapter" data-level="2.4" data-path="2-op-zoek-naar-alternatieve-kaartlagen.html"><a href="2-op-zoek-naar-alternatieve-kaartlagen.html#s:osm"><i class="fa fa-check"></i><b>2.4</b> OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-keuze-van-de-basiskaartlaag.html"><a href="3-keuze-van-de-basiskaartlaag.html"><i class="fa fa-check"></i><b>3</b> Keuze van de basiskaartlaag</a></li>
+<li class="chapter" data-level="4" data-path="4-s-relevant.html"><a href="4-s-relevant.html"><i class="fa fa-check"></i><b>4</b> Selectie van relevante gebieden uit OpenStreetMap</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-s-relevant.html"><a href="4-s-relevant.html#positieve-selectie"><i class="fa fa-check"></i><b>4.1</b> Positieve selectie</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="4-s-relevant.html"><a href="4-s-relevant.html#akker"><i class="fa fa-check"></i><b>4.1.1</b> Akker</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-s-relevant.html"><a href="4-s-relevant.html#weiland-of-grasland-in-landbouwbeheer"><i class="fa fa-check"></i><b>4.1.2</b> Weiland of grasland in landbouwbeheer</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-s-relevant.html"><a href="4-s-relevant.html#natuurlijk-grasland"><i class="fa fa-check"></i><b>4.1.3</b> Natuurlijk grasland</a></li>
+<li class="chapter" data-level="4.1.4" data-path="4-s-relevant.html"><a href="4-s-relevant.html#drassig-weiland-of-moeras"><i class="fa fa-check"></i><b>4.1.4</b> Drassig weiland of moeras</a></li>
+<li class="chapter" data-level="4.1.5" data-path="4-s-relevant.html"><a href="4-s-relevant.html#particuliere-weides"><i class="fa fa-check"></i><b>4.1.5</b> Particuliere weides</a></li>
+<li class="chapter" data-level="4.1.6" data-path="4-s-relevant.html"><a href="4-s-relevant.html#overige-gras"><i class="fa fa-check"></i><b>4.1.6</b> Overige gras</a></li>
+<li class="chapter" data-level="4.1.7" data-path="4-s-relevant.html"><a href="4-s-relevant.html#boomgaard"><i class="fa fa-check"></i><b>4.1.7</b> Boomgaard</a></li>
+<li class="chapter" data-level="4.1.8" data-path="4-s-relevant.html"><a href="4-s-relevant.html#wijngaard"><i class="fa fa-check"></i><b>4.1.8</b> Wijngaard</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4-s-relevant.html"><a href="4-s-relevant.html#negatieve-selectie"><i class="fa fa-check"></i><b>4.2</b> Negatieve selectie</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="4-s-relevant.html"><a href="4-s-relevant.html#woongebied"><i class="fa fa-check"></i><b>4.2.1</b> Woongebied</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-s-relevant.html"><a href="4-s-relevant.html#boerenerf"><i class="fa fa-check"></i><b>4.2.2</b> Boerenerf</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-s-relevant.html"><a href="4-s-relevant.html#beheerd-bos"><i class="fa fa-check"></i><b>4.2.3</b> Beheerd bos</a></li>
+<li class="chapter" data-level="4.2.4" data-path="4-s-relevant.html"><a href="4-s-relevant.html#natuurlijk-bos"><i class="fa fa-check"></i><b>4.2.4</b> Natuurlijk bos</a></li>
+<li class="chapter" data-level="4.2.5" data-path="4-s-relevant.html"><a href="4-s-relevant.html#industrie"><i class="fa fa-check"></i><b>4.2.5</b> Industrie</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-opdelen-van-open-ruimte-in-telblokken.html"><a href="5-opdelen-van-open-ruimte-in-telblokken.html"><i class="fa fa-check"></i><b>5</b> Opdelen van open ruimte in telblokken</a></li>
+<li class="chapter" data-level="6" data-path="6-verbeteren-van-openstreetmap.html"><a href="6-verbeteren-van-openstreetmap.html"><i class="fa fa-check"></i><b>6</b> Verbeteren van OpenStreetMap</a></li>
+<li class="chapter" data-level="7" data-path="7-aanmaak-van-de-kaartlagen.html"><a href="7-aanmaak-van-de-kaartlagen.html"><i class="fa fa-check"></i><b>7</b> Aanmaak van de kaartlagen</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="s-relevant" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Selectie van relevante gebieden uit OpenStreetMap<a href="4-s-relevant.html#s-relevant" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In dit hoofdstuk geven we aan welke kenmerken we uit <a href="https://www.openstreetmap.org">OpenStreetMap</a> gebruiken om de voor patrijs relevante open ruimte te definiëren.
+We gebruiken hiervoor de kenmerken <a href="https://wiki.openstreetmap.org/wiki/NL:Key:landuse"><code>landuse</code></a> (landgebruik), <a href="https://wiki.openstreetmap.org/wiki/NL:Key:natural"><code>natural</code></a> (natuurlijk landschap) en <a href="https://wiki.openstreetmap.org/w/index.php?title=Key:landcover&amp;redirect=no"><code>landcover</code></a> (bodembedekking).
+De links in voorgaande zin verwijzen naar de volledige lijst van mogelijke klassen.
+Door deze lijst te vergelijken met onderstaande sectie weet de lezer welke klassen we niet gebruiken bij de selectie.</p>
+<div id="positieve-selectie" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Positieve selectie<a href="4-s-relevant.html#positieve-selectie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We selecteren alle gebieden die voldoen aan een van de onderstaande kenmerken.
+Om de kaart zo compact mogelijk te maken voegen we aangrenzende polygonen samen tot een geheel.
+Daarnaast snijden we ze bij tot de jachtterreinen.
+Het resultaat van deze kaart is een maximale kaart van de open ruimte binnen de Vlaamse jachtterreinen.</p>
+<div id="akker" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Akker<a href="4-s-relevant.html#akker" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = farmland</code></li>
+<li>Objecttype: landbouwgebied</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmland" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmland</a></li>
+</ul>
+</div>
+<div id="weiland-of-grasland-in-landbouwbeheer" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Weiland of grasland in landbouwbeheer<a href="4-s-relevant.html#weiland-of-grasland-in-landbouwbeheer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = meadow</code></li>
+<li>Objecttype: weide</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dmeadow" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dmeadow</a></li>
+</ul>
+</div>
+<div id="natuurlijk-grasland" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Natuurlijk grasland<a href="4-s-relevant.html#natuurlijk-grasland" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>natural = grassland</code></li>
+<li>Objecttype: natuurlijk grasland</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:natural%3Dgrassland" class="uri">https://wiki.openstreetmap.org/wiki/Tag:natural%3Dgrassland</a></li>
+</ul>
+</div>
+<div id="drassig-weiland-of-moeras" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Drassig weiland of moeras<a href="4-s-relevant.html#drassig-weiland-of-moeras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>natural = wetland</code></li>
+<li>Objecttype: natuurlijk grasland</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwetland" class="uri">https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwetland</a></li>
+</ul>
+<p>We gebruiken enkel gebieden die ofwel expliciet als drassig weiland (<code>wetland = wet_meadow</code>) aangeduid zijn, ofwel geen
+bijkomende aanduiding hebben (geen <code>wetland = ...</code>).
+Categorieën die we buiten beschouwing laten zijn:</p>
+<ul>
+<li>moeras (<code>wetland = swamp</code> of <code>wetland = marsh</code>)</li>
+<li>rietveld (<code>wetland = reedbed</code>)</li>
+<li>ven (<code>wetland = fen</code>)</li>
+<li>veen (<code>wetland = bog</code>)</li>
+<li>slik (<code>wetland = tidalflat</code>)</li>
+<li>schorre (<code>wetland = saltmarsh</code>)</li>
+</ul>
+<p>Is dit landgebruik wel relevant voor patrijs?
+Wanneer we deze gebieden vergelijken met de biologische waarderingskaart <span class="citation">(<a href="#ref-BWK" role="doc-biblioref">De Saeger <em>et al.</em>, 2020</a>)</span>, stellen we vast dat het merendeel van de percelen een BWK code bevatten die we vorige jaar als open ruimte beschouwden.
+We kunnen ze eveneens vergelijken met de waarnemingen van de tellingen van patrijs uit het voorjaar van 2021.
+Als er in de onmiddellijke omgeving waarnemingen van patrijs zijn, dan zijn er meestal ook waarnemingen van patrijs in deze gebieden.
+Merk op dat deze set zowel percelen omvat die expliciet als drassig weiland aangeduid zijn en andere percelen waarbij het type <code>wetland</code> niet gespecificeerd is.
+Deze laatste groep kan een aantal percelen bevatten die in de praktijk geen drassig weiland maar moeras, rietveld, … zijn.
+In dat geval zijn ze ten onrechte opgenomen in de open ruimte.
+Wanneer dit in OpenStreetMap gecorrigeerd is, zullen dergelijke percelen bij de volgende versie van de open-ruimte-kaart automatisch uit de selectie gehaald worden.</p>
+</div>
+<div id="particuliere-weides" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Particuliere weides<a href="4-s-relevant.html#particuliere-weides" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Soms gebruikt om kleinere weides met paarden, schapen, … aan te duiden.</p>
+<ul>
+<li>OSM definitie: <code>landuse = animal_keeping</code></li>
+<li>Objecttype: <em>niet beschikbaar</em></li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Danimal_keeping" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Danimal_keeping</a></li>
+</ul>
+</div>
+<div id="overige-gras" class="section level3 hasAnchor" number="4.1.6">
+<h3><span class="header-section-number">4.1.6</span> Overige gras<a href="4-s-relevant.html#overige-gras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = grass</code> of <code>landcover = grass</code></li>
+<li>Objecttype: gras</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landcover%3Dgrass" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landcover%3Dgrass</a> en <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgrass" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgrass</a></li>
+</ul>
+</div>
+<div id="boomgaard" class="section level3 hasAnchor" number="4.1.7">
+<h3><span class="header-section-number">4.1.7</span> Boomgaard<a href="4-s-relevant.html#boomgaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = orchard</code></li>
+<li>Objecttype: boomgaard</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dorchard" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dorchard</a></li>
+</ul>
+<p>Een combinatie van weide met (hoogstam)boomgaard is <code>landuse = meadow, meadow = orchard</code>.</p>
+</div>
+<div id="wijngaard" class="section level3 hasAnchor" number="4.1.8">
+<h3><span class="header-section-number">4.1.8</span> Wijngaard<a href="4-s-relevant.html#wijngaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = vineyard</code></li>
+<li>Objecttype: wijngaard</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dvineyard" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dvineyard</a></li>
+</ul>
+</div>
+</div>
+<div id="negatieve-selectie" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Negatieve selectie<a href="4-s-relevant.html#negatieve-selectie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Soms zijn er in OpenStreetMap grote gebieden als één landgebruik aangeduid en komen daarbinnen kleinere gebieden met een ander landgebruik voor.
+Bijvoorbeeld een groot bosgebied met hier en daar een weiland.
+Of een groot akkergebied met hier en daar een klein bos.
+Wanneer we enkel met een positieve selectie werken dan krijgen we enkel bij het eerste voorbeeld een correcte selectie (enkel het weiland).
+In het tweede voorbeeld selecteren we teveel (de bossen die overlappen met het akkergebied).</p>
+<p>Daarom we knippen we onderstaande landgebruiken uit de maximale kaart met open ruimte.
+We doen dit enkel wanneer het gaat om kleine (negatieve) gebieden die volledig binnen een groot (positief) gebied liggen.</p>
+<div id="woongebied" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Woongebied<a href="4-s-relevant.html#woongebied" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = residential</code></li>
+<li>Objecttype: woongebied</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dresidential" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dresidential</a></li>
+</ul>
+</div>
+<div id="boerenerf" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Boerenerf<a href="4-s-relevant.html#boerenerf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = farmyard</code></li>
+<li>Objecttype: boerenerf</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmyard" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dfarmyard</a></li>
+</ul>
+</div>
+<div id="beheerd-bos" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Beheerd bos<a href="4-s-relevant.html#beheerd-bos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = forest</code></li>
+<li>Objecttype: beheerd bos</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dforest" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dforest</a></li>
+</ul>
+</div>
+<div id="natuurlijk-bos" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Natuurlijk bos<a href="4-s-relevant.html#natuurlijk-bos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>natural = wood</code></li>
+<li>Objecttype: natuurlijk bos</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwood" class="uri">https://wiki.openstreetmap.org/wiki/Tag:natural%3Dwood</a></li>
+</ul>
+</div>
+<div id="industrie" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Industrie<a href="4-s-relevant.html#industrie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>OSM definitie: <code>landuse = industrial</code></li>
+<li>Objecttype: industriegebied</li>
+<li>OSM Wiki: <a href="https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial" class="uri">https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-BWK" class="csl-entry">
+De Saeger S., Guelinckx R., Oosterlynck P., De Bruyn A., Debusschere K., Dhaluin P., Erens R., Hendrickx P., Hennebel D., Jacobs I., Kumpen M., Op De Beeck J., Spanhove T., Tamsyn W., Van Oost F., Van Dam G., Van Hove M., Wils C. &amp; Paelinckx D. (2020). Biologische Waarderingskaart en Natura 2000 Habitatkaart, uitgave 2020. Rapporten van het Instituut voor Natuur- en Bosonderzoek, Nr. 35. Instituut voor Natuur- en Bosonderzoek, Belgi<span>ë</span>. <a href="https://doi.org/10.21436/inbor.18840851">https://doi.org/10.21436/inbor.18840851</a>.
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="libs/INBOmd-0.5.3/img/cc-by.svg" class = "cc"/></a>
+Onkelinx, T. &amp; Carmen, R. (2022). 10.21436/inbor.70809860
+            </section>
+        </div>
+      </div>
+    </div>
+<a href="3-keuze-van-de-basiskaartlaag.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-opdelen-van-open-ruimte-in-telblokken.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com:inbo/patrijs-steekproefkader/edit/main/rapport/2_relevant.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["steekproefkader.pdf", "steekproefkader.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, "");
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+
+</html>
