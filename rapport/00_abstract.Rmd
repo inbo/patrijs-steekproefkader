@@ -1,0 +1,50 @@
+\benglish <!-- spell-check: ignore -->
+
+# English abstract {-}
+
+**Why do we need an open space map?**
+
+The [Agency for Nature and Forests (ANB)](https://www.natuurenbos.be/english) only allows the hunt for partridges in an area if several conditions are met.
+One of these conditions is that there are enough partridges present.
+For this, ANB applies a minimum of 3 breeding pairs per 100 ha of open space.
+Therefore, a game management unit (GMU) that wishes to hunt partridge must first make an inventory of where all the partridges occur in the GMU.
+Based on these observations, the [Research Institute for Nature and Forest (INBO)](https://www.vlaanderen.be/inbo/en-gb/homepage/) determines the number of breeding pairs in each GMU.
+Finally we divide this number of breeding pairs by the area of open space to get the density of partridge (number of breeding pairs per 100 ha open space).
+To obtain the area of open space in each GMU, we need a map that defines what open space is.
+
+**Why a new open space map?**
+
+After the spring 2021 censuses, several hunters informed us that the current open space map does not always correspond to reality.
+Some plots were classified as open space on the map but are a built-up or forested area in reality.
+This overestimated the area of open space and underestimated the density of partridge.
+The previous version of the open space map is based on the most recent publication of the [biological valuation map (BVM)](https://www.vlaanderen.be/inbo/en-gb/biological-valuation-map/wat-is-de-biologische-waarderingskaart/).
+Although this version of the BVM was published in 2020, it does not mean that all the information originated from 2020.
+Actually, about three quarters of the information turned out to be older than 2007.
+For that reason, we went looking for a better source.
+
+**An _open_ open space map**
+
+After weighing a number of options, we chose [OpenStreetMap](https://www.openstreetmap.org) as our source map.
+Like all other candidates, this map is not perfect.
+However, it is good enough to use.
+And it has the advantage that errors are relatively easy and quickly corrected.
+At the start of the surveys, hunters are given a preliminary version of the open space map.
+When hunters identify errors in the open space map, they can report the error or modify it themselves in OpenStreetMap.
+After calculating the number of breeding pairs, we can generate an updated version of the open space map based on the most recent information from OpenStreetMap.
+This update ability is an important difference between OpenStreetMap and other usable maps.
+Furthermore, the other maps are based on information that is at least 1 to 2 years old.
+
+For hunters, this way of working provides them the opportunity to contribute to a correct open space map themselves.
+Since OpenStreetMap provides the information with open use terms, everyone can enjoy an improved OpenStreetMap.
+
+**A [reproducible](https://en.wikipedia.org/wiki/Reproducibility) open space map**
+
+In this report, we describe how to convert the information from OpenStreetMap to an open space map.
+We established the conversion as a computer program.
+We publish that computer program together with the open space map and the source maps that were used (OpenStreetMap and hunting area boundaries).
+In this way, everyone can check the rules (or have them checked), use, or implement them themselves.
+
+\eenglish <!-- spell-check: ignore -->
+
+<!-- hier komt de inhoudstafel bij pdf -->
+\mainmatter <!-- spell-check: ignore -->

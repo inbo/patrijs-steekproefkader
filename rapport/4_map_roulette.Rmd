@@ -1,0 +1,46 @@
+# Verbeteren van OpenStreetMap
+
+We weten dat op er sommige plaatsen een verschil is tussen OpenStreetMap informatie en het andere kaartmateriaal.
+Dat weet de OpenStreetMap gemeenschap ook.
+Daarom hebben ze https://maproulette.org/ ontwikkelt.
+Daarmee bieden ze de vrijwilligers uitdagingen aan die elk bestaan uit een aantal taken rond een zelfde thema.
+Een taak is dan een mogelijk probleem in de OpenStreetMap databank dat in principe makkelijk te verhelpen is.
+Vrijwilligers kunnen een taak aannemen om het probleem in detail te bekijken.
+Vervolgens geven ze aan of 1) ze het probleem opgelost hebben, 2) het probleem ondertussen reeds opgelost was, 3) het probleem zich niet stelde (de OpenStreetMap data was correct), 4) het probleem te moeilijk is om op te lossen.
+
+Om dit meer concreet te maken verwijzen we naar een eerste [uitdaging](https://maproulette.org/browse/challenges/23674) die we zelf aangemaakt hebben.
+Hierbij hebben we gekeken waar er grasland 
+_sensu lato_ <!-- spell-check: ignore -->
+is volgens de landbouwgebruikspercelen (§\@ref(s:landbouw)).
+Vervolgens selecteerden we de percelen binnen de jachtterreinen.
+In het ideale geval zitten al deze percelen in onze open-ruimte-kaart.
+Om dit na te gaan verwijderen we in de selectie alles wat als grasland of akker in OpenStreetMap staat.
+We verwijderen tevens smalle slierten (< 5 m) die ontstaan wanneer de grenzen van verschillende kaartlagen niet perfect overlappen.
+Van de overgebleven gebieden houden we enkel de stukken over die minstens 1 ha groot zijn.
+Eind november 2021 bleken een kleine 1200 gebieden (gemiddeld iets minder dan 2 ha groot) gespreid over Vlaanderen aan deze selectie te voldoen.
+Elk van deze gebiedjes hebben we als taak toegevoegd aan de uitdaging "ontbrekende graslanden in Vlaanderen".
+Na drie weken hadden 10 vrijwilligers samen 70% van de taken opgelost.
+In tabel \@ref(tab:delta) geven we een overzicht van de situaties waarop de taken betrekking hadden.
+
+(ref:delta) Overzicht van voorkomen situaties bij percelen die als een vorm van grasland opgegeven zijn in de landbouwgebruikspercelen van 2020 en niet als grasland of akker opgenomen zijn in OpenStreetMap.
+
+```{r delta}
+tribble(
+  ~Werkelijk, ~OpenStreetMap,
+  "weide met (hoogstam)boomgaard", "boomgaard",
+  "weide met (veel) bomen", "bos",
+  "grasland met (veel) struiken", "struweel",
+  "weide op de huiskavel", "boerenerf",
+  "weide", "niet gekarteerd",
+  "grasland in industriegebied", "industrie",
+  "grasland in woongebied", "woongebied",
+  "paardenweide", "animal_keeping",
+  "bouwwerf", "bouwwerf",
+  "recente bosuitbreiding", "bos"
+) %>%
+  kable(caption = "(ref:delta)")
+```
+
+Het is de bedoeling om dergelijke oefening ook te doen met percelen die akker zijn volgens de landbouwgebruikspercelen.
+In de toekomst kunnen we de oefening opnieuw doen met nieuwe versies van de landbouwgebruikspercelen kaarten.
+Indien ander relevant kaartmateriaal in de toekomst beschikbaar komt, kan dit gebruikt worden om de OpenStreetMap te controleren en te laten aanpassen.

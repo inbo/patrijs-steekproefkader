@@ -1,0 +1,25 @@
+# Inleiding
+
+Sinds 2008 is de jacht op patrijs in Vlaanderen gebonden aan een aantal voorwaarden.
+De eerste voorwaarde vermeldt het voldoen aan een gemiddelde dichtheid van minstens 3 broedparen per 100 ha open ruimte.
+Het Instituut voor Natuur- en Bosonderzoek (INBO) staat in voor de berekening van deze dichtheden en brengt hierover advies uit aan het Agentschap voor Natuur en Bos (ANB).
+
+Aangezien de jachtwetgeving geen definitie geeft van de open ruimte, kozen we bij de invoering van deze regelgeving om te werken met de biologische waarderingskaart ([BWK](https://www.vlaanderen.be/inbo/de-biologische-waarderingskaart/bwk-belang/)).
+De BWK is een gebiedsdekkende inventaris van het biologische milieu en van de bodembedekking van het volledige Vlaams Gewest.
+Deze kaart wordt door het INBO opgemaakt aan de hand van een inventarisatie met behulp van vooraf gedefinieerde karteringseenheden.
+De verschillende karteringseenheden werden beoordeeld als behorende tot de categorie "open ruimte" of "niet open ruimte" voor patrijs.
+Op deze manier kon een afbakening van de open ruimte bepaald worden.
+
+Voor de berekeningen van de dichtheden van de broedparen werd steeds gewerkt met de meest recente versie van de BWK.
+Ook @Onkelinx2021 gebruikte de meest recente versie van de BWK [@BWK].
+De verschillende versies verwijzen echter naar de kaart als geheel, niet naar de laatste update van elk polygoon in de kaart.
+Zo stelt @BWK dat in de meest actuele versie ongeveer driekwart van de oppervlakte van het niet urbaan gebied gebaseerd is op een kartering van 2007 of ouder (fig. 1‐1 in @BWK).
+Het gevolg is dat de BWK voor sommige gebieden niet langer het actuele landgebruik weergeeft.
+Wat op zijn beurt weer aanleiding geeft tot fouten in de kaart met open ruimte relevant voor patrijs.
+
+In het kader van de uitrol van een standaard telprotocol voor patrijs, werd daarom beslist om een alternatieve bepaling van de open ruimte voor patrijs uit te werken.
+Gezien de hoeveelheid vragen en opmerkingen over de vorige kaart, willen we de nieuwe kaart tevens transparant, open en reproduceerbaar maken.
+Elke betrokkene kan hierdoor de werkwijze (laten) nakijken of zelf opnieuw (laten) uitvoeren.
+Om dit te kunnen garanderen, gebruiken we enkel kaartmateriaal dat als [open data](https://nl.wikipedia.org/wiki/Open_data) beschikbaar is en [vrije software](https://nl.wikipedia.org/wiki/Vrije_software_en_opensourcesoftware).
+In dit rapport beschreven we welke alternatieve kaarten we in overweging genomen hebben.
+Vervolgens beschrijven we op welke manier we de nieuwe open-ruimte-kaart uitwerken.

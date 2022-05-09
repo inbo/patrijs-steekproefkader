@@ -1,0 +1,140 @@
+---
+# generic options. See ?INBOmd::report() for full list and more details.
+title: Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering
+author: 
+  - firstname: Thierry
+    name: Onkelinx
+    email: "thierry.onkelinx@inbo.be"
+    orcid: 0000-0002-1825-0097
+  - firstname: Raïsa
+    name: Carmen
+    email: "raisa.carmen@inbo.be"
+    orcid: 0000-0003-1025-8702
+style: Vlaanderen
+lang: nl
+
+reviewer: 
+  - firstname: Thomas
+    name: Scheppers
+    email: "thomas.scheppers@inbo.be"
+    orcid: 0000-0002-5098-9326
+year: 2022
+reportnr: 2
+depotnr: D/2022/3241/023
+doi: doi.org/10.21436/inbor.70809860
+
+# report specific options. See ?INBOmd::report() for full list and more details.
+shortauthor: Onkelinx, T. & Carmen, R.
+corresponding: thierry.onkelinx@inbo.be
+cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
+cover_description: Roepende patrijs in maïsveld. © Yves Adams
+cover: cover.pdf
+cooperation:
+  - Agentschap voor Natuur en Bos
+  - VAC Brussel - Herman Teirlinck
+  - Havenlaan 88 bus 75
+  - 1000 Brussel
+  - https://natuurenbos.be
+cooperation_logo: anb.jpg
+
+
+# pdf report specific options. See ?INBOmd::report() for full list and more details.
+embargo: 2021-12-10
+
+# HTML report specific options. See ?INBOmd::gitbook() for full list and more details.
+github-repo: inbo/patrijs-steekproefkader
+
+floatbarrier: section
+
+bibliography: references.bib
+link-citations: TRUE
+site: bookdown::bookdown_site
+
+output:
+  INBOmd::gitbook: default
+  INBOmd::pdf_report: default
+  INBOmd::epub_book: default
+  bookdown::dontrun: default
+---
+
+# Samenvatting {-}
+
+**Waarom een open-ruimte-kaart?**
+
+Het [Agentschap voor Natuur en Bos (ANB)](https://www.natuurenbos.be/) opent de jacht op patrijs in een wildbeheereenheid alleen wanneer aan meerdere voorwaarden voldaan is.
+Een van deze voorwaarden is dat er genoeg patrijzen zijn.
+Het ANB hanteert een minimum van 3 broedparen per 100 ha open ruimte.
+Daarom moet een wildbeheereenheid (WBE) die op patrijs wil jagen, eerst inventariseren waar er allemaal patrijzen rondlopen.
+Op basis van deze waarnemingen bepaalt het [Instituut voor Natuur- en Bosonderzoek (INBO)](https://www.vlaanderen.be/inbo/) het aantal broedparen in elke WBE.
+Ten slotte delen we dit aantal broedparen door de oppervlakte open ruimte om tot de dichtheid van patrijs (broedparen per 100 ha open ruimte) te komen.
+Om deze oppervlakte te kennen, hebben we nood aan een kaart die bepaalt wat open ruimte is.
+
+**Waarom een nieuwe open-ruimte-kaart?**
+
+Na de tellingen van het voorjaar 2021 lieten meerdere jagers ons weten dat de gebruikte open-ruimte-kaart niet altijd overeenkomt met de werkelijkheid.
+Sommige percelen zijn aangeduid als open ruimte maar zijn in werkelijkheid bebouwd of bebost.
+Waardoor de oppervlakte open ruimte overschat en de dichtheid van patrijs onderschat is.
+
+De vorige versie van de open-ruimte-kaart is gebaseerd op de meest recente publicatie van de [biologische waarderingskaart (BWK)](https://www.vlaanderen.be/inbo/de-biologische-waarderingskaart/wat-is-de-biologische-waarderingskaart/).
+Hoewel deze versie in 2020 gepubliceerd werd, wil dat niet zeggen dat alle informatie uit 2020 stamt.
+In de praktijk bleek zowat driekwart van de gegevens ouder dan 2007.
+Vandaar dat we op zoek gaan naar een betere bron.
+
+**Een _open_ open-ruimte-kaart**
+
+Na het afwegen van een aantal mogelijkheden, kozen we [OpenStreetMap](https://www.openstreetmap.org) als nieuwe bronkaart.
+Net zoals alle andere kandidaten is deze kaart niet perfect, maar wel goed genoeg om te gebruiken.
+En ze heeft als troef dat fouten relatief eenvoudig en snel te verbeteren zijn.
+Bij de start van de inventarisatie krijgen de jagers een voorlopige versie van de open-ruimte-kaart.
+Wanneer een jager een fout in de open-ruimte-kaart vaststelt, kan deze de fout melden of zelf aanpassen in OpenStreetMap.
+Na het berekenen van het aantal broedparen kunnen we de finale versie van de open-ruimte-kaart vastleggen op basis van de meest recente informatie uit OpenStreetMap.
+
+Dit is een belangrijk verschil met de overige onderzochte kaarten.
+Die kan je namelijk niet bijwerken.
+Verder zijn ze gebaseerd op informatie die minstens 1 tot 2 jaar oud is.
+
+Voor de jagers biedt deze manier van werken de mogelijkheid om zelf bij te dragen aan een correcte open-ruimte-kaart.
+Omdat OpenStreetMap de informatie met open gebruiksvoorwaarden aanbiedt, kan iedereen genieten van een verbeterde OpenStreetMap-kaart.
+
+**Een [reproduceerbare](https://nl.wikipedia.org/wiki/Reproduceerbaarheid) open-ruimte-kaart**
+
+In dit rapport beschrijven we hoe we de informatie van OpenStreetMap omzetten naar een open-ruimte-kaart.
+De omzetting hebben we als een computerprogramma uitgewerkt.
+We publiceren dit computerprogramma samen met de open-ruimte-kaart en de gebruikte bronkaarten (OpenStreetMap en grenzen jachtgebieden).
+Op die manier kan iedereen de gebruikte regels (laten) nakijken of zelf uitvoeren.
+```{r setup, include = FALSE}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE,
+  eval = TRUE,
+  cache = FALSE,
+  warning = TRUE,
+  error = FALSE,
+  message = TRUE
+)
+library(tidyverse)
+library(leaflet)
+library(deldir)
+library(INBOtheme)
+if (interactive()) {
+  theme_set(theme_inbo(base_size = 10))
+} else {
+  switch(
+    opts_knit$get("rmarkdown.pandoc.to"),
+    html = {
+      opts_chunk$set(dev = "png", dpi = 72, fig.align = "center")
+      theme_set(theme_inbo(base_size = 12))
+    },
+    latex = {
+      opts_chunk$set(dev = "cairo_pdf", dpi = 300)
+      theme_set(theme_inbo(base_size = 9))
+      update_geom_defaults("point", list(size = 1.5))
+      update_geom_defaults("text", list(size = 2))
+    },
+    epub3 = {
+      opts_chunk$set(dev = "png", dpi = 300)
+      theme_set(theme_inbo(base_size = 12))
+    }
+  )
+}
+```
