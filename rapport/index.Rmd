@@ -21,7 +21,7 @@ reviewer:
 year: 2022
 reportnr: 2
 depotnr: D/2022/3241/023
-doi: doi.org/10.21436/inbor.70809860
+doi: 10.21436/inbor.70809860
 
 # report specific options. See ?INBOmd::report() for full list and more details.
 shortauthor: Onkelinx, T. & Carmen, R.
