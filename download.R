@@ -44,7 +44,7 @@ if (!file_test("-f", here(dl, "geofabrik_belgium-latest.osm.pbf"))) {
   target <- "geofabrik_belgium-latest.osm.pbf"
   if (!file_test("-f", here(dl, target))) {
     download_zenodo(
-      doi = paste("10.5281", "zenodo.5792949", sep = "/"), path = dl
+      doi = paste("10.5281", "zenodo.6628312", sep = "/"), path = dl
     )
   }
   hash <- sha512(file(here(dl, target)))
