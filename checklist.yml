@@ -3,3 +3,14 @@ package: no
 allowed:
   warnings: []
   notes: []
+citation_roles:
+- aut
+- cre
+required:
+- checklist
+- filename conventions
+- license
+- lintr
+- spelling
+spelling:
+  default: en-GB
