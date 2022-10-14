@@ -7,10 +7,10 @@ library(osmextract)
 library(qgisprocess)
 qgis_configure()
 
-target_folder <- here("steekproef")
+target_folder <- here("data", "sampling")
 dir.create(target_folder, showWarnings = FALSE)
 
-here("open_ruimte", "open_ruimte.gpkg") %>%
+here("data", "open_area", "open_ruimte.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:reprojectlayer",
