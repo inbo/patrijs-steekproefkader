@@ -4,15 +4,11 @@ library(tidyverse)
 library(qgisprocess)
 qgis_configure()
 
-download_folder <- here("downloads")
-target_folder <- here("open_ruimte")
+download_folder <- here("data", "downloads")
+target_folder <- here("data", "open_space")
 dir.create(target_folder, showWarnings = FALSE)
 
-if (
-  !file_test("-f", here(download_folder, "geofabrik_belgium-latest.osm.pbf"))
-) {
-  source(here("download.R"))
-}
+source(here("source", "create_map", "download.R"))
 
 here(download_folder, "jachtter.shp") %>%
   setNames("INPUT") %>%
