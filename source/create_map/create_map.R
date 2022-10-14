@@ -5,19 +5,16 @@ library(tidyverse)
 library(qgisprocess)
 qgis_configure()
 
-download_folder <- here("downloads")
-target_folder <- here("open_ruimte")
+download_folder <- here("data", "downloads")
+target_folder <- here("data", "open_area")
 dir.create(target_folder, showWarnings = FALSE)
 
+source(here("source", "create_map", "download.R"))
 osm_pbf <- here(download_folder, "geofabrik_belgium-latest.osm.pbf")
-
-if (!file_test("-f", osm_pbf)) {
-  source(here("download.R"))
-}
 
 jacht <- here(target_folder, "jacht.gpkg")
 if (!file_test("-f", jacht)) {
-  source(here("jacht.R"))
+  source(here("source", "create_map", "hunting_grounds.R"))
 }
 
 # extract landuse, landcover and natural

@@ -5,7 +5,7 @@ library(qgisprocess)
 qgis_configure()
 
 download_folder <- here("data", "downloads")
-target_folder <- here("data", "open_space")
+target_folder <- here("data", "open_area")
 dir.create(target_folder, showWarnings = FALSE)
 
 source(here("source", "create_map", "download.R"))
