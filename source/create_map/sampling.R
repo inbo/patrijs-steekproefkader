@@ -26,7 +26,23 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
   setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
   c(list(algorithm = "native:dissolve", FIELD = "VELDID")) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
+    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+    OUTPUT = qgis_tmp_vector()
+  )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
   # bereken de breedte van de bounding box in hm
@@ -34,7 +50,7 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float", # nolint
+      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Decimal (double)",
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -45,7 +61,7 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float", # nolint
+      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -56,7 +72,7 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-      FORMULA = "$area / 10000", FIELD_TYPE = "Float", # nolint
+      FORMULA = "$area / 10000", FIELD_TYPE = "Decimal (double)", # nolint
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -86,7 +102,7 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   do.call(what = qgis_run_algorithm)
 qgis_tmp_clean()
 
-download_folder <- here("downloads")
+download_folder <- here("data", "downloads")
 osm_pbf <- here(download_folder, "geofabrik_belgium-latest.osm.pbf")
 osm_gpkg <- oe_vectortranslate(file_path = osm_pbf, layer = "lines")
 
@@ -221,7 +237,6 @@ qgis_tmp_clean()
 to_buffer <- list.files(
   target_folder, pattern = "^(high|water)way.*.gpkg", full.names = TRUE
 )
-
 for (i in to_buffer) {
   i %>%
     setNames("INPUT") %>%
@@ -653,7 +668,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-    FORMULA = "$area / 10000", FIELD_TYPE = "Float", # nolint
+    FORMULA = "$area / 10000", FIELD_TYPE = "Decimal (double)", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -668,7 +683,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "x_min",
-    FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Float", # nolint
+    FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -676,7 +691,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "x_max",
-    FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Float", # nolint
+    FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -684,7 +699,7 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "y_min",
-    FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Float", # nolint
+    FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
     OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -692,34 +707,26 @@ list.files(target_folder, pattern = "open_ruimte_klein", full.names = TRUE) %>%
   setNames("INPUT") %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "y_max",
-    FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Float", # nolint
+    FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
     OUTPUT = here(target_folder, "open_ruimte_merge.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
 
 get_penalty <- function(bp) {
-  bp <- dplyr::summarise(
-    bp,
-    ha = sum(rlang::.data$ha),
-    dplyr::across(dplyr::ends_with("min"), min),
-    dplyr::across(dplyr::ends_with("max"), max)
+  bp <- data.frame(
+    ha = sum(bp$ha), x_min = min(bp$x_min), x_max = min(bp$x_max),
+    y_min = min(bp$y_min), y_max = min(bp$y_max)
   )
-  bp <- dplyr::mutate(
-    bp,
-    dx = rlang::.data$x_max - rlang::.data$x_min,
-    dy = rlang::.data$y_max - rlang::.data$y_min,
-    penalty = ifelse(
-      pmax(rlang::.data$dx, rlang::.data$dy) > 25, Inf,
-      pmax(rlang::.data$dx, rlang::.data$dy) / 25
-    ) +
+  bp$dx <- bp$x_max - bp$x_min
+  bp$dy <- bp$y_max - bp$y_min
+  bp$penalty <- ifelse(
+    pmax(bp$dx, bp$dy) > 25, Inf, pmax(bp$dx, bp$dy) / 25
+  ) +
     ifelse(
-      pmin(rlang::.data$dx, rlang::.data$dy) > 19, Inf,
-      pmin(rlang::.data$dx, rlang::.data$dy) / 19
+      pmin(bp$dx, bp$dy) > 19, Inf, pmin(bp$dx, bp$dy) / 19
     ) +
-    ifelse(rlang::.data$ha > 150, Inf, rlang::.data$ha / 150)
-  )
-  bp <- dplyr::summarise(bp, penalty = sum(rlang::.data$penalty))
-  bp <- dplyr::pull(bp, rlang::.data$penalty)
+    ifelse(bp$ha > 150, Inf, bp$ha / 150)
+  sum(bp$penalty)
 }
 
 here(target_folder, "open_ruimte_merge.gpkg") %>%
@@ -734,7 +741,7 @@ for (current_field in to_do) {
     filter(.data$VELDID == current_field) -> merge_base
   merge_base %>%
     st_drop_geometry() %>%
-    select(-.data$VELDID, -.data$WBENR) %>%
+    select(-"VELDID", -"WBENR") %>%
     mutate(
       grouping = row_number(),
       dx = .data$x_max - .data$x_min,
@@ -750,7 +757,7 @@ for (current_field in to_do) {
       distance = sqrt((.data$x1 - .data$x2) ^ 2 + (.data$y1 - .data$y2) ^ 2)
     ) %>%
     filter(.data$distance < 1000) %>%
-    select(-.data$distance) %>%
+    select(-"distance") %>%
     arrange(.data$from, .data$to) -> connections
   base_points %>%
     filter(
@@ -769,11 +776,11 @@ for (current_field in to_do) {
       pull(.data$grouping) -> smallest
     connections %>%
       filter(.data$from == smallest) %>%
-      select(candidate = .data$to) %>%
+      select(candidate = "to") %>%
       bind_rows(
         connections %>%
           filter(.data$to == smallest) %>%
-          select(candidate = .data$from)
+          select(candidate = "from")
       ) %>%
       pull(.data$candidate) -> candidate
     base_points %>%
@@ -853,7 +860,6 @@ list.files(
   setNames("LAYERS") %>%
   c(list(
     algorithm = "native:mergevectorlayers",
-    OUTPUT = part_1,
     CRS = paste(
       "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
       "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
@@ -887,6 +893,13 @@ list.files(
   qgis_output("OUTPUT") %>%
   setNames("INPUT") %>%
   c(list(
+    algorithm = "native:snappointstogrid", OUTPUT = qgis_tmp_vector(),
+    HSPACING = 1, VSPACING = 1
+  )) %>%
+  do.call(what = qgis_run_algorithm) %>%
+  qgis_output("OUTPUT") %>%
+  setNames("INPUT") %>%
+  c(list(
     algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
     END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
     OUTPUT = qgis_tmp_vector()
@@ -911,7 +924,7 @@ list.files(
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
-      FORMULA = "$area / 10000" #nolint
+      FORMULA = "$area / 10000"
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -936,7 +949,7 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "id",
-      FORMULA = "format('%1_01', \"VELDID\")", FIELD_TYPE = "String",
+      FORMULA = "format('%1_01', \"VELDID\")", FIELD_TYPE = "Text (string)",
       OUTPUT = qgis_tmp_vector()
     )
   ) %>%
@@ -971,8 +984,8 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Float", #nolint
-      OUTPUT = qgis_tmp_vector()
+      FORMULA = "bounds_width($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
@@ -980,8 +993,8 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Float", #nolint
-      OUTPUT = qgis_tmp_vector()
+      FORMULA = "bounds_height($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
@@ -989,7 +1002,7 @@ here(target_folder, "open_ruimte_ok_1.gpkg") %>%
   setNames("INPUT") %>%
   c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "landscape",
-      FORMULA = '"dx" > "dy"', FIELD_TYPE = "Integer",
+      FORMULA = '"dx" > "dy"', FIELD_TYPE = "Integer (32 bit)",
       OUTPUT = here(target_folder, "telblok.gpkg")
   )) %>%
   do.call(what = qgis_run_algorithm)
