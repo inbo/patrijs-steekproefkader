@@ -12,7 +12,7 @@ doi <- c(
   wevl = 5827429
 )
 
-current <- "vlbr"
+current <- "wevl"
 myrec <- zenodo$getDepositionById(doi[current])
 myrec <- zenodo$depositRecordVersion(
   record = myrec, delete_latest_files = TRUE, publish = FALSE
@@ -22,48 +22,11 @@ myrec$setVersion(new_version)
 source_folder %>%
   file.path(current) %>%
   list.files(full.names = TRUE) -> to_do
-while (length(to_do) > 0) {
-  walk(to_do, zenodo$uploadFile, record = myrec)
-  zenodo$getFiles(myrec$id) %>%
-    map_chr("filename") -> done
-  to_do <- to_do[!basename(to_do) %in% done]
-}
-myrec <- zenodo$depositRecord(myrec, publish = TRUE)
-
-current <- "limb"
-myrec <- zenodo$getDepositionById(doi[current])
-myrec <- zenodo$depositRecordVersion(
-  record = myrec, delete_latest_files = TRUE, publish = FALSE
-)
-myrec$setPublicationDate(Sys.Date())
-myrec$setVersion(new_version)
-source_folder %>%
-  file.path(current) %>%
-  list.files(full.names = TRUE) -> to_do
-while (length(to_do) > 0) {
-  walk(to_do, zenodo$uploadFile, record = myrec)
-  zenodo$getFiles(myrec$id) %>%
-    map_chr("filename") -> done
-  to_do <- to_do[!basename(to_do) %in% done]
-}
-myrec <- zenodo$depositRecord(myrec, publish = TRUE)
-
-current <- "antw"
-myrec <- zenodo$getDepositionById(doi[current])
-myrec <- zenodo$depositRecordVersion(
-  record = myrec, delete_latest_files = TRUE, publish = FALSE
-)
-myrec$setPublicationDate(Sys.Date())
-myrec$setVersion(new_version)
-source_folder %>%
-  file.path(current) %>%
-  list.files(full.names = TRUE) -> to_do
-while (length(to_do) > 0) {
-  walk(to_do, zenodo$uploadFile, record = myrec)
-  zenodo$getFiles(myrec$id) %>%
-    map_chr("filename") -> done
-  to_do <- to_do[!basename(to_do) %in% done]
-}
+walk(to_do, zenodo$uploadFile, record = myrec)
+zenodo$getFiles(myrec$id) %>%
+  map_chr("filename") -> done
+to_do <- to_do[!basename(to_do) %in% done]
+stopifnot(length(to_do) == 0)
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
 
 current <- "oovl"
@@ -76,15 +39,14 @@ myrec$setVersion(new_version)
 source_folder %>%
   file.path(current) %>%
   list.files(full.names = TRUE) -> to_do
-while (length(to_do) > 0) {
-  walk(to_do, zenodo$uploadFile, record = myrec)
-  zenodo$getFiles(myrec$id) %>%
-    map_chr("filename") -> done
-  to_do <- to_do[!basename(to_do) %in% done]
-}
+walk(to_do, zenodo$uploadFile, record = myrec)
+zenodo$getFiles(myrec$id) %>%
+  map_chr("filename") -> done
+to_do <- to_do[!basename(to_do) %in% done]
+stopifnot(length(to_do) == 0)
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
 
-current <- "wevl"
+current <- "antw"
 myrec <- zenodo$getDepositionById(doi[current])
 myrec <- zenodo$depositRecordVersion(
   record = myrec, delete_latest_files = TRUE, publish = FALSE
@@ -94,10 +56,43 @@ myrec$setVersion(new_version)
 source_folder %>%
   file.path(current) %>%
   list.files(full.names = TRUE) -> to_do
-while (length(to_do) > 0) {
-  walk(to_do, zenodo$uploadFile, record = myrec)
-  zenodo$getFiles(myrec$id) %>%
-    map_chr("filename") -> done
-  to_do <- to_do[!basename(to_do) %in% done]
-}
+walk(to_do, zenodo$uploadFile, record = myrec)
+zenodo$getFiles(myrec$id) %>%
+  map_chr("filename") -> done
+to_do <- to_do[!basename(to_do) %in% done]
+stopifnot(length(to_do) == 0)
+myrec <- zenodo$depositRecord(myrec, publish = TRUE)
+
+current <- "limb"
+myrec <- zenodo$getDepositionById(doi[current])
+myrec <- zenodo$depositRecordVersion(
+  record = myrec, delete_latest_files = TRUE, publish = FALSE
+)
+myrec$setPublicationDate(Sys.Date())
+myrec$setVersion(new_version)
+source_folder %>%
+  file.path(current) %>%
+  list.files(full.names = TRUE) -> to_do
+walk(to_do, zenodo$uploadFile, record = myrec)
+zenodo$getFiles(myrec$id) %>%
+  map_chr("filename") -> done
+to_do <- to_do[!basename(to_do) %in% done]
+stopifnot(length(to_do) == 0)
+myrec <- zenodo$depositRecord(myrec, publish = TRUE)
+
+current <- "vlbr"
+myrec <- zenodo$getDepositionById(doi[current])
+myrec <- zenodo$depositRecordVersion(
+  record = myrec, delete_latest_files = TRUE, publish = FALSE
+)
+myrec$setPublicationDate(Sys.Date())
+myrec$setVersion(new_version)
+source_folder %>%
+  file.path(current) %>%
+  list.files(full.names = TRUE) -> to_do
+walk(to_do, zenodo$uploadFile, record = myrec)
+zenodo$getFiles(myrec$id) %>%
+  map_chr("filename") -> done
+to_do <- to_do[!basename(to_do) %in% done]
+stopifnot(length(to_do) == 0)
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
