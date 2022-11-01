@@ -2,7 +2,6 @@
 *.gpkg-shm
 *.gpkg-wal
 *.html
-*.json
 *.pbf
 *.zip
 .DS_Store
