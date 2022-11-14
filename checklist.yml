@@ -4,6 +4,7 @@ allowed:
   warnings: []
   notes: []
 required:
+- CITATION
 - checklist
 - filename conventions
 - license

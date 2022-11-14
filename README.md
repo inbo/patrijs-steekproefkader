@@ -67,3 +67,10 @@ Having both the code and the data available under version control, allows to rec
 - **Antwerp**: https://doi.org/10.5281/zenodo.5827467
 - **Limburg**: https://doi.org/10.5281/zenodo.5827491
 - **Flemish Brabant**: https://doi.org/10.5281/zenodo.5827509
+
+## Other maps
+
+- **open area for partridge**: https://doi.org/10.5281/zenodo.5814833
+- **sampling units**: https://doi.org/10.5281/zenodo.5814900
+- **hunting grounds**: https://doi.org/10.5281/zenodo.5584203
+- **OpenStreetMap snapshot**: https://doi.org/10.5281/zenodo.5792948

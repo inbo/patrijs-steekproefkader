@@ -11,7 +11,7 @@
 .Ruserdata
 .httr-oauth
 cover.txt
+data/*
 docs
 open_ruimte/*
 output/*
-data/*
