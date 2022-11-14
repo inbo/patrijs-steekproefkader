@@ -5,19 +5,16 @@ library(tidyverse)
 library(qgisprocess)
 qgis_configure()
 
-download_folder <- here("downloads")
-target_folder <- here("open_ruimte")
+download_folder <- here("data", "downloads")
+target_folder <- here("data", "open_area")
 dir.create(target_folder, showWarnings = FALSE)
 
+source(here("source", "create_map", "download.R"))
 osm_pbf <- here(download_folder, "geofabrik_belgium-latest.osm.pbf")
-
-if (!file_test("-f", osm_pbf)) {
-  source(here("download.R"))
-}
 
 jacht <- here(target_folder, "jacht.gpkg")
 if (!file_test("-f", jacht)) {
-  source(here("jacht.R"))
+  source(here("source", "create_map", "hunting_grounds.R"))
 }
 
 # extract landuse, landcover and natural
@@ -270,7 +267,7 @@ natural_wetland %>%
   c(list(
     algorithm = "native:fieldcalculator", FIELD_NAME = "meadow",
     FORMULA = 'regexp_substr("other_tags", \'.*meadow"=>"(.*?)".*\')',
-    OUTPUT = qgis_tmp_vector(), FIELD_TYPE = "String"
+    OUTPUT = qgis_tmp_vector(), FIELD_TYPE = "Text (string)"
   )) %>%
   do.call(what = qgis_run_algorithm) %>%
   qgis_output("OUTPUT") %>%
@@ -310,7 +307,7 @@ if (!file_test("-f", landcover_grass)) {
     c(list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "landcover",
       FORMULA = 'regexp_substr("other_tags", \'.*landcover"=>"(.*?)".*\')',
-      OUTPUT = qgis_tmp_vector(), FIELD_TYPE = "String"
+      OUTPUT = qgis_tmp_vector(), FIELD_TYPE = "Text (string)"
     )) %>%
     do.call(what = qgis_run_algorithm) %>%
     qgis_output("OUTPUT") %>%
@@ -343,7 +340,7 @@ to_do[!to_do %in% done] %>%
         setNames("INPUT") %>%
         c(list(
           algorithm = "native:fieldcalculator", FIELD_NAME = "open",
-          FORMULA = 1, FIELD_TYPE = "Integer", FIELD_LENGTH = 1,
+          FORMULA = 1, FIELD_TYPE = "Integer (32 bit)", FIELD_LENGTH = 1,
           FIELD_PRECISION = 0, OUTPUT = qgis_tmp_vector()
         )) %>%
         do.call(what = qgis_run_algorithm) %>%
