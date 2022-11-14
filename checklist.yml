@@ -3,9 +3,6 @@ package: no
 allowed:
   warnings: []
   notes: []
-citation_roles:
-- aut
-- cre
 required:
 - checklist
 - filename conventions
@@ -14,3 +11,21 @@ required:
 - spelling
 spelling:
   default: en-GB
+  ignore:
+  - .github
+  - LICENSE.md
+  - output
+  - renv
+  - source/create_map
+  other:
+    nl-BE:
+    - source/density/detectie.Rmd
+    - source/density/detectie2.Rmd
+    - source/rapport/01_inleiding.Rmd
+    - source/rapport/1_alternatief.Rmd
+    - source/rapport/2_relevant.Rmd
+    - source/rapport/3_telblok.Rmd
+    - source/rapport/4_map_roulette.Rmd
+    - source/rapport/5_reproduceerbaar.Rmd
+    - source/rapport/index.Rmd
+    - source/rapport/zzz_references_and_appendix.Rmd

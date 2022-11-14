@@ -50,8 +50,8 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
-      FORMULA = "bounds_width($geometry) / 100", FIELD_TYPE = "Decimal (double)",
-      OUTPUT = qgis_tmp_vector()
+      FORMULA = "bounds_width($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
@@ -61,8 +61,8 @@ here("data", "open_area", "open_ruimte.gpkg") %>%
   c(
     list(
       algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
-      FORMULA = "bounds_height($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
-      OUTPUT = qgis_tmp_vector()
+      FORMULA = "bounds_height($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
     )
   ) %>%
   do.call(what = qgis_run_algorithm) %>%
