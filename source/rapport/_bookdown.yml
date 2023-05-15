@@ -1,6 +1,6 @@
 book_filename: "steekproefkader.Rmd"
-output_dir: "../output"
-delete_merged_file: FALSE
+output_dir: "../../output"
+delete_merged_file: TRUE
 language:
   label:
     fig:    'Figuur '
@@ -14,4 +14,4 @@ language:
     ex:     'Voorbeeld '
     proof:  'Bewijs. '
     remark: 'Opmerking. '
-edit: https://github.com/inbo/patrijs-steekproefkader/edit/main/rapport/%s
+edit: https://github.com/inbo/patrijs-steekproefkader/edit/main/source/rapport/%s
