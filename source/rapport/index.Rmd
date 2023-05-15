@@ -38,14 +38,14 @@ keywords: partridge; OpenStreetMap; reproducible research
 corresponding: thierry.onkelinx@inbo.be
 cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
 cover_description: Roepende patrijs in maïsveld. © Yves Adams
-cover: cover.pdf
+cover: media/cover.pdf
 cooperation:
   - Agentschap voor Natuur en Bos
   - VAC Brussel - Herman Teirlinck
   - Havenlaan 88 bus 75
   - 1000 Brussel
   - https://natuurenbos.be
-cooperation_logo: anb.jpg
+cooperation_logo: media/anb.jpg
 
 
 # pdf report specific options. See ?INBOmd::report() for full list and more details.
