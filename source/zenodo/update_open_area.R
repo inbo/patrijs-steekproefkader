@@ -21,7 +21,7 @@ here("data", "open_area") |>
     record = myrec, delete_latest_files = TRUE, publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2023.01")
+myrec$setVersion("2023.02")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
 
 myrec <- zenodo$getDepositionById("5814901")
@@ -33,5 +33,5 @@ here("data", "sampling") |>
     record = myrec, delete_latest_files = TRUE, publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2023.01")
+myrec$setVersion("2023.02")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
