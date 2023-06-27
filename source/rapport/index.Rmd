@@ -2,40 +2,50 @@
 # generic options. See ?INBOmd::report() for full list and more details.
 title: Afbakening van de open ruimte voor patrijs in functie van de jachtreglementering
 author: 
-  - firstname: Thierry
-    name: Onkelinx
+  - name: 
+      given: Thierry
+      family: Onkelinx
     email: "thierry.onkelinx@inbo.be"
     orcid: 0000-0002-1825-0097
-  - firstname: Raïsa
-    name: Carmen
+    affiliation: Research Institute for Nature and Forest (INBO)
+    corresponding: true
+  - name: 
+      given: Raïsa
+      family: Carmen
     email: "raisa.carmen@inbo.be"
     orcid: 0000-0003-1025-8702
+    affiliation: Research Institute for Nature and Forest (INBO)
 style: Vlaanderen
 lang: nl
 
 reviewer: 
-  - firstname: Thomas
-    name: Scheppers
+  - name: 
+      given: Thomas
+      family: Scheppers
     email: "thomas.scheppers@inbo.be"
     orcid: 0000-0002-5098-9326
+    affiliation: Research Institute for Nature and Forest (INBO)
 year: 2022
 reportnr: 2
 depotnr: D/2022/3241/023
 doi: 10.21436/inbor.70809860
+funder: Research Institute for Nature and Forest (INBO)
+rightsholder: Research Institute for Nature and Forest (INBO)
+community: inbo
+keywords: partridge; OpenStreetMap; reproducible research
 
 # report specific options. See ?INBOmd::report() for full list and more details.
-shortauthor: Onkelinx, T. & Carmen, R.
 corresponding: thierry.onkelinx@inbo.be
 cover_photo: https://img5.vildaphoto.net/asset/l/117545.jpg
 cover_description: Roepende patrijs in maïsveld. © Yves Adams
-cover: cover.pdf
+cover: media/cover.pdf
 cooperation:
   - Agentschap voor Natuur en Bos
   - VAC Brussel - Herman Teirlinck
   - Havenlaan 88 bus 75
   - 1000 Brussel
   - https://natuurenbos.be
-cooperation_logo: anb.jpg
+cooperation_logo: media/anb.jpg
 
 
 # pdf report specific options. See ?INBOmd::report() for full list and more details.
@@ -57,7 +67,7 @@ output:
   bookdown::dontrun: default
 ---
 
-# Samenvatting {-}
+# Samenvatting {.unnumbered}
 
 **Waarom een open-ruimte-kaart?**
 
@@ -80,7 +90,7 @@ Hoewel deze versie in 2020 gepubliceerd werd, wil dat niet zeggen dat alle infor
 In de praktijk bleek zowat driekwart van de gegevens ouder dan 2007.
 Vandaar dat we op zoek gaan naar een betere bron.
 
-**Een _open_ open-ruimte-kaart**
+**Een *open* open-ruimte-kaart**
 
 Na het afwegen van een aantal mogelijkheden, kozen we [OpenStreetMap](https://www.openstreetmap.org) als nieuwe bronkaart.
 Net zoals alle andere kandidaten is deze kaart niet perfect, maar wel goed genoeg om te gebruiken.
@@ -102,6 +112,7 @@ In dit rapport beschrijven we hoe we de informatie van OpenStreetMap omzetten na
 De omzetting hebben we als een computerprogramma uitgewerkt.
 We publiceren dit computerprogramma samen met de open-ruimte-kaart en de gebruikte bronkaarten (OpenStreetMap en grenzen jachtgebieden).
 Op die manier kan iedereen de gebruikte regels (laten) nakijken of zelf uitvoeren.
+
 ```{r setup, include = FALSE}
 library(knitr)
 opts_chunk$set(
@@ -137,4 +148,5 @@ if (interactive()) {
     }
   )
 }
+conflicted::conflicts_prefer(dplyr::filter)
 ```

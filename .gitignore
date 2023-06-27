@@ -1,9 +1,18 @@
+*.dbf
+*.doc*
+*.gddoc
+*.gdsheet
 *.gpkg
 *.gpkg-shm
 *.gpkg-wal
 *.html
+*.mdb
 *.pbf
+*.shp*
+*.shx
+*.xls*
 *.zip
+*_files
 .DS_Store
 .RData
 .Rhistory
@@ -13,5 +22,8 @@
 cover.txt
 data/*
 docs
+libs
 open_ruimte/*
+output
 output/*
+renv/library

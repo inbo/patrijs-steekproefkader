@@ -61,7 +61,7 @@ basis %>%
 
 ## Groenkaart {#s:groenkaart}
 
-Bron: https://www.geopunt.be/catalogus/datasetfolder/2c64ca0c-5053-4a66-afac-24d69b1a09e7
+Bron: <https://www.geopunt.be/catalogus/datasetfolder/2c64ca0c-5053-4a66-afac-24d69b1a09e7>
 
 De meest recente versie geeft het landgebruik voor 2018 weer.
 In principe zal men de kaart elke drie jaar vernieuwen.
@@ -103,12 +103,12 @@ basis %>%
 ```
 
 ```{r groenkaart-legende, fig.cap = "Legende van de groenkaart."}
-include_graphics("groenkaart-legende.png")
+include_graphics("media/groenkaart-legende.png")
 ```
 
 ## Landgebruik {#s:landgebruik}
 
-Bron: https://www.geopunt.be/catalogus/datasetfolder/fe979929-a2b5-4353-94c5-608c4b109dc6
+Bron: <https://www.geopunt.be/catalogus/datasetfolder/fe979929-a2b5-4353-94c5-608c4b109dc6>
 
 De meest recente versie geeft het landgebruik voor 2019 weer.
 In principe zal men de kaart elke drie jaar vernieuwen.
@@ -148,12 +148,12 @@ basis %>%
 ```
 
 ```{r landgebruik-legende, fig.cap = "Legende van de landgebruikkaart."}
-include_graphics("landgebruik-legende.png")
+include_graphics("media/landgebruik-legende.png")
 ```
 
 ## Landbouwgebruikspercelen {#s:landbouw}
 
-Bron: https://www.geopunt.be/catalogus/datasetfolder/13cc8a4e-7292-4cb8-afc7-6e07d052b01a
+Bron: <https://www.geopunt.be/catalogus/datasetfolder/13cc8a4e-7292-4cb8-afc7-6e07d052b01a>
 
 De meest recente versie geeft de situatie van 2020 weer.
 In principe zal men de kaart jaarlijks vernieuwen.
@@ -194,12 +194,12 @@ basis %>%
 ```
 
 ```{r landbouw-legende, fig.cap = "Legende van de gewasgroepen van de landbouwgebruikspercelenkaart."}
-include_graphics("landbouw-legende.png")
+include_graphics("media/landbouw-legende.png")
 ```
 
 ## OpenStreetMap {#s:osm}
 
-Bron: https://www.openstreetmap.org
+Bron: <https://www.openstreetmap.org>
 
 OpenStreetMap is een kaart waar wereldwijd vrijwilligers aan bijdragen.
 Het updaten van de kaart hangt bijgevolg af van de vrijwilligers.
@@ -209,15 +209,14 @@ Ze bieden de informatie tevens aan als verschillende kant en klaar [online kaart
 De kaart is beschikbaar onder de [`Open Database License`](https://wiki.openstreetmap.org/wiki/NL:Open_Database_License).
 
 Elke polygoon bevat informatie in een gestandaardiseerd formaat.
-Naast landgebruik kan er informatie zijn over gebouwen, administratieve gebieden, ...
-We kunnen de open ruimte definiëren aan de hand van de polygonen die voldoen aan een goed gekozen set van kenmerken.
+Naast landgebruik kan er informatie zijn over gebouwen, administratieve gebieden, ... We kunnen de open ruimte definiëren aan de hand van de polygonen die voldoen aan een goed gekozen set van kenmerken.
 
 Grosso modo is de actuele kwaliteit van deze kaart behoorlijk goed.
 Ze is niet perfect.
 Deels omdat ze op sommige plaatsen verouderd is.
 Deels omdat vrijwilligers zich soms vergissen van landgebruiksklasse of een gebied niet (helemaal) ingetekend hebben.
 
-(ref:osm) Voorbeeld van OpenStreetMap. De legende is beschikbaar via https://wiki.openstreetmap.org/wiki/AreasTab.
+(ref:osm) Voorbeeld van OpenStreetMap. De legende is beschikbaar via <https://wiki.openstreetmap.org/wiki/AreasTab>.
 
 ```{r osm, fig.cap = "(ref:osm)"}
 basis %>%
@@ -228,7 +227,6 @@ basis %>%
   ) %>%
   hideGroup("jachtterreinen")
 ```
-
 
 # Keuze van de basiskaartlaag
 
@@ -255,7 +253,7 @@ En zo houden we bij het bepalen van de gemiddelde dichtheid van patrijs in de WB
 
 In het volgende hoofdstuk beschrijven we welke selecties we uitvoeren op basis van OpenStreetMap om de open-ruimte-kaart aan te maken.
 Iedereen kan op basis van deze regels vaststellen waarom we een bepaald perceel al dan niet als open ruimte indelen.
-De eigenschappen van een polygoon kan je op https://www.openstreetmap.org eenvoudig opvragen via "Nabije objecten opvragen".
+De eigenschappen van een polygoon kan je op <https://www.openstreetmap.org> eenvoudig opvragen via "Nabije objecten opvragen".
 Hiervoor selecteer je rechts de tool die als icoon een pijltje met vraagteken heeft.
 De cursor verandert dan in een vraagteken met pijl naar beneden.
 Daarmee klik je in het gebied waarvan je de informatie wenst op te vragen.
