@@ -379,12 +379,12 @@
     },
     "checklist": {
       "Package": "checklist",
-      "Version": "0.3.2",
+      "Version": "0.3.4",
       "Source": "Repository",
       "Repository": "https://inbo.r-universe.dev",
       "RemoteUrl": "https://github.com/inbo/checklist",
       "RemoteRef": "HEAD",
-      "RemoteSha": "a475267f230ce10ee6495cb111d0191252d718db",
+      "RemoteSha": "cef05b1b54177c3eb4a37b13249b2d0ca3104b14",
       "Requirements": [
         "R",
         "R6",
@@ -408,7 +408,7 @@
         "withr",
         "yaml"
       ],
-      "Hash": "305d69a7a519c2e7771fe429030f3151"
+      "Hash": "109dedf745343e3b29f063fc84aec5e4"
     },
     "class": {
       "Package": "class",
