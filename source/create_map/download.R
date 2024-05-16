@@ -27,7 +27,7 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
 } else {
   target <- "jacht.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.7190764", path = dl, timeout = 600)
+    download_zenodo(doi = "10.5281/zenodo.10212759", path = dl, timeout = 600)
   }
   here(dl, target) |>
     file() |>
@@ -84,7 +84,7 @@ if (file_test("-f", here(dl, target))) {
       hash == hashes$sha512[hashes$file == target]
   )
 } else {
-  download_zenodo(doi = "10.5281/zenodo.7962764", path = dl, timeout = 600)
+  download_zenodo(doi = "10.5281/zenodo.10212939", path = dl, timeout = 600)
   here(dl, target) |>
     file() |>
     sha512() |>
