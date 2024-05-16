@@ -45,3 +45,16 @@ for (this_layout in c("Cartoweb", "luchtfoto", "OSM")) {
     )
   }
 }
+
+old_wd <- getwd()
+for (root in list.dirs(target_folder)) {
+  setwd(root)
+  message(root)
+  to_zip <- list.files(root, pattern = "*.pdf")
+  zip_file <- gsub("jachtveld_([0-9]{3}).*_(.*).pdf", "wbe_\\1_\\2.zip", to_zip)
+  for (zf in unique(zip_file)) {
+    message(zf)
+    zip(zf, files = to_zip[zip_file == zf])
+  }
+}
+setwd(old_wd)

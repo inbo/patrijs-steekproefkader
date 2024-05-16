@@ -74,3 +74,11 @@ Having both the code and the data available under version control, allows to rec
 - **sampling units**: https://doi.org/10.5281/zenodo.5814900
 - **hunting grounds**: https://doi.org/10.5281/zenodo.5584203
 - **OpenStreetMap snapshot**: https://doi.org/10.5281/zenodo.5792948
+
+# How to update the maps
+
+## Downloading and republish the source data
+
+1. `source/zenodo/update_osm_pbf.R` handles the OpenStreetMap data.
+1. `source/zenodo/update_jacht.R` handles the hunting area data.
+  Note that you need to update the URL, publication date and version.
