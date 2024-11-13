@@ -86,7 +86,7 @@ if (file_test("-f", here(dl, target))) {
       hash == hashes$sha512[hashes$file == target]
   )
 } else {
-  download_zenodo(doi = "10.5281/zenodo.11204543", path = dl, timeout = 600)
+  download_zenodo(doi = "10.5281/zenodo.14139313", path = dl, timeout = 600)
   here(dl, target) |>
     file() |>
     sha512() |>
@@ -98,11 +98,10 @@ if (file_test("-f", here(dl, target))) {
         hash == hashes$sha512[hashes$file == target]
     )
   } else {
-    write_vc(
-      rbind(
-        data.frame(file = target, sha512 = unclass(as.character(hash))), hashes
-      ),
-      "checksum", root = dl, sorting = "file", optimize = FALSE
-    )
+    data.frame(file = target, sha512 = unclass(as.character(hash))) |>
+      rbind(hashes) |>
+      write_vc(
+        "checksum", root = dl, sorting = "file", optimize = FALSE
+      )
   }
 }

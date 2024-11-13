@@ -9,7 +9,7 @@ osm_pbf <- oe_download(
 )
 
 zenodo <- ZenodoManager$new(token = key_get("zenodo"), logger = "INFO")
-myrec <- zenodo$getDepositionById("5792949")
+myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.5792949")
 myrec <- zenodo$depositRecordVersion(
   myrec, delete_latest_files = TRUE, files = osm_pbf, publish = FALSE
 )
