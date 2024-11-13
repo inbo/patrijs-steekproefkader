@@ -15,6 +15,7 @@
 *_files
 .DS_Store
 .RData
+.Renviron
 .Rhistory
 .Rproj.user
 .Ruserdata

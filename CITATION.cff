@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
-title: Sampling frame for partridge (Perdrix perdrix) in Flanders
+title: "Sampling frame for partridge (Perdrix perdrix) in Flanders"
 authors:
 - given-names: Thierry
   family-names: Onkelinx
@@ -23,21 +23,23 @@ doi: 10.5281/zenodo.5814813
 license: CC-BY-4.0
 repository-code: https://github.com/inbo/patrijs-steekproefkader/
 type: software
-abstract: |-
-  Since 2008, partridge hunting in Flanders has been subject to a number of conditions.
-  The first condition states compliance with an average density of at least 3 breeding pairs per 100 ha of open space.
-  The Research Institute for Nature and Forest ([INBO](https://www.vlaanderen.be/inbo/en)) is responsible for the calculation of these densities and advises the Agency for Nature and Forests ([ANB](https://www.natuurenbos.be/)) on this.
-
-  This repository contains the source code to generate the layer with open space within [hunting grounds](https://doi.org/10.5281/zenodo.5584203) in Flanders.
-  The selection is based on relevant categories of the [OpenStreetMap](https://openstreetmap.org) information.
-
-  We aim to make the layer reproducible by making the code publicly available under an open source license.
-  The code itself requires only freeware open source software ([R](https://www.r-project.org/) and [QGIS](https://qgis.org)).
-  The OpenStreetMap database updates continuously.
-  Rerunning the code on the current database might yield a different layer.
-  Therefore we also republish the [snapshot](https://doi.org/10.5281/zenodo.5792948) of the OpenStreetMap data we used.
-  When we need to update the open space layer, we will add an updated snapshot as a new version.
-  Having both the code and the data available under version control, allows to recreate both the most recent version as any older version.
+abstract: "Since 2008, partridge hunting in Flanders has been subject to a number
+  of conditions.\nThe first condition states compliance with an average density of
+  at least 3 breeding pairs per 100 ha of open space.\nThe Research Institute for
+  Nature and Forest ([INBO](https://www.vlaanderen.be/inbo/en)) is responsible for
+  the calculation of these densities and advises the Agency for Nature and Forests
+  ([ANB](https://www.natuurenbos.be/)) on this.\n\nThis repository contains the source
+  code to generate the layer with open space within [hunting grounds](https://doi.org/10.5281/zenodo.5584203)
+  in Flanders.\nThe selection is based on relevant categories of the [OpenStreetMap](https://openstreetmap.org)
+  information.\n\nWe aim to make the layer reproducible by making the code publicly
+  available under an open source license.\nThe code itself requires only freeware
+  open source software ([R](https://www.r-project.org/) and [QGIS](https://qgis.org)).\nThe
+  OpenStreetMap database updates continuously.\nRerunning the code on the current
+  database might yield a different layer.\nTherefore we also republish the [snapshot](https://doi.org/10.5281/zenodo.5792948)
+  of the OpenStreetMap data we used.\nWhen we need to update the open space layer,
+  we will add an updated snapshot as a new version.\nHaving both the code and the
+  data available under version control, allows to recreate both the most recent version
+  as any older version."
 identifiers:
 - type: doi
   value: 10.5281/zenodo.5814813
