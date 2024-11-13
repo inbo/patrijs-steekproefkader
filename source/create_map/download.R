@@ -27,9 +27,7 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
 } else {
   target <- "jacht.zip"
   if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.11204626", path = dl, timeout = 600)
-    here(dl, "Jacht_Shapefile.zip") |>
-      file.rename(here(dl, target))
+    download_zenodo(doi = "10.5281/zenodo.14140560", path = dl, timeout = 600)
   }
   here(dl, target) |>
     file() |>
@@ -49,10 +47,10 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
     )
     hashes <- read_vc("checksum", dl)
   }
-  relevant <- paste0("Jachtter", c(".dbf", ".prj", ".shp", ".shx"))
+  relevant <- paste0("Jachtterr", c(".dbf", ".prj", ".shp", ".shx"))
   unzip(
     zipfile = here(dl, target), overwrite = FALSE, junkpaths = TRUE,
-    files = file.path("Shapefile", relevant), setTimes = TRUE, exdir = dl
+    files = relevant, setTimes = TRUE, exdir = dl
   )
   file.rename(here(dl, relevant), here(dl, tolower(relevant)))
   map(here(dl, tolower(relevant)), file) |>
