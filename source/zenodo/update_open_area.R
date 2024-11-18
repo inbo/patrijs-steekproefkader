@@ -21,10 +21,10 @@ here("data", "open_area") |>
     record = myrec, delete_latest_files = TRUE, publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2024.02")
+myrec$setVersion("2025.01")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
 
-myrec <- zenodo$getDepositionById("5814901")
+myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.5814901")
 here("data", "sampling") |>
   list.files(
     pattern = "^telblok\\.(gpkg|dbf|prj|shp|shx)$", full.names = TRUE
@@ -33,5 +33,5 @@ here("data", "sampling") |>
     record = myrec, delete_latest_files = TRUE, publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2023.02")
+myrec$setVersion("2025.01")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
