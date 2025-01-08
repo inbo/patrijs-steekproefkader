@@ -12,7 +12,7 @@ dir.create(dl, showWarnings = FALSE)
 
 # jachtterreinen
 if (file_test("-f", here(dl, "jachtter.shp"))) {
-  relevant <- paste0("jachtter", c(".dbf", ".prj", ".shp", ".shx"))
+  relevant <- paste0("jachtterr", c(".dbf", ".prj", ".shp", ".shx"))
   hashes <- read_vc("checksum", dl)
   map(here(dl, relevant), file) |>
     map(sha512) |>
@@ -26,14 +26,16 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
   )
 } else {
   target <- "jacht.zip"
-  if (!file_test("-f", here(dl, target))) {
-    download_zenodo(doi = "10.5281/zenodo.14140560", path = dl, timeout = 600)
+  if (!file_test("-f", here(dl, tolower(target)))) {
+    download_zenodo(doi = "10.5281/zenodo.14611150", path = dl, timeout = 600)
+    file.rename(here(dl, "Jacht_20240731_Shapefile.zip"), here(dl, target))
   }
-  here(dl, target) |>
+  here(dl, tolower(target)) |>
     file() |>
     sha512() |>
     as.character() |>
     unclass() -> hash
+
   if (file_test("-f", here(dl, "checksum.csv"))) {
     hashes <- read_vc("checksum", dl)
     stopifnot(
@@ -47,16 +49,17 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
     )
     hashes <- read_vc("checksum", dl)
   }
-  relevant <- paste0("Jachtterr", c(".dbf", ".prj", ".shp", ".shx"))
+  relevant <- paste0("Jachtter", c(".dbf", ".prj", ".shp", ".shx"))
   unzip(
     zipfile = here(dl, target), overwrite = FALSE, junkpaths = TRUE,
-    files = relevant, setTimes = TRUE, exdir = dl
+    files = file.path("Shapefile", relevant), setTimes = TRUE, exdir = dl
   )
-  file.rename(here(dl, relevant), here(dl, tolower(relevant)))
-  map(here(dl, tolower(relevant)), file) |>
+  final <- gsub("Jachtter\\.", "jachtterr.", relevant)
+  file.rename(here(dl, relevant), here(dl, final))
+  map(here(dl, final), file) |>
     map(sha512) |>
     map_chr(as.character) -> hash
-  data.frame(file = tolower(relevant), check = hash) |>
+  data.frame(file = final, check = hash) |>
     inner_join(hashes, by = "file") -> to_test
   stopifnot(
     "Hash of downloaded file doesn't match the stored hash" = all(
@@ -64,7 +67,7 @@ if (file_test("-f", here(dl, "jachtter.shp"))) {
         all(to_test$check == to_test$sha512)
     )
   )
-  data.frame(file = tolower(relevant), sha512 = hash) |>
+  data.frame(file = final, sha512 = hash) |>
     anti_join(hashes, by = "file") |>
     bind_rows(hashes) |>
     write_vc("checksum", root = dl, optimize = FALSE)
