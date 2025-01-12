@@ -161,7 +161,8 @@ if (!file_test("-f", here(target_folder, "highway_other.gpkg"))) {
     qgis_run_algorithm_p(
       algorithm = "native:extractbyattribute", FIELD = "highway",
       OPERATOR = "≠", OUTPUT = here(target_folder, "highway_other.gpkg"),
-      VALUE = "service", FAIL_OUTPUT = here(target_folder, "highway_service.gpkg")
+      VALUE = "service",
+      FAIL_OUTPUT = here(target_folder, "highway_service.gpkg")
     )
   qgis_clean_tmp()
 }
@@ -756,3 +757,490 @@ if (!file_test("-f", here(target_folder, "telblok.gpkg"))) {
   qgis_clean_tmp()
 }
 
+# sampling by WBENR instead of VELDID
+
+if (!file_test("-f", here(target_folder, "to_refine_wbe.gpkg"))) {
+  here(target_folder, "open_ruimte_lambert75.gpkg") |>
+    setNames("INPUT") |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", FIELDS = "WBENR",
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "WBENR", OPERATOR = 9,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+      END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:dissolve", FIELD = "WBENR"
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+      END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # bereken de breedte van de bounding box in hm
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "dx",
+      FORMULA = "bounds_width($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # bereken de hoogte van de bounding box in hm
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "dy",
+      FORMULA = "bounds_height($geometry) / 100",
+      FIELD_TYPE = "Decimal (double)", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # bereken de oppervlakte in ha
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
+      FORMULA = "$area / 10000", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        ha > 150 OR
+          (dx > dy AND (dx > 27 OR dy > 19)) OR
+          (dy > dx AND (dy > 27 OR dx > 19)),
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = here(target_folder, "to_refine_wbe.gpkg"), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_ok_1_wbe.gpkg")
+    )
+  qgis_clean_tmp()
+}
+
+if (!file_test("-f", here(target_folder, "open_ruimte_klein_10_wbe.gpkg"))) {
+  here(target_folder, "open_ruimte_lambert75.gpkg") |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", FIELDS = "WBENR",
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "WBENR", OPERATOR = 9,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:joinattributestable", FIELD = "WBENR",
+      OUTPUT = qgis_tmp_vector(),
+      INPUT_2 = here(target_folder, "to_refine_wbe.gpkg"),
+      FIELD_2 = "WBENR", DISCARD_NONMATCHING = TRUE,
+      METHOD =
+        "Take attributes of the first matching feature only (one-to-one)",
+      FIELDS_TO_COPY = "fid", PREFIX = "junk", NON_MATCHING = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_1_wbe.gpkg")
+    ) |>
+    # clip large polygons by secondary highways
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_secondary.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_2_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_tertiary.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_3_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_waterway_stream.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_4_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_unclassified.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_5_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_track.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_6_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_waterway_ditch.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_7_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_waterway_drain.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_8_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_path.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=", OUTPUT = qgis_tmp_vector(), VALUE = 0,
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_9_wbe.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference",
+      OVERLAY = here(target_folder, "buffer_highway_service.gpkg"),
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    # determine which polygons are too large, too wide or too high
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ok",
+      FORMULA = "if(
+        $area > 500000 OR
+          bounds_width($geometry) > 1900 OR
+          bounds_height($geometry) > 1900,
+        0, 1
+      )", FIELD_TYPE = 1,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    # set small polygons aside
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ok",
+      OPERATOR = "=",  VALUE = 0,
+      OUTPUT = here(target_folder, "open_ruimte_klein_rest_wbe.gpkg"),
+      FAIL_OUTPUT = here(target_folder, "open_ruimte_klein_10_wbe.gpkg")
+    )
+  qgis_clean_tmp()
+}
+
+if (!file_test("-f", here(target_folder, "open_ruimte_merge_wbe.gpkg"))) {
+  list.files(
+    target_folder, pattern = "open_ruimte_klein_.*_wbe", full.names = TRUE
+  ) |>
+    as.list() |>
+    do.call(what = "qgis_list_input") |>
+    qgis_run_algorithm_p(
+      algorithm = "native:mergevectorlayers",
+      OUTPUT = qgis_tmp_vector(),
+      CRS = paste(
+        "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+        "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+        "+y_0=5400088.438 +ellps=intl",
+        "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+        "+units=m +no_defs"
+      )
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = "WBENR"
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "ha",
+      FORMULA = "$area / 10000", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "ha", VALUE = 0.01,
+      OPERATOR = "≥", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "x_min",
+      FORMULA = "x_min($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "x_max",
+      FORMULA = "x_max($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "y_min",
+      FORMULA = "y_min($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:fieldcalculator", FIELD_NAME = "y_max",
+      FORMULA = "y_max($geometry) / 100", FIELD_TYPE = "Decimal (double)", # nolint
+      OUTPUT = here(target_folder, "open_ruimte_merge_wbe.gpkg")
+    )
+  qgis_clean_tmp()
+}
+
+here(target_folder, "open_ruimte_merge_wbe.gpkg") |>
+  read_sf() |>
+  filter(.data$ha >= 0.01) -> to_merge
+list.files(target_folder, pattern = "^wbe") |>
+  str_replace("wbe_(.*).gpkg", "\\1") -> done
+to_do <- sort(unique(to_merge$WBENR[!to_merge$WBENR %in% done]))
+for (current_field in to_do) {
+  message(current_field)
+  to_merge |>
+    filter(.data$WBENR == current_field) -> merge_base
+  merge_base |>
+    st_drop_geometry() |>
+    select(-"WBENR") |>
+    mutate(
+      grouping = row_number(),
+      dx = .data$x_max - .data$x_min,
+      dy = .data$y_max - .data$y_min
+    ) -> base_points
+  merge_base |>
+    st_centroid() |>
+    st_coordinates() |>
+    deldir() %>%
+    `[[`("delsgs") %>%
+    transmute(
+      from = pmin(.data$ind1, .data$ind2), to = pmax(.data$ind1, .data$ind2),
+      distance = sqrt((.data$x1 - .data$x2) ^ 2 + (.data$y1 - .data$y2) ^ 2)
+    ) |>
+    filter(.data$distance < 1000) |>
+    select(-"distance") |>
+    arrange(.data$from, .data$to) -> connections
+  base_points |>
+    filter(
+      .data$ha > 150 | pmin(.data$dx, .data$dy) > 19 |
+        pmax(.data$dx, .data$dy) > 25
+    ) |>
+    pull(.data$grouping) -> too_large
+  connections |>
+    filter(!.data$from %in% too_large, !.data$to %in% too_large) -> connections
+  while (nrow(connections) > 0) {
+    base_points |>
+      filter(.data$grouping %in% c(connections$from, connections$to)) |>
+      group_by(.data$grouping) |>
+      summarise(ha = sum(.data$ha)) |>
+      slice_min(.data$ha, n = 1) |>
+      pull(.data$grouping) -> smallest
+    connections |>
+      filter(.data$from == smallest) |>
+      select(candidate = "to") |>
+      bind_rows(
+        connections |>
+          filter(.data$to == smallest) |>
+          select(candidate = "from")
+      ) |>
+      pull(.data$candidate) -> candidate
+    base_points |>
+      filter(.data$grouping == smallest) -> current_small
+    penalties <- sapply(
+      candidate,
+      function(cand, bp = base_points) {
+        bp |>
+          filter(.data$grouping == cand) |>
+          bind_rows(current_small) |>
+          get_penalty()
+      }
+    )
+    if (any(is.finite(penalties))) {
+      best <- candidate[which.min(penalties)]
+      if (best < smallest) {
+        base_points$grouping[base_points$grouping == smallest] <- best
+        connections$from[connections$from == smallest] <- best
+        connections$to[connections$to == smallest] <- best
+      } else {
+        base_points$grouping[base_points$grouping == best] <- smallest
+        connections$from[connections$from == best] <- smallest
+        connections$to[connections$to == best] <- smallest
+      }
+      connections |>
+        distinct() |>
+        filter(.data$from < .data$to) -> connections
+    }
+    if (any(is.infinite(penalties))) {
+      connections |>
+        filter(
+          !.data$from %in% candidate[is.infinite(penalties)] |
+            .data$to != smallest,
+          !.data$to %in% candidate[is.infinite(penalties)] |
+            .data$from != smallest
+        ) -> connections
+    }
+  }
+  merge_base |>
+    transmute(
+      .data$WBENR,
+      id = base_points$grouping |>
+        factor() |>
+        as.integer() |>
+        sprintf(fmt = "%2$s_%1$02i", .data$WBENR)
+    ) |>
+    st_make_valid() |>
+    st_write(here(target_folder, sprintf("wbe_%s.gpkg", current_field)))
+}
