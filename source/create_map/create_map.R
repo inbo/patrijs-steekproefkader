@@ -168,6 +168,7 @@ if (!file_test("-f", vineyard)) {
 natural_grassland <- here(target_folder, "natural_grassland.gpkg")
 natural_wetland <- here(target_folder, "natural_wetland.gpkg")
 natural_wood <- here(target_folder, "natural_wood.gpkg")
+natural_water <- here(target_folder, "natural_water.gpkg")
 
 if (!file_test("-f", natural_grassland)) {
   natural |>
@@ -186,6 +187,11 @@ if (!file_test("-f", natural_grassland)) {
       algorithm = "native:extractbyattribute", FIELD = "natural",
       OPERATOR = "≠", OUTPUT = qgis_tmp_vector(), VALUE = "wood",
       FAIL_OUTPUT = natural_wood
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "natural",
+      OPERATOR = "≠", OUTPUT = qgis_tmp_vector(), VALUE = "water",
+      FAIL_OUTPUT = natural_water
     )
 
   qgis_clean_tmp()
