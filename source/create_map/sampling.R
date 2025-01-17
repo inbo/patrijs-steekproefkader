@@ -301,161 +301,164 @@ sprintf(
     )
   )
 
-here("data", "open_area", "jacht.gpkg") |>
-  setNames("INPUT") |>
-  qgis_run_algorithm_p(
-    algorithm = "native:extractbyattribute", FIELD = "WBENR", VALUE = NULL,
-    OPERATOR = "is not null", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:reprojectlayer",
-    OUTPUT = here(target_folder, "open_ruimte_lambert75.gpkg"),
-    TARGET_CRS = paste(
-      "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
-      "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
-      "+y_0=5400088.438 +ellps=intl",
-      "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
-      "+units=m +no_defs"
+if (!file_test("-f", here(target_folder, "open_ruimte_buffer.gpkg"))) {
+  here("data", "open_area", "jacht.gpkg") |>
+    setNames("INPUT") |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "WBENR", VALUE = NULL,
+      OPERATOR = "is not null", OUTPUT = qgis_tmp_vector(), FAIL_OUTPUT = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:reprojectlayer",
+      OUTPUT = here(target_folder, "open_ruimte_lambert75.gpkg"),
+      TARGET_CRS = paste(
+        "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
+        "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
+        "+y_0=5400088.438 +ellps=intl",
+        "+towgs84=-99.059,53.322,-112.486,0.419,-0.83,1.885,-1",
+        "+units=m +no_defs"
+      )
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
+      OVERLAY = here(target_folder, "main_buffer.gpkg"), GRID = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = c("fid", "VELDID", "WBENR")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level1",
+      OUTPUT = qgis_tmp_vector(),
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
+      OVERLAY = here(target_folder, "buffer_waterway_stream.gpkg"), GRID = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
+      OVERLAY = here(target_folder, "buffer_waterway_drain.gpkg"), GRID = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "..", "open_area", "natural_water.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = c("fid", "VELDID", "WBENR", "level1")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level2",
+      OUTPUT = qgis_tmp_vector(),
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
+      OVERLAY = here(target_folder, "buffer_highway_primary.gpkg"), GRID = NULL
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+      END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_primary_link.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_secondary.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_secondary_link.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+      END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level3",
+      OUTPUT = qgis_tmp_vector(),
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_tertiary.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
+      END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
+      OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_tertiary_link.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2", "level3")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level4",
+      OUTPUT = qgis_tmp_vector(),
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_residential.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_unclassified.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
+      FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2", "level3", "level4")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level5",
+      OUTPUT = qgis_tmp_vector(),
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_path.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_track.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_highway_service.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
+      OVERLAY = here(target_folder, "buffer_waterway_ditch.gpkg")
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:multiparttosingleparts",
+      OUTPUT = here(target_folder, "open_ruimte_buffer")
     )
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
-    OVERLAY = here(target_folder, "main_buffer.gpkg"), GRID = NULL
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
-    FIELDS = c("fid", "VELDID", "WBENR")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level1",
-    OUTPUT = qgis_tmp_vector(),
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
-    OVERLAY = here(target_folder, "buffer_waterway_stream.gpkg"), GRID = NULL
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
-    OVERLAY = here(target_folder, "buffer_waterway_drain.gpkg"), GRID = NULL
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "..", "open_area", "natural_water.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
-    FIELDS = c("fid", "VELDID", "WBENR", "level1")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level2",
-    OUTPUT = qgis_tmp_vector(),
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(),
-    OVERLAY = here(target_folder, "buffer_highway_primary.gpkg"), GRID = NULL
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
-    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
-    OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_primary_link.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_secondary.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_secondary_link.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
-    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
-    OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
-    FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level3",
-    OUTPUT = qgis_tmp_vector(),
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_tertiary.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
-    END_CAP_STYLE = 0, JOIN_STYLE = 0, MITER_LIMIT = 2, SEGMENTS = 5,
-    OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_tertiary_link.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
-    FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2", "level3")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level4",
-    OUTPUT = qgis_tmp_vector(),
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_residential.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_unclassified.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts", OUTPUT = qgis_tmp_vector()
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:retainfields", OUTPUT = qgis_tmp_vector(),
-    FIELDS = c("fid", "VELDID", "WBENR", "level1", "level2", "level3", "level4")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:renametablefield", FIELD = "fid", NEW_NAME = "level5",
-    OUTPUT = qgis_tmp_vector(),
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_path.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_track.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_highway_service.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:difference", OUTPUT = qgis_tmp_vector(), GRID = NULL,
-    OVERLAY = here(target_folder, "buffer_waterway_ditch.gpkg")
-  ) |>
-  qgis_run_algorithm_p(
-    algorithm = "native:multiparttosingleparts",
-    OUTPUT = here(target_folder, "open_ruimte_buffer")
-  )
+}
+
 if (!file_test("-f", here(target_folder, "open_ruimte_merge.gpkg"))) {
   here(target_folder, "to_refine.gpkg") |>
     qgis_run_algorithm_p(
@@ -627,7 +630,7 @@ if (!file_test("-f", here(target_folder, "open_ruimte_ok_2.gpkg"))) {
     as.list() |>
     do.call(what = "qgis_list_input") |>
     qgis_run_algorithm_p(
-      algorithm = "native:mergevectorlayers",
+      algorithm = "native:mergevectorlayers", OUTPUT = qgis_tmp_vector(),
       CRS = paste(
         "PROJ4:+proj=lcc +lat_0=90 +lon_0=4.36748666666667",
         "+lat_1=51.1666672333333 +lat_2=49.8333339 +x_0=150000.013",
@@ -650,7 +653,7 @@ if (!file_test("-f", here(target_folder, "open_ruimte_ok_2.gpkg"))) {
     ) |>
     qgis_run_algorithm_p(
       algorithm = "native:snappointstogrid", OUTPUT = qgis_tmp_vector(),
-      HSPACING = 1, VSPACING = 1
+      HSPACING = 0.5, VSPACING = 0.5
     ) |>
     qgis_run_algorithm_p(
       algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,
