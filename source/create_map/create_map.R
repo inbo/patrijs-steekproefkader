@@ -23,7 +23,7 @@ landuse <- here(target_folder, "landuse.gpkg")
 landcover <- here(target_folder, "landcover.gpkg")
 natural <- here(target_folder, "natural.gpkg")
 
-if (!file_test("-f", natural)) {
+if (!file_test("-f", landuse)) {
   osm_gpkg <- oe_vectortranslate(file_path = osm_pbf, layer = "multipolygons")
 
   # select only non NULL landuse
@@ -46,7 +46,9 @@ if (!file_test("-f", natural)) {
       algorithm = "native:retainfields", OUTPUT = landuse,
       FIELDS = c("osm_id", "landuse", "other_tags")
     )
+}
 
+if (!file_test("-f", landcover)) {
   # select only landcover
   osm_gpkg |>
     paste0("|layername=multipolygons") |>
@@ -68,7 +70,9 @@ if (!file_test("-f", natural)) {
       algorithm = "native:retainfields", OUTPUT = landcover,
       FIELDS = c("osm_id", "other_tags")
     )
+}
 
+if (!file_test("-f", natural)) {
   # select only non NULL natural
   osm_gpkg |>
     paste0("|layername=multipolygons") |>
@@ -326,7 +330,7 @@ for (current_exclude in to_exclude) {
     ) |>
     qgis_run_algorithm_p(
       algorithm = "native:difference", INPUT = current_input,
-      OUTPUT = qgis_tmp_vector()
+      OUTPUT = qgis_tmp_vector(), GRID_SIZE = NULL
     ) |>
     qgis_extract_output() -> current_input
 }
@@ -334,7 +338,7 @@ current_input |>
   qgis_run_algorithm_p(
     algorithm = "native:intersection", OVERLAY = jacht,
     INPUT_FIELDS = NULL, OVERLAY_FIELDS = c("VELDID", "WBENR"),
-    OUTPUT = qgis_tmp_vector()
+    OUTPUT = qgis_tmp_vector(), GRID_SIZE = NULL
   ) |>
   qgis_run_algorithm_p(
     algorithm = "native:retainfields",
