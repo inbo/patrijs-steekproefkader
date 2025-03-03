@@ -370,38 +370,7 @@
     "checklist": {
       "Package": "checklist",
       "Version": "0.4.1",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "inbo",
-      "RemoteRepo": "checklist",
-      "RemoteRef": "0.4.1",
-      "RemoteSha": "e6a345e1908a774810008588b88bae029b7b0465",
-      "Requirements": [
-        "R",
-        "R6",
-        "assertthat",
-        "cli",
-        "codemetar",
-        "desc",
-        "devtools",
-        "fs",
-        "gert",
-        "httr",
-        "hunspell",
-        "jsonlite",
-        "knitr",
-        "lintr",
-        "pkgdown",
-        "rcmdcheck",
-        "renv",
-        "rmarkdown",
-        "sessioninfo",
-        "utils",
-        "withr",
-        "yaml"
-      ],
-      "Hash": "254e73c9507adc5fcf15e25f67c26cdf"
+      "Source": "Repository"
     },
     "class": {
       "Package": "class",
@@ -1471,24 +1440,8 @@
     },
     "lintr": {
       "Package": "lintr",
-      "Version": "3.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "backports",
-        "codetools",
-        "cyclocomp",
-        "digest",
-        "glue",
-        "knitr",
-        "rex",
-        "stats",
-        "utils",
-        "xml2",
-        "xmlparsedata"
-      ],
-      "Hash": "08cff46381a242d44c0d8dd0aabd9f71"
+      "Version": "3.2.0",
+      "Source": "Repository"
     },
     "lubridate": {
       "Package": "lubridate",
