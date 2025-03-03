@@ -82,3 +82,11 @@ Having both the code and the data available under version control, allows to rec
 1. `source/zenodo/update_osm_pbf.R` handles the OpenStreetMap data.
 1. `source/zenodo/update_jacht.R` handles the hunting area data.
   Note that you need to update the URL, publication date and version.
+
+## Updating the open area layer
+
+1. Delete the `data/open_area` folder.
+1. `source/create_map/create_map.R` is the main script to create the open area map.
+  It calls `source/create_map/download.R` and `source/create_map/hunting_grounds.R` if required.
+1. `source/create_map/sampling.R` splits the open area map into sampling areas.
+1. `source/create_map/atlas.R` creates a set of pdf's for every sampling area.

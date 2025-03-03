@@ -15,7 +15,6 @@ De lezer kan in de online eveneens de laag met de jachtterreinen activeren.
 
 ```{r basis, fig.cap = "Basiskaart met de meest recente luchtfoto's."}
 basis <- leaflet(width = "100%", height = "770") %>%
-  # setView(lat = 51.05936, lng = 4.80056, zoom = 16) %>%
   setView(lat = 50.75695, lng = 4.00905, zoom = 15) %>%
   addWMSTiles(
     paste(

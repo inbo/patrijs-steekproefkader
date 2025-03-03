@@ -10,7 +10,7 @@ dir.create(target_folder, showWarnings = FALSE)
 
 source(here("source", "create_map", "download.R"))
 
-here(download_folder, "jachtter.shp") |>
+here(download_folder, "jacht.gpkg") |>
   setNames("INPUT") |>
   qgis_run_algorithm_p(
     algorithm = "native:buffer", DISTANCE = 0, DISSOLVE = FALSE,

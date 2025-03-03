@@ -23,7 +23,7 @@ landuse <- here(target_folder, "landuse.gpkg")
 landcover <- here(target_folder, "landcover.gpkg")
 natural <- here(target_folder, "natural.gpkg")
 
-if (!file_test("-f", natural)) {
+if (!file_test("-f", landuse)) {
   osm_gpkg <- oe_vectortranslate(file_path = osm_pbf, layer = "multipolygons")
 
   # select only non NULL landuse
@@ -46,7 +46,9 @@ if (!file_test("-f", natural)) {
       algorithm = "native:retainfields", OUTPUT = landuse,
       FIELDS = c("osm_id", "landuse", "other_tags")
     )
+}
 
+if (!file_test("-f", landcover)) {
   # select only landcover
   osm_gpkg |>
     paste0("|layername=multipolygons") |>
@@ -68,7 +70,9 @@ if (!file_test("-f", natural)) {
       algorithm = "native:retainfields", OUTPUT = landcover,
       FIELDS = c("osm_id", "other_tags")
     )
+}
 
+if (!file_test("-f", natural)) {
   # select only non NULL natural
   osm_gpkg |>
     paste0("|layername=multipolygons") |>
@@ -168,6 +172,7 @@ if (!file_test("-f", vineyard)) {
 natural_grassland <- here(target_folder, "natural_grassland.gpkg")
 natural_wetland <- here(target_folder, "natural_wetland.gpkg")
 natural_wood <- here(target_folder, "natural_wood.gpkg")
+natural_water <- here(target_folder, "natural_water.gpkg")
 
 if (!file_test("-f", natural_grassland)) {
   natural |>
@@ -186,6 +191,11 @@ if (!file_test("-f", natural_grassland)) {
       algorithm = "native:extractbyattribute", FIELD = "natural",
       OPERATOR = "≠", OUTPUT = qgis_tmp_vector(), VALUE = "wood",
       FAIL_OUTPUT = natural_wood
+    ) |>
+    qgis_run_algorithm_p(
+      algorithm = "native:extractbyattribute", FIELD = "natural",
+      OPERATOR = "≠", OUTPUT = qgis_tmp_vector(), VALUE = "water",
+      FAIL_OUTPUT = natural_water
     )
 
   qgis_clean_tmp()
@@ -320,7 +330,7 @@ for (current_exclude in to_exclude) {
     ) |>
     qgis_run_algorithm_p(
       algorithm = "native:difference", INPUT = current_input,
-      OUTPUT = qgis_tmp_vector()
+      OUTPUT = qgis_tmp_vector(), GRID_SIZE = NULL
     ) |>
     qgis_extract_output() -> current_input
 }
@@ -328,7 +338,7 @@ current_input |>
   qgis_run_algorithm_p(
     algorithm = "native:intersection", OVERLAY = jacht,
     INPUT_FIELDS = NULL, OVERLAY_FIELDS = c("VELDID", "WBENR"),
-    OUTPUT = qgis_tmp_vector()
+    OUTPUT = qgis_tmp_vector(), GRID_SIZE = NULL
   ) |>
   qgis_run_algorithm_p(
     algorithm = "native:retainfields",
