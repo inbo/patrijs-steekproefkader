@@ -1,8 +1,8 @@
 renv::restore()
 library(here)
-library(tidyverse)
-library(sf)
 library(qgisprocess)
+library(sf)
+library(tidyverse)
 qgis_configure()
 
 target_folder <- here("data", "fieldmap")
@@ -10,13 +10,13 @@ target_folder <- here("data", "fieldmap")
 coverage <- here("data", "sampling", "telblok.gpkg")
 coverage |>
   read_sf() |>
-  filter(!is.na(.data$WBENR)) |>
+  filter(!is.na(as.integer(.data$WBENR))) |>
   st_drop_geometry() |>
   transmute(
     prov = str_sub(.data$WBENR, end = 1) |>
       factor(
-        levels = c("1", "2", "3", "4", "5"),
-        labels = c("wevl", "oovl", "antw", "limb", "vlbr")
+        levels = c("1", "2", "3", "5", "4"),
+        labels = c("wevl", "oovl", "antw", "vlbr", "limb")
       ),
     wbe = .data$WBENR, hunting = .data$VELDID
   ) |>
@@ -88,11 +88,11 @@ render_layout <- function(
 }
 
 render_layout(
-  this_layout = "luchtfoto", grounds = hunting_grounds,
+  this_layout = "OSM", grounds = hunting_grounds,
   target_folder = target_folder
 )
 render_layout(
-  this_layout = "OSM", grounds = hunting_grounds,
+  this_layout = "luchtfoto", grounds = hunting_grounds,
   target_folder = target_folder
 )
 render_layout(

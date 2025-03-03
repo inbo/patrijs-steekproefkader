@@ -6,7 +6,7 @@ library(tidyverse)
 source_folder <- here("data", "fieldmap", "osm")
 zenodo <- ZenodoManager$new(token = key_get("zenodo"), logger = "INFO")
 
-new_version <- "2025.02"
+new_version <- "2025.05"
 doi <- c(
   wevl = "10.5281/zenodo.14647585", oovl = "10.5281/zenodo.14194002",
   antw = "10.5281/zenodo.14194017", limb = "10.5281/zenodo.14194025",

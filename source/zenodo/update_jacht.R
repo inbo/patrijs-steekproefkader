@@ -7,17 +7,8 @@ library(sf)
 library(zen4R)
 
 target <- here("data", "downloads")
-query = c(
-  request = "GetFeature", typeName = "Jacht:Jachtterr",
-  outputFormat = "json", srsName = "epsg:31370"
-)
-paste(names(query), query, sep = "=", collapse = "&") |>
-  sprintf(fmt = "https://geo.api.vlaanderen.be/Jacht/wfs?%s") |>
-  curl_download(here(target, "jacht.json"))
-here(target, "jacht.json") |>
-  read_sf() |>
-  st_bbox()
-query = c(
+
+query <- c(
   request = "GetFeature", typeName = "Jacht:Jachtterr",
   outputFormat = "json", srsName = "epsg:31370",
   BBOX = "23000,150000,140000,250000"
@@ -29,7 +20,7 @@ here(target, "jacht_west.json") |>
   read_sf() -> jacht_west
 stopifnot(nrow(jacht_west) < 10000)
 
-query = c(
+query <- c(
   request = "GetFeature", typeName = "Jacht:Jachtterr",
   outputFormat = "json", srsName = "epsg:31370",
   BBOX = "140000,150000,260000,250000"
