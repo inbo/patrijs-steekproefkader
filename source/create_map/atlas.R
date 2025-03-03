@@ -24,7 +24,8 @@ coverage |>
   arrange(.data$prov, .data$wbe, .data$hunting) -> hunting_grounds
 
 render_wbe <- function(this_layout = "luchtfoto", this_wbe, target_folder) {
-  here(
+  stopifnot(require("here"), require("qgisprocess"))
+  here::here(
     target_folder, tolower(this_layout), head(this_wbe$prov, 1)
   ) |>
     normalizePath() -> prov
@@ -34,10 +35,11 @@ render_wbe <- function(this_layout = "luchtfoto", this_wbe, target_folder) {
   this_wbe <- this_wbe[!this_wbe$hunting %in% done, ]
   for (hunting in this_wbe$hunting) {
     message(this_layout, " ", hunting)
-    qgis_run_algorithm(
+    qgisprocess::qgis_run_algorithm(
       algorithm = "native:atlaslayouttopdf", LAYOUT = this_layout,
       FILTER_EXPRESSION = sprintf("\"VELDID\" = '%s'", hunting), .quiet = TRUE,
-      SORTBY_EXPRESSION = "id", PROJECT_PATH = here("data", "steekproef.qgz"),
+      SORTBY_EXPRESSION = "id",
+      PROJECT_PATH = here::here("data", "steekproef.qgz"),
       COVERAGE_LAYER = sprintf("%s|layername=telblok", coverage), DPI = 300,
       OUTPUT = sprintf("%s/jachtveld_%s_%s.pdf", prov, hunting, this_layout),
       SORTBY_REVERSE = FALSE, FORCE_VECTOR = FALSE, GEOREFERENCE = TRUE,

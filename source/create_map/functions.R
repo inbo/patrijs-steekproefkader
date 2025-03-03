@@ -8,6 +8,7 @@ get_leafs <- function(object) {
 generate_cluster <- function(
   dendrogram, base_points, max_width = 27, max_height = 19, max_ha = 150
 ) {
+  stopifnot(require("dplyr", quietly = TRUE), require("rlang", quietly = TRUE))
   leafs <- get_leafs(dendrogram)
   if (length(leafs) == 1) {
     return(list(leafs))
