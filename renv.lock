@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.2",
+    "Version": "4.5.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -9,10 +9,6 @@
       {
         "Name": "INLA",
         "URL": "https://inla.r-inla-download.org/R/testing"
-      },
-      {
-        "Name": "inbo",
-        "URL": "https://inbo.r-universe.dev"
       }
     ]
   },
@@ -31,10 +27,12 @@
     "INBOmd": {
       "Package": "INBOmd",
       "Version": "0.6.3",
-      "Source": "Repository",
-      "Repository": "https://inbo.r-universe.dev",
-      "RemoteUrl": "https://github.com/inbo/inbomd",
-      "RemoteRef": "HEAD",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "inbo",
+      "RemoteRepo": "INBOmd",
+      "RemoteRef": "main",
       "RemoteSha": "9193adc22e99d10670113042616ca9dcf280f40f",
       "Requirements": [
         "R",
@@ -52,16 +50,18 @@
         "tinytex",
         "utils"
       ],
-      "Hash": "781239c8875603cb232dd2fbfc6c7be7"
+      "Hash": "a81dd7c91194eef65d0c931a83108415"
     },
     "INBOtheme": {
       "Package": "INBOtheme",
-      "Version": "0.6.0",
-      "Source": "Repository",
-      "Repository": "https://inbo.r-universe.dev",
-      "RemoteUrl": "https://github.com/inbo/inbotheme",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "efd415e626b2f873b1c1fe872aa55fe7257d250e",
+      "Version": "0.6.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "inbo",
+      "RemoteRepo": "INBOtheme",
+      "RemoteRef": "main",
+      "RemoteSha": "278ce189737fb147819c5d14850579653ff0c768",
       "Requirements": [
         "R",
         "assertthat",
@@ -71,7 +71,7 @@
         "grid",
         "scales"
       ],
-      "Hash": "e7f7d962abb5a037ab6447e8d9cd1d88"
+      "Hash": "bcc43f27df3db40144e7098821556362"
     },
     "KernSmooth": {
       "Package": "KernSmooth",
@@ -220,13 +220,13 @@
     },
     "bit": {
       "Package": "bit",
-      "Version": "4.0.5",
+      "Version": "4.6.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "d242abec29412ce988848d0294b208fd"
+      "Hash": "ebe86ffd194564abdc895d87742d5a29"
     },
     "bit64": {
       "Package": "bit64",
@@ -370,7 +370,38 @@
     "checklist": {
       "Package": "checklist",
       "Version": "0.4.1",
-      "Source": "Repository"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "inbo",
+      "RemoteRepo": "checklist",
+      "RemoteRef": "v0.4.1",
+      "RemoteSha": "5e659fdccb25fe35a8d1b85e8eae3b8c4911d5e2",
+      "Requirements": [
+        "R",
+        "R6",
+        "assertthat",
+        "cli",
+        "codemetar",
+        "desc",
+        "devtools",
+        "fs",
+        "gert",
+        "gh",
+        "httr",
+        "hunspell",
+        "jsonlite",
+        "knitr",
+        "lintr",
+        "pkgdown",
+        "rcmdcheck",
+        "rmarkdown",
+        "sessioninfo",
+        "utils",
+        "withr",
+        "yaml"
+      ],
+      "Hash": "a00adf148206ea3ae0b53be9f6308632"
     },
     "class": {
       "Package": "class",
@@ -421,6 +452,20 @@
         "utils"
       ],
       "Hash": "3f038e5ac7f41d4ac41ce658c85e3042"
+    },
+    "cluster": {
+      "Package": "cluster",
+      "Version": "2.1.8.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "grDevices",
+        "graphics",
+        "stats",
+        "utils"
+      ],
+      "Hash": "e16d49a008e1a22ee863fb9a51de9bde"
     },
     "codemeta": {
       "Package": "codemeta",
@@ -1441,16 +1486,29 @@
     "lintr": {
       "Package": "lintr",
       "Version": "3.2.0",
-      "Source": "Repository"
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "backports",
+        "cli",
+        "codetools",
+        "digest",
+        "glue",
+        "knitr",
+        "rex",
+        "stats",
+        "utils",
+        "xml2",
+        "xmlparsedata"
+      ],
+      "Hash": "45b44c7f1040cce8f34ec0a9c92d47f3"
     },
     "lubridate": {
       "Package": "lubridate",
       "Version": "1.9.4",
       "Source": "Repository",
-      "Repository": "https://inbo.r-universe.dev",
-      "RemoteUrl": "https://github.com/tidyverse/lubridate",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "fea9692686dcb0a968fa068d7f8dfdb41bbea581",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "generics",
@@ -1841,10 +1899,9 @@
       "Package": "qgisprocess",
       "Version": "0.4.1.9000",
       "Source": "Repository",
-      "Repository": "https://inbo.r-universe.dev",
       "RemoteUrl": "https://github.com/r-spatial/qgisprocess",
       "RemoteRef": "HEAD",
-      "RemoteSha": "49ffca7362597582ae1d2e890c3cc46342d7874a",
+      "RemoteSha": "b8863a7598a6f3121b7a32f3c353b4b83d6d6e60",
       "Requirements": [
         "R",
         "assertthat",
@@ -1859,7 +1916,7 @@
         "vctrs",
         "withr"
       ],
-      "Hash": "e8f26b789613f549d7acd4527f2b9756"
+      "Hash": "5e0a565dc3ce33a02cc06a1cf64eb6dc"
     },
     "qpdf": {
       "Package": "qpdf",
