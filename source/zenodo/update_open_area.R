@@ -15,23 +15,29 @@ zenodo <- ZenodoManager$new(token = key_get("zenodo"), logger = "INFO")
 myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.10260759")
 here("data", "open_area") |>
   list.files(
-    pattern = "^open_ruimte\\.(gpkg|dbf|prj|shp|shx)$", full.names = TRUE
+    pattern = "^open_ruimte\\.(gpkg|dbf|prj|shp|shx)$",
+    full.names = TRUE
   ) |>
   zenodo$depositRecordVersion(
-    record = myrec, delete_latest_files = TRUE, publish = FALSE
+    record = myrec,
+    delete_latest_files = TRUE,
+    publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2025.05")
+myrec$setVersion("2025.06")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
 
 myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.5814901")
 here("data", "sampling") |>
   list.files(
-    pattern = "^telblok\\.(gpkg|dbf|prj|shp|shx)$", full.names = TRUE
+    pattern = "^telblok\\.(gpkg|dbf|prj|shp|shx)$",
+    full.names = TRUE
   ) |>
   zenodo$depositRecordVersion(
-    record = myrec, delete_latest_files = TRUE, publish = FALSE
+    record = myrec,
+    delete_latest_files = TRUE,
+    publish = FALSE
   ) -> myrec
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2025.05")
+myrec$setVersion("2025.06")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
