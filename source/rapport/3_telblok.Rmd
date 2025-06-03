@@ -36,23 +36,23 @@ We kunnen niet anders dan deze eenheden als telblokken groter dan 150 ha te gebr
 tribble(
   ~key, ~value, ~omschrijving, ~url,
   "highway", "secondary", "steenwegen",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary",
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary",
   "highway", "tertiary", "lokale verbindingswegen",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary",
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary",
   "waterway", "stream", "beek",
-    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream",
+  "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream",
   "highway", "unclassified", "lokale wegen",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dunclassified",
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dunclassified",
   "highway", "track", "veldweg geschikt voor landbouwvoertuigen",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
   "waterway", "ditch", "gracht",
-    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dditch",
+  "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dditch",
   "waterway", "ditch", "afwateringskanaal",
-    "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain",
+  "https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain",
   "highway", "path", "veldweg niet geschikt voor landbouwvoertuigen",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack",
   "highway", "service", "private toegangsweg",
-    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dservice"
+  "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dservice"
 ) %>%
   transmute(
     .data$key, value = sprintf("[%s](%s)", .data$value, .data$url),
@@ -72,10 +72,10 @@ In figuur \@ref(fig:samen-1) geven we een fictief voorbeeld van een aantal eenhe
 ```{r samen-1, fig.cap = "Voorbeeld met een aantal fictieve eenheden met aanduiding van hun zwaartepunt, label en oppervlakte."}
 tribble(
   ~x, ~y, ~id, ~opp,
-     0, -20, "A", 20,
-     0, 500, "B", 35,
-   400, -50, "C", 10,
-   500, 400, "D", 12,
+  0, -20, "A", 20,
+  0, 500, "B", 35,
+  400, -50, "C", 10,
+  500, 400, "D", 12,
   1500, 200, "E", 50,
   1000, 1200, "F", 150
 ) %>%
@@ -222,8 +222,10 @@ tribble(
   summarise(P = sum(.data$P)) %>%
   arrange(desc(.data$P)) %>%
   kable(
-    caption =
-  "Compactheidscore voor verschillende combinaties van (groepen van) eenheden.",
+    caption = paste(
+      "Compactheidscore voor verschillende combinaties van (groepen van)",
+      "eenheden."
+    ),
     digits = 2
   )
 ```
