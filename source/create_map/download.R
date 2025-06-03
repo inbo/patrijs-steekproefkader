@@ -38,9 +38,9 @@ if (file_test("-f", here(dl, target))) {
   if (file_test("-f", here(dl, "checksum.csv"))) {
     hashes <- read_vc("checksum", dl)
     stopifnot(
-      "Hash of downloaded file doesn't match the stored hash" = unclass(as.character(
-        hash
-      )) ==
+      "Hash of downloaded file doesn't match the stored hash" = unclass(
+        as.character(hash)
+      ) ==
         hashes$sha512[hashes$file == target]
     )
   } else {
