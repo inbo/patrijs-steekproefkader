@@ -12,7 +12,7 @@
 
 [Onkelinx, Thierry![ORCID logo](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-8804-4216)[^aut][^cre][^INBO];
 [Carmen, Raïsa![ORCID logo](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-1025-8702)[^aut][^INBO];
-Research Institute for Nature and Forest (INBO)[^cph][^fnd]
+[Research Institute for Nature and Forest (INBO)](mailto:info%40inbo.be)[^cph][^fnd]
 
 [^aut]: author
 [^cre]: contact person
