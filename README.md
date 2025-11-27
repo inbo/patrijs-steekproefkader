@@ -1,13 +1,15 @@
 <!-- badges: start -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5814813.svg)](https://doi.org/10.5281/zenodo.5814813)
 [![website](https://img.shields.io/badge/website-https%3A%2F%2Finbo.github.io%2Fpatrijs--steekproefkader%2F-c04384)](https://inbo.github.io/patrijs-steekproefkader/)
-![GitHub](https://img.shields.io/github/license/inbo/patrijs-steekproefkader)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/inbo/patrijs-steekproefkader)
-![GitHub Release Date](https://img.shields.io/github/release-date/inbo/patrijs-steekproefkader)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inbo/patrijs-steekproefkader/check-source)
+[![Project Status: Concept - Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-brightgreen)](https://raw.githubusercontent.com/inbo/checklist/refs/heads/main/inst/generic_template/cc_by_4_0.md)
+[![Release](https://img.shields.io/github/release/inbo/patrijs-steekproefkader.svg)](https://github.com/inbo/patrijs-steekproefkader/releases)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/inbo/patrijs-steekproefkader/check-project)
 ![GitHub repo size](https://img.shields.io/github/repo-size/inbo/patrijs-steekproefkader)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/inbo/patrijs-steekproefkader.svg)
 <!-- badges: end -->
-  
+
 # Sampling frame for partridge (_Perdrix perdrix_) in Flanders
 
 [Onkelinx, Thierry![ORCID logo](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-8804-4216)[^aut][^cre][^INBO];
@@ -15,14 +17,14 @@
 [Research Institute for Nature and Forest (INBO)](mailto:info%40inbo.be)[^cph][^fnd]
 
 [^aut]: author
-[^cre]: contact person
 [^cph]: copyright holder
+[^cre]: contact person
 [^fnd]: funder
 [^INBO]: Research Institute for Nature and Forest (INBO)
 
 **keywords**: hunting; monitoring; habitat
 
-<!-- version: 2023.01 -->
+<!-- version: 2025.05 -->
 <!-- community: inbo -->
 
 <!-- description: start -->

@@ -10,6 +10,7 @@ required:
 - folder conventions
 - license
 - lintr
+- organisation
 - spelling
 spelling:
   default: en-GB
