@@ -27,7 +27,7 @@ if (file_test("-f", here(dl, target))) {
   )
 } else {
   if (!file_test("-f", here(dl, tolower(target)))) {
-    download_zenodo(doi = "10.5281/zenodo.14651015", path = dl, timeout = 600)
+    download_zenodo(doi = "10.5281/zenodo.17737064", path = dl, timeout = 600)
   }
   here(dl, target) |>
     file() |>
@@ -69,7 +69,7 @@ if (file_test("-f", here(dl, target))) {
       hashes$sha512[hashes$file == target]
   )
 } else {
-  download_zenodo(doi = "10.5281/zenodo.15575630", path = dl, timeout = 600)
+  download_zenodo(doi = "10.5281/zenodo.17737337", path = dl, timeout = 600)
   here(dl, target) |>
     file() |>
     sha512() |>
