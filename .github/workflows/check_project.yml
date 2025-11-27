@@ -14,4 +14,6 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: inbo/actions/check_project@main
+      - uses: inbo/actions/check_project@devel
+        with:
+          aptget: libpoppler-cpp-dev
