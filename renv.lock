@@ -950,7 +950,7 @@
         "hunspell",
         "jsonlite",
         "knitr",
-        "lintr (>= 3.2.0)",
+        "lintr (>= 3.3.0)",
         "pkgdown (>= 2.0.7)",
         "R6",
         "rcmdcheck",
@@ -988,8 +988,8 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "inbo",
       "RemoteRepo": "checklist",
-      "RemoteRef": "hotfix",
-      "RemoteSha": "63298f2935161a54d2d06831da8fed61cc153e9a"
+      "RemoteRef": "main",
+      "RemoteSha": "0630e6bcae466a323d22eddeb36ed9db8e633808"
     },
     "class": {
       "Package": "class",
