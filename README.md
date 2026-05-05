@@ -22,7 +22,7 @@
 [^fnd]: funder
 [^INBO]: Research Institute for Nature and Forest (INBO)
 
-**keywords**: hunting; monitoring; habitat
+**keywords**: hunting; monitoring; habitat; inbo_version
 
 <!-- version: 2026.01 -->
 <!-- community: inbo -->
