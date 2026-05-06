@@ -1,5 +1,9 @@
+!source/**/_extensions/**
+*.[rR][dD]ata
+*.[rR]ds
 *.dbf
 *.doc*
+*.eps
 *.gddoc
 *.gdsheet
 *.gpkg
@@ -8,11 +12,17 @@
 *.html
 *.mdb
 *.pbf
+*.pdf
 *.shp*
 *.shx
+*.sty
+*.tex
 *.xls*
 *.zip
+*_cache
 *_files
+*_freeze
+*_libs
 .DS_Store
 .RData
 .Renviron
@@ -20,6 +30,7 @@
 .Rproj.user
 .Ruserdata
 .httr-oauth
+.quarto
 cover.txt
 data/*
 docs
