@@ -7,15 +7,16 @@
   "keywords": [
     "hunting",
     "monitoring",
-    "habitat"
+    "habitat",
+    "inbo_version"
   ],
   "upload_type": "software",
   "language": "eng",
   "contributors": [
     {
-      "name": "Van Calster, Hans",
+      "name": "Onkelinx, Thierry",
       "affiliation": "Research Institute for Nature and Forest (INBO)",
-      "orcid": "0000-0001-8595-8426",
+      "orcid": "0000-0001-8804-4216",
       "type": "contactperson"
     },
     {
@@ -25,9 +26,9 @@
   ],
   "creators": [
     {
-      "name": "Van Calster, Hans",
+      "name": "Onkelinx, Thierry",
       "affiliation": "Research Institute for Nature and Forest (INBO)",
-      "orcid": "0000-0001-8595-8426"
+      "orcid": "0000-0001-8804-4216"
     },
     {
       "name": "Carmen, Raïsa",

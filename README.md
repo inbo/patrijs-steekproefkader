@@ -44,36 +44,9 @@ When we need to update the open space layer, we will add an updated snapshot as 
 Having both the code and the data available under version control, allows to recreate both the most recent version as any older version.
 <!-- description: end -->
 
-## Available maps for field work
-
-### Areal photograph as background
-
-- **West-Flanders**: https://doi.org/10.5281/zenodo.5812597
-- **East-Flanders**: https://doi.org/10.5281/zenodo.5814972
-- **Antwerp**: https://doi.org/10.5281/zenodo.5815049
-- **Limburg**: https://doi.org/10.5281/zenodo.5815083
-- **Flemish Brabant**: https://doi.org/10.5281/zenodo.5815089
-
-### OpenStreetMap as background
-
-- **West-Flanders**: https://doi.org/10.5281/zenodo.5815407
-- **East-Flanders**: https://doi.org/10.5281/zenodo.5815400
-- **Antwerp**: https://doi.org/10.5281/zenodo.5815392
-- **Limburg**: https://doi.org/10.5281/zenodo.5815379
-- **Flemish Brabant**: https://doi.org/10.5281/zenodo.5815209
-
-### Cartoweb as background
-
-- **West-Flanders**: https://doi.org/10.5281/zenodo.5827428
-- **East-Flanders**: https://doi.org/10.5281/zenodo.5831528
-- **Antwerp**: https://doi.org/10.5281/zenodo.5827467
-- **Limburg**: https://doi.org/10.5281/zenodo.5827491
-- **Flemish Brabant**: https://doi.org/10.5281/zenodo.5827509
-
-## Other maps
+## Available maps
 
 - **open area for partridge**: https://doi.org/10.5281/zenodo.5814833
-- **sampling units**: https://doi.org/10.5281/zenodo.5814900
 - **hunting grounds**: https://doi.org/10.5281/zenodo.5584203
 - **OpenStreetMap snapshot**: https://doi.org/10.5281/zenodo.5792948
 
