@@ -2,6 +2,8 @@ renv::restore()
 library(keyring)
 library(zen4R)
 library(osmextract)
+library(git2rdata)
+library(tidyverse)
 
 osm_source <- oe_match("Belgium")
 osm_pbf <- oe_download(
@@ -20,3 +22,16 @@ myrec <- zenodo$depositRecordVersion(
 myrec$setPublicationDate(Sys.Date())
 myrec$setVersion(Sys.Date())
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
+
+read_vc("checksum", dl) |>
+  filter(file != "geofabrik_belgium-latest.osm.pbf") |>
+  bind_rows(
+    data.frame(
+      file = "geofabrik_belgium-latest.osm.pbf",
+      sha512 = file(osm_pbf) |>
+        sha512() |>
+        as.character() |>
+        unclass()
+    )
+  ) |>
+  write_vc("checksum", root = dl, optimize = FALSE)

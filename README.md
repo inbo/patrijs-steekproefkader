@@ -24,7 +24,7 @@
 
 **keywords**: hunting; monitoring; habitat; inbo_version
 
-<!-- version: 2026.01 -->
+<!-- version: 2026.02 -->
 <!-- community: inbo -->
 
 <!-- description: start -->

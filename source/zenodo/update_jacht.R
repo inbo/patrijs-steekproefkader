@@ -9,8 +9,10 @@ library(zen4R)
 target <- here("data", "downloads")
 
 query <- c(
-  request = "GetFeature", typeName = "Jacht:Jachtterr",
-  outputFormat = "json", srsName = "epsg:31370",
+  request = "GetFeature",
+  typeName = "Jacht:Jachtterr",
+  outputFormat = "json",
+  srsName = "epsg:31370",
   BBOX = "23000,150000,140000,250000"
 )
 paste(names(query), query, sep = "=", collapse = "&") |>
@@ -21,8 +23,10 @@ here(target, "jacht_west.json") |>
 stopifnot(nrow(jacht_west) < 10000)
 
 query <- c(
-  request = "GetFeature", typeName = "Jacht:Jachtterr",
-  outputFormat = "json", srsName = "epsg:31370",
+  request = "GetFeature",
+  typeName = "Jacht:Jachtterr",
+  outputFormat = "json",
+  srsName = "epsg:31370",
   BBOX = "140000,150000,260000,250000"
 )
 paste(names(query), query, sep = "=", collapse = "&") |>
@@ -44,7 +48,9 @@ timestamp <- file.info(here(target, "jacht.shp"))$ctime
 zenodo <- ZenodoManager$new(token = key_get("zenodo"), logger = "INFO")
 myrec <- zenodo$getDepositionByDOI("10.5281/zenodo.5584204")
 myrec <- zenodo$depositRecordVersion(
-  myrec, delete_latest_files = TRUE, publish = FALSE,
+  myrec,
+  delete_latest_files = TRUE,
+  publish = FALSE,
   here(target) |>
     list.files(pattern = "jacht\\.(gpkg|dbf|shp|shx|prj)$", full.names = TRUE)
 )
@@ -53,3 +59,16 @@ format(timestamp, "%Y-%m-%d %H:%M:%S") |>
   sprintf(fmt = "WFS download %s") |>
   myrec$setVersion()
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
+
+read_vc("checksum", dl) |>
+  filter(file != "jacht.gpkg") |>
+  bind_rows(
+    data.frame(
+      file = "jacht.gpkg",
+      sha512 = file(here(target, "jacht.gpkg")) |>
+        sha512() |>
+        as.character() |>
+        unclass()
+    )
+  ) |>
+  write_vc("checksum", root = dl, optimize = FALSE)

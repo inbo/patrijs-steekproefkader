@@ -20,6 +20,7 @@ here("data", "open_area") |>
     delete_latest_files = TRUE,
     publish = FALSE
   ) -> myrec
+myrec$setSubjects(c("open ruimte", "patrijs", "OpenStreetMap", "inbo-version"))
 myrec$setPublicationDate(Sys.Date())
-myrec$setVersion("2026.01")
+myrec$setVersion("2026.02")
 myrec <- zenodo$depositRecord(myrec, publish = TRUE)
